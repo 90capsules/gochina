@@ -1,14 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Gochina</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<!--Let browser know website is optimized for mobile
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+	-->	
+
+	<title>江南style</title>
+
+  <!-- font CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
+	<!-- Main css styles -->
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+
+	<!-- Main javascript files -->
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
+
+
+
+
 </head>
 <body>
 
-<%= yield %>
+  <!-- Page topnavbar -->
+  <%= render 'layouts/topnavbar' %>
+
+  <!-- Wrapper-->
+  <div id="wrapper" class="<%= params[:controller] %>.<%= params[:action] %>">
+
+    <!-- Main view  -->
+    <%= yield %>
+
+  </div>
+  <!-- End wrapper-->
+
+  <!-- Footer -->
+  <%= render 'layouts/footer' %>
+
+
+  <!-- jquery here -->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
+  <!-- Include javascript per-controller - vendor plugins -->
+  <%= javascript_include_tag params[:controller] if ::Rails.application.assets.find_asset("#{params[:controller]}.js") %>		
+
+
+
+
 
 </body>
 </html>
+
+
+
+
+
+
+

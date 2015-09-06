@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'estimate/request'
+
   root 'home#index'
   get 'home/index'
 

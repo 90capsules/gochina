@@ -2,15 +2,12 @@
   <div class="nav-wrapper container">
     <a id="logo-container" href="#" class="brand-logo white-text">江南style</a>
     <ul class="right hide-on-med-and-down">
-<<<<<<< HEAD
       <li><a href="#" class="white-text">LOGIN</a></li>
-=======
       <% if user_signed_in? %>
         <li><%= link_to "LOGOUT", destroy_user_session_path, :class => "white-text",method: 'delete' %></li>
       <% else %>
         <li><a href="#" class="white-text">LOGIN</a></li>
       <% end %>
->>>>>>> 1ef63a3a1076969c82044641eb0a2f015b1440f1
       <li><a href="#" class="white-text">JOIN</a></li>
       <li><a href="#" class="white-text">MY PAGE</a></li>
     </ul>

@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
   devise_for :codis, controllers: {
-        sessions: 'codis/sessions'
+        sessions: 'codis/sessions',
+        registrations: 'codis/registrations',
+        passwords: 'codis/passwords',
       }
   devise_for :users, controllers: {
-        sessions: 'users/sessions'
+        sessions: 'users/sessions',
+        registrations: 'users/registrations',
+        passwords: 'users/passwords',
       }
   get 'estimate/request'
 

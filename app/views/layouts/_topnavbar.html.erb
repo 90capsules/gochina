@@ -1,15 +1,18 @@
 <nav class="red" role="navigation">
   <div class="nav-wrapper container">
-    <a id="logo-container" href="#" class="brand-logo white-text">江南style</a>
+    <a id="logo-container" href="/" class="brand-logo white-text">江南style</a>
     <ul class="right hide-on-med-and-down">
-      <li><a href="#" class="white-text">LOGIN</a></li>
+
       <% if user_signed_in? %>
         <li><%= link_to "LOGOUT", destroy_user_session_path, :class => "white-text",method: 'delete' %></li>
-      <% else %>
-        <li><a href="#" class="white-text">LOGIN</a></li>
+        <li><a href="#" class="white-text">MY PAGE</a></li>
+      <% elsif codi_signed_in? %>
+        <li><%= link_to "LOGOUT", destroy_codi_session_path, :class => "white-text",method: 'delete' %></li>
+        <li><a href="#" class="white-text">MY PAGE</a></li>
+      <% else %>  
+        <li><a href="/users/sign_in" class="white-text">LOGIN</a></li>
+        <li><a href="/users/sign_up" class="white-text">JOIN</a></li>
       <% end %>
-      <li><a href="#" class="white-text">JOIN</a></li>
-      <li><a href="#" class="white-text">MY PAGE</a></li>
     </ul>
 
     <ul id="nav-mobile" class="side-nav">

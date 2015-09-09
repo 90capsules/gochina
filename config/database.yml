@@ -10,22 +10,8 @@ default: &default
   timeout: 5000
 
 development:
-  adapter: postgresql
-  encoding: unicode
-  database: postgres
-  pool: 5
-  host: localhost
-  username: postgres
-  password: 1234
-  
-production:
-  adapter: postgresql
-  prepared_statements: false
-  
-# 백용수 주석처리
-# development:
-#   <<: *default
-#   database: db/development.sqlite3
+  <<: *default
+  database: db/development.sqlite3
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

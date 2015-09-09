@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :codis, controllers: {
+        sessions: 'codis/sessions'
+      }
+  devise_for :users, controllers: {
+        sessions: 'users/sessions'
+      }
   get 'estimate/request'
 
   root 'home#index'

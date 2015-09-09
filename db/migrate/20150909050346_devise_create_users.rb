@@ -1,6 +1,15 @@
 class DeviseCreateUsers < ActiveRecord::Migration
   def change
     create_table(:users) do |t|
+      # 백용수 User속성
+      t.string :str_id,             null: false, default: ""
+      t.string :sex,                null: false, default: ""
+      t.integer :age
+      t.string :realname,           null: false, default: ""
+      t.string :nickname,           null: false, default: ""
+      t.string :phonenumber
+      t.string :interested_operation, array: true
+      
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""

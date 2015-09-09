@@ -4,10 +4,30 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    <%= f.label :ID %><br />
+    <%= f.text_field :str_id, autofocus: true %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :nickname %><br />
+    <%= f.text_field :nickname, autofocus: true %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :realname, autofocus: true %>
+  </div>
+  
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
-
+  
+  <div class="field">
+    <%= f.label :phonenumber %><br />
+    <%= f.telephone_field :phonenumber, autofocus: true %>
+  </div>
+  
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>

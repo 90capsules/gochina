@@ -1,4 +1,42 @@
 Rails.application.routes.draw do
+  get 'review/write_review'
+
+  get 'review/writing_review'
+
+  get 'review/detail'
+
+  get 'review/writing_reply'
+
+  get 'review/index'
+
+  get 'mypage/trace'
+
+  get 'mypage/account'
+
+  get 'mypage/codi_account'
+
+  get 'mypage/savebox'
+
+  get 'mypage/saving_box'
+
+  get 'hospital/inex'
+
+  get 'hospital/detail'
+
+  get 'estimating/requesting'
+
+  get 'estimating/requesting_complete'
+
+  get 'estimating/manage'
+
+  get 'estimating/counsel'
+
+  get 'estimating/couunsel_complete'
+
+  get 'estimating/codi_index'
+
+  get 'codis/edit'
+
   devise_for :codis, controllers: {
         sessions: 'codis/sessions',
         registrations: 'codis/registrations',

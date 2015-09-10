@@ -1,6 +1,14 @@
 class DeviseCreateCodis < ActiveRecord::Migration
   def change
     create_table(:codis) do |t|
+      # 백용수 Codi속성
+
+      t.string :realname,           null: false, default: ""
+      t.string :nickname,           null: false, default: ""
+      t.string :phonenumber
+      t.integer :hospital_id,       null: false, default: ""      
+      
+      
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
@@ -38,5 +46,12 @@ class DeviseCreateCodis < ActiveRecord::Migration
     add_index :codis, :reset_password_token, unique: true
     # add_index :codis, :confirmation_token,   unique: true
     # add_index :codis, :unlock_token,         unique: true
+    
+    # 백용수 index추가
+    add_index :codis, :realname
+    add_index :codis, :nickname
+    add_index :codis, :phonenumber
+    add_index :codis, :hospital_id
+
   end
 end

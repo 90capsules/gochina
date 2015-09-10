@@ -4,8 +4,8 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :ID %><br />
-    <%= f.text_field :str_id, autofocus: true %>
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
   </div>
   
   <div class="field">
@@ -19,13 +19,22 @@
   </div>
   
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.label :phonenumber %><br />
+    <%= f.telephone_field :phonenumber, autofocus: true %>
   </div>
   
   <div class="field">
-    <%= f.label :phonenumber %><br />
-    <%= f.telephone_field :phonenumber, autofocus: true %>
+    <%= f.label :sex %><br />
+
+    <%= f.radio_button(:sex, "male") %>
+    <%= f.label(:sex_male, "MALE") %>
+    <%= f.radio_button(:sex, "female") %>
+    <%= f.label(:sex_female, "FEMALE") %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :age %><br />
+    <%= f.number_field :age, autofocus: true %>
   </div>
   
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -46,7 +55,12 @@
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
-
+  
+  <div class="field">
+    <%= f.label :interested_operation %><br />
+    <%= f.text_field :interested_operation, autofocus: true %>
+  </div>
+  
   <div class="actions">
     <%= f.submit "Update" %>
   </div>

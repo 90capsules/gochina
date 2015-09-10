@@ -4,8 +4,8 @@
   <%= devise_error_messages! %>
   
   <div class="field">
-    <%= f.label :ID %><br />
-    <%= f.text_field :str_id, autofocus: true %>
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
   </div>
   
   <div class="field">
@@ -32,13 +32,12 @@
   </div>
   
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-  
-  <div class="field">
     <%= f.label :sex %><br />
-    <%= f.text_field :sex, autofocus: true %>
+
+    <%= f.radio_button(:sex, "male") %>
+    <%= f.label(:sex_male, "MALE") %>
+    <%= f.radio_button(:sex, "female") %>
+    <%= f.label(:sex_female, "FEMALE") %>
   </div>
   
   <div class="field">
@@ -50,10 +49,15 @@
     <%= f.label :phonenumber %><br />
     <%= f.telephone_field :phonenumber, autofocus: true %>
   </div>
+  
+  <div class="field">
+    <%= f.label :interested_operation %><br />
+    <%= f.text_field :interested_operation, autofocus: true %>
+  </div>
 
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
-<a href="/codi/sign_up">Coordinator SIGN UP</a>
+<a href="/codis/sign_up">Coordinator SIGN UP</a></br>
 <%= render "users/shared/links" %>

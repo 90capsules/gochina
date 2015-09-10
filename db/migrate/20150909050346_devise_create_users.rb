@@ -2,7 +2,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
   def change
     create_table(:users) do |t|
       # 백용수 User속성
-      t.string :str_id,             null: false, default: ""
+
       t.string :sex,                null: false, default: ""
       t.integer :age
       t.string :realname,           null: false, default: ""
@@ -42,9 +42,18 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_index :users, :str_id,                unique: true
+    add_index :users, :email,                unique: true
     add_index :users, :reset_password_token,  unique: true
     # add_index :users, :confirmation_token,   unique: true
     # add_index :users, :unlock_token,         unique: true
+    
+    # 백용수 index 추가
+    add_index :users, :sex
+    add_index :users, :age
+    add_index :users, :realname
+    add_index :users, :nickname
+    add_index :users, :phonenumber
+    add_index :users, :interested_operation
+    
   end
 end

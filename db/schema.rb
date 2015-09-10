@@ -14,6 +14,10 @@
 ActiveRecord::Schema.define(version: 20150909050359) do
 
   create_table "codis", force: :cascade do |t|
+    t.string   "realname",               default: "", null: false
+    t.string   "nickname",               default: "", null: false
+    t.string   "phonenumber"
+    t.integer  "hospital_id",                         null: false
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -29,10 +33,13 @@ ActiveRecord::Schema.define(version: 20150909050359) do
   end
 
   add_index "codis", ["email"], name: "index_codis_on_email", unique: true
+  add_index "codis", ["hospital_id"], name: "index_codis_on_hospital_id"
+  add_index "codis", ["nickname"], name: "index_codis_on_nickname"
+  add_index "codis", ["phonenumber"], name: "index_codis_on_phonenumber"
+  add_index "codis", ["realname"], name: "index_codis_on_realname"
   add_index "codis", ["reset_password_token"], name: "index_codis_on_reset_password_token", unique: true
 
   create_table "users", force: :cascade do |t|
-    t.string   "str_id",                 default: "", null: false
     t.string   "sex",                    default: "", null: false
     t.integer  "age"
     t.string   "realname",               default: "", null: false
@@ -53,7 +60,13 @@ ActiveRecord::Schema.define(version: 20150909050359) do
     t.datetime "updated_at",                          null: false
   end
 
+  add_index "users", ["age"], name: "index_users_on_age"
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["interested_operation"], name: "index_users_on_interested_operation"
+  add_index "users", ["nickname"], name: "index_users_on_nickname"
+  add_index "users", ["phonenumber"], name: "index_users_on_phonenumber"
+  add_index "users", ["realname"], name: "index_users_on_realname"
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  add_index "users", ["str_id"], name: "index_users_on_str_id", unique: true
+  add_index "users", ["sex"], name: "index_users_on_sex"
 
 end

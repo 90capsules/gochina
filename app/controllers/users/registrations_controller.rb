@@ -1,6 +1,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-# before_filter :configure_sign_up_params, only: [:create]
-# before_filter :configure_account_update_params, only: [:update]
+before_filter :configure_sign_up_params, only: [:create]
+before_filter :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
   # def new
@@ -39,14 +39,24 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # protected
 
   # If you have extra params to permit, append them to the sanitizer.
-  # def configure_sign_up_params
-  #   devise_parameter_sanitizer.for(:sign_up) << :attribute
-  # end
+  def configure_sign_up_params
+    devise_parameter_sanitizer.for(:sign_up) << :sex
+    devise_parameter_sanitizer.for(:sign_up) << :age
+    devise_parameter_sanitizer.for(:sign_up) << :realname
+    devise_parameter_sanitizer.for(:sign_up) << :nickname
+    devise_parameter_sanitizer.for(:sign_up) << :phonenumber
+    devise_parameter_sanitizer.for(:sign_up) << :interested_operation
+  end
 
   # If you have extra params to permit, append them to the sanitizer.
-  # def configure_account_update_params
-  #   devise_parameter_sanitizer.for(:account_update) << :attribute
-  # end
+  def configure_account_update_params
+    devise_parameter_sanitizer.for(:account_update) << :sex
+    devise_parameter_sanitizer.for(:account_update) << :age
+    devise_parameter_sanitizer.for(:account_update) << :realname
+    devise_parameter_sanitizer.for(:account_update) << :nickname
+    devise_parameter_sanitizer.for(:account_update) << :phonenumber
+    devise_parameter_sanitizer.for(:account_update) << :interested_operation
+  end
 
   # The path used after sign up.
   # def after_sign_up_path_for(resource)

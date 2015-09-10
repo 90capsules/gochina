@@ -2,8 +2,8 @@
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.label :ID %><br />
+    <%= f.text_field :str_id, autofocus: true %>
   </div>
 
   <div class="field">
@@ -22,5 +22,7 @@
     <%= f.submit "Log in" %>
   </div>
 <% end %>
+
+<a href="/codis/sign_in">Coordinator LOGIN</a>
 
 <%= render "users/shared/links" %>

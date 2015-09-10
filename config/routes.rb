@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  
+  match ":controller(/:action(/:id))"
+ 
   get 'review/write_review'
 
   get 'review/writing_review'

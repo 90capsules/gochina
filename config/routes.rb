@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  match ":controller(/:action(/:id))"
+  match ":controller(/:action(/:id))", :via=> [:post, :get]
  
   get 'review/write_review'
 

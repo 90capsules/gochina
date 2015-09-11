@@ -1,7 +1,8 @@
 class HospitalController < ApplicationController
-  def inex
+  def index
   end
 
   def detail
   end
+
 end

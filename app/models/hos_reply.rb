@@ -1,6 +1,6 @@
 class HosReply < ActiveRecord::Base
     
-    belongs_to :users
+    belongs_to :user
     belongs_to :hospital
-    
+
 end

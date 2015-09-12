@@ -4,7 +4,6 @@ class CreateCounsels < ActiveRecord::Migration
       t.integer :codi_id
       t.string :status
       t.text :content
-      t.integer :chat_room_id
 
       t.timestamps null: false
     end

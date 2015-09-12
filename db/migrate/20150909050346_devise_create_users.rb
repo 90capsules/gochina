@@ -51,7 +51,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
     add_index :users, :sex
     add_index :users, :age
     add_index :users, :realname
-    add_index :users, :nickname
+    add_index :users, :nickname,  unique: true
     add_index :users, :phonenumber
     add_index :users, :interested_operation
     

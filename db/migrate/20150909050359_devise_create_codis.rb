@@ -49,7 +49,7 @@ class DeviseCreateCodis < ActiveRecord::Migration
     
     # 백용수 index추가
     add_index :codis, :realname
-    add_index :codis, :nickname
+    add_index :codis, :nickname,  unique: true
     add_index :codis, :phonenumber
     add_index :codis, :hospital_id
 

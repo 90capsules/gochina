@@ -58,15 +58,15 @@
                 <div class="card-panel white" style = "padding-top: 0px;    padding-right: 0px;    padding-bottom: 0px;    padding-left: 0px;">
                     <div class = "row" style = "margin: 0.5rem 0 1rem 0;">
                     
-                        <div class="col s4 form-box" style = "padding-right: 0px;    padding-left: 0px;">eye</div>
-                        <div class="col s4 form-box" style = "padding-right: 0px;    padding-left: 0px;">eye</div>
-                        <div class="col s4 form-box" style = "padding-right: 0px;    padding-left: 0px;">eye</div>
-                        <div class="col s4 form-box" style = "padding-right: 0px;    padding-left: 0px;">nose</div>
-                        <div class="col s4 form-box" style = "padding-right: 0px;    padding-left: 0px;">nose</div>
-                        <div class="col s4 form-box" style = "padding-right: 0px;    padding-left: 0px;">nose</div>
-                        <div class="col s4 form-box" style = "padding-right: 0px;    padding-left: 0px;">mouth</div>
-                        <div class="col s4 form-box" style = "padding-right: 0px;    padding-left: 0px;">mouth</div>
-                        <div class="col s4 form-box" style = "padding-right: 0px;    padding-left: 0px;">mouth</div>
+                        <div class="col s4 form-box" id ="part_1" style = "padding-right: 0px;    padding-left: 0px;">eye</div>
+                        <div class="col s4 form-box" id ="part_2" style = "padding-right: 0px;    padding-left: 0px;">eye</div>
+                        <div class="col s4 form-box" id ="part_3" style = "padding-right: 0px;    padding-left: 0px;">eye</div>
+                        <div class="col s4 form-box" id ="part" style = "padding-right: 0px;    padding-left: 0px;">nose</div>
+                        <div class="col s4 form-box" id ="part" style = "padding-right: 0px;    padding-left: 0px;">nose</div>
+                        <div class="col s4 form-box" id ="part" style = "padding-right: 0px;    padding-left: 0px;">nose</div>
+                        <div class="col s4 form-box" id ="part" style = "padding-right: 0px;    padding-left: 0px;">mouth</div>
+                        <div class="col s4 form-box" id ="part" style = "padding-right: 0px;    padding-left: 0px;">mouth</div>
+                        <div class="col s4 form-box" id ="part" style = "padding-right: 0px;    padding-left: 0px;">mouth</div>
                         
                     </div>
                 </div>
@@ -318,7 +318,7 @@
                                                      <form action="#">
                                                         <p>
                                                           <input type="checkbox" id="qes4" />
-                                                          <label for="qes4">질문 4</label>
+                                                          <label for="qes4">질문 3</label>
                                                         </p>
                                                     </form>
                                                 </div>
@@ -367,4 +367,26 @@
               <!-- right end-->
            </div>
      </div>
+     <!-- Part box jQuery-->
+      <script>
      
+     $(document).ready(function() {
+        $('#part_1').mouseenter(function() {
+            $(('#part_1').fadeTo('fast',1);
+        });
+        $(('#part_1').mouseleave(function() {
+         $(('#part_1').fadeTo('fast', 0.5); 
+        });
+        
+        
+    });
+     $(document).ready(function() {
+        $('#part_2').mouseenter(function() {
+            $('#part_2').fadeTo('fast',1);
+        });
+        $('#part_2').mouseleave(function() {
+         $('#part_2').fadeTo('fast', 0.5); 
+        });
+    });
+      </script>
+      <!-- Part box jQuery end-->

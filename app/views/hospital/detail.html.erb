@@ -1,64 +1,21 @@
 
-<!--
-<div class="jumbotron">
-  <img src="<%= @pro.img %>" width="100%">
-  <h1><%= @pro.title %></h1>
-  <p class="lead"><%= @pro.intro %></p>
-  <p id="count"><%= @pro.avg %> 점</p>
-   <%= form_tag "/home/ev", method: "post" do %>
-    <input type = "hidden" name="tv_id" value="<%=@pro.id%>">
-    <span class="star-rating">
-      <input type="radio" name="rating" value="1"><i></i>
-      <input type="radio" name="rating" value="2"><i></i>
-      <input type="radio" name="rating" value="3"><i></i>
-      <input type="radio" name="rating" value="4"><i></i>
-      <input type="radio" name="rating" value="5"><i></i>
-    </span>
-    <br>
-    <input type="text" class="form-control" name="msg" placeholder="별점 체크 후 평가를 남겨">
-    <br>
-    <button class="btn btn-success" href="#" role="button">평가하기</button>
-   <% end %>
-   <%= form_tag "/home/big_delete", method: "post" do%>
-     <input type = "hidden" name = "tv_id" value = "<%= @pro.id %>">
-     <button class = "btn btn-success" style="font-size:15px">삭제</button>
-   <% end %>
-</div>
 
-
-
- 
- <% @pro.comments.reverse.each do |c| %>
- <div class="container">
-   <div class="row">
-      <div class="col-lg-10">
-         <div class="col-lg-3">
-            <span class="star-rating small">
-            <% 1.upto(5) do |i| %>
-              <% if i==c.score %>
-              <i class="on"></i>
-              <%else%>
-              <i></i>
-              <%end%>
-            <% end %>  
-            </span>
-            <%= User.find(c.user_id).email %>
-            <%=c.created_at.in_time_zone("Seoul")%>
+<div class="row">
+        <div class="col l12 s12 m7">
+          <div class="card">
+            <div class="card-image">
+              <img src="/assets/<%= @a_hospital.hos_name_eng %>"+"_detail"+"<%=[1,2].sample(1)%>" + ".jpg">
+              <span class="card-title">Card Title</span>
+            </div>
+            <div class="card-content">
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div class="card-action">
+              <a href="#">병원 홈페이지 이동</a>
+            </div>
           </div>
-          <div class="col-lg-7">
-            <p><%= c.comment %></p>
-          </div>
-          <div class="pull-right">
-            <%= form_tag "/home/delte", method: "post" do%>
-            <button type="submit" class="btn btn-success del_button" >삭제하기</button> 
-            <input type="hidden" name="comment_id" value ="<%= c.id %>">
-          </div>
-        <% end %>
+        </div>
       </div>
-    </div>
-  </div>
- <% end %>  
- 
-</div>
 
--->
+

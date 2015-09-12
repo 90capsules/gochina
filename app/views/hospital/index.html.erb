@@ -1,28 +1,35 @@
-<div id = "hospital_basic">
- <div class="container">
-  <div class="row marketing">
-    <!-- 데이터베이스에서 불러와 반복하여 뿌려줄 병원 정보 -->
+
+   <!-- 데이터베이스에서 불러와 반복하여 뿌려줄 병원 정보 -->
   
-  
-  
+<div class="container">
+  <div class="row">
     <% @hospitals.each do |t| %>
-     <div class="col-md-6">
-      <h4><%= t.hos_name_display %></h4>
-      <img src= "/assets/<%= t.hos_name_eng %>_main.jpg" class="img-thumbnail" width="320" /> 
-      <p><%= t.hos_intro %></p>
-      <span class="star-rating small">
-        <i></i>
-        <i></i>
-        <i></i>
-        <i class="on"></i>
-        <i></i>
-      </span>
-      <p id="count">4.2 점 (250 명)</p>
-      <p><a class="btn btn-sm btn-success" href="#" role="button">자세히 보기</a></p>
-    </div>
-   <% end %>
-  
-  
+      <div class="col l4 m6 s12">
+        <div class="card">
+          <div class="card-image">
+            <img src="/assets/<%= t.hos_name_eng %>_main.jpg"  width="320" height= "220">
+            <span class="card-title"><%= t.hos_name_display %></span>
+          </div>
+          <div class="card-content">
+            <p><%= t.hos_intro %></p>
+          </div>
+          <div class="card-action">
+            <a href="#">자세히보기</a>
+          
+          <span class="star-rating small">
+            <input type="radio" name="rating" value="1"><i></i>
+            <input type="radio" name="rating" value="2"><i></i>
+            <input type="radio" name="rating" value="3"><i></i>
+            <input type="radio" name="rating" value="4"><i></i>
+            <input type="radio" name="rating" value="5"><i></i>
+          </span>
+          
+          </div>
+         
+        </div>
+      </div>
+    <% end %>
   </div>
-  </div>
-</div> 
+</div>
+ 
+      

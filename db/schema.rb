@@ -11,7 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150909050359) do
+ActiveRecord::Schema.define(version: 20150911190754) do
+
+  create_table "chat_rooms", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "codis", force: :cascade do |t|
     t.string   "realname",               default: "", null: false
@@ -38,6 +43,37 @@ ActiveRecord::Schema.define(version: 20150909050359) do
   add_index "codis", ["phonenumber"], name: "index_codis_on_phonenumber"
   add_index "codis", ["realname"], name: "index_codis_on_realname"
   add_index "codis", ["reset_password_token"], name: "index_codis_on_reset_password_token", unique: true
+
+  create_table "counsels", force: :cascade do |t|
+    t.integer  "codi_id"
+    t.string   "status"
+    t.text     "content"
+    t.integer  "chat_room_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "hos_replies", force: :cascade do |t|
+    t.string   "user_id"
+    t.string   "content"
+    t.string   "hospital_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "hospitals", force: :cascade do |t|
+    t.string   "hos_name"
+    t.string   "hos_address"
+    t.text     "hos_intro"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "requests", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "sex",                    default: "", null: false

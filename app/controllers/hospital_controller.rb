@@ -9,7 +9,7 @@ class HospitalController < ApplicationController
   
   def detail
     
-      @a_hospital = Hospital.find(params[:id])
+      @a_hospital = Hospital.where(:id => params[:id].to_i).take
      
   end
 

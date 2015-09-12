@@ -8,6 +8,8 @@ class HospitalController < ApplicationController
 
   
   def detail
+    
+      @a_hospital = Hospital.find(params[:id])
      
   end
 

@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  
-  match ":controller(/:action(/:id))", :via=> [:post, :get]
- 
+
   get 'review/write_review'
 
   get 'review/writing_review'
@@ -22,7 +20,7 @@ Rails.application.routes.draw do
 
   get 'mypage/saving_box'
 
-  get 'hospital/inex'
+  get 'hospital/index'
 
   get 'hospital/detail'
 
@@ -39,6 +37,8 @@ Rails.application.routes.draw do
   get 'estimating/codi_index'
 
   get 'codis/edit'
+  
+  
 
   devise_for :codis, controllers: {
         sessions: 'codis/sessions',

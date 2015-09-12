@@ -36,9 +36,6 @@ Rails.application.routes.draw do
 
   get 'estimating/codi_index'
 
-  get 'codis/edit'
-  
-  
 
   devise_for :codis, controllers: {
         sessions: 'codis/sessions',
@@ -50,7 +47,7 @@ Rails.application.routes.draw do
         registrations: 'users/registrations',
         passwords: 'users/passwords',
       }
-  get 'estimate/request'
+
 
   root 'home#index'
   get 'home/index'

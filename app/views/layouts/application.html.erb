@@ -16,6 +16,7 @@
 	<!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
 	<!-- Main css styles -->
+	<%= stylesheet_link_tag    'base/login3', media: 'all'%>
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 
 	<!-- Main javascript files -->
@@ -31,20 +32,25 @@
   <!--백용수 경고메세지-->
   <p class="notice"><%=notice%></p>
   <p class="alert"><%=alert%></p>
+  
+  <% if params[:controller] != 'users/sessions' && params[:action] != 'create' %>
   <!-- Page topnavbar -->
   <%= render 'layouts/topnavbar' %>
+  <% end %>
 
   <!-- Wrapper-->
   <div id="wrapper" class="<%= params[:controller] %>.<%= params[:action] %>">
 
     <!-- Main view  -->
-    <%= yield %>
+    <%= yield  %>
 
   </div>
   <!-- End wrapper-->
 
+  <% if params[:controller] != 'users/sessions' && params[:action] != 'create' %>
   <!-- Footer -->
   <%= render 'layouts/footer2' %>
+  <% end %>
 
 
   <!-- jquery here -->
@@ -52,11 +58,62 @@
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
   <!-- Include javascript per-controller - vendor plugins -->
+  
+  <%= javascript_include_tag 'base/jquery.min' %>
+  <%= javascript_include_tag 'base/jquery-migrate.min' %>
+  <!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+  <%= javascript_include_tag 'base/jquery-ui.min' %>
+  <%= javascript_include_tag 'base/bootstrap.min' %>
+  <%= javascript_include_tag 'base/bootstrap-hover-dropdown.min' %>
+  <%= javascript_include_tag 'base/jquery.slimscroll.min' %>
+  <%= javascript_include_tag 'base/jquery.blockui.min' %>
+  <%= javascript_include_tag 'base/jquery.cokie.min' %>
+  <%= javascript_include_tag 'base/jquery.uniform.min' %>
+ 
+  <!-- END CORE PLUGINS -->
+  <!-- BEGIN PAGE LEVEL PLUGINS -->
+  <%= javascript_include_tag 'base/jquery.vmap' %>
+  <%= javascript_include_tag 'base/jquery.vmap.russia' %>
+  <%= javascript_include_tag 'base/jquery.vmap.world' %>
+  <%= javascript_include_tag 'base/jquery.vmap.europe' %>
+  <%= javascript_include_tag 'base/jquery.vmap.germany' %>
+  <%= javascript_include_tag 'base/jquery.vmap.usa' %>
+  <%= javascript_include_tag 'base/jquery.vmap.sampledata' %>
+  
+  <%= javascript_include_tag 'base/jquery.validate.min.js' %>
+  <%= javascript_include_tag 'base/select2.min.js' %>
+  <!-- IMPORTANT! fullcalendar depends on jquery-ui.min.js for drag & drop support -->
+  <%= javascript_include_tag 'base/morris.min' %>
+  <%= javascript_include_tag 'base/raphael-min' %>
+  <%= javascript_include_tag 'base/jquery.sparkline.min' %>
+  <!-- END PAGE LEVEL PLUGINS -->
+  <!-- BEGIN PAGE LEVEL SCRIPTS -->
+  <%= javascript_include_tag 'base/metronic' %>
+  <%= javascript_include_tag 'base/layout' %>
+  <%= javascript_include_tag 'base/quick-sidebar' %>
+  <%= javascript_include_tag 'base/demo' %>
+  <%= javascript_include_tag 'base/index3' %>
+  <%= javascript_include_tag 'base/tasks' %>
+  
+  <%= javascript_include_tag 'base/login', media: 'all' %>
+  <!-- END PAGE LEVEL SCRIPTS -->
+  
   <%= javascript_include_tag params[:controller] if ::Rails.application.assets.find_asset("#{params[:controller]}.js") %>		
 
-
-
-
+  <script>
+    jQuery(document).ready(function() {    
+       Metronic.init(); // init metronic core componets
+       Layout.init(); // init layout
+       Login.init();
+       Demo.init(); // init demo(theme settings page)
+       QuickSidebar.init(); // init quick sidebar
+       Index.init(); // init index page
+       Tasks.initDashboardWidget(); // init tash dashboard widget
+       
+    });
+  </script>
+  
+  
 
 </body>
 </html>

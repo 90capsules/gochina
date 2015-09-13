@@ -13,6 +13,16 @@
  *= require_tree .
  *= require_self
  */
+ 
+ 
+ body {
+  color: #333333;
+  font-family: "Open Sans", sans-serif;
+  padding: 0px !important;
+  margin: 0px !important;
+  font-size: 13px;
+  direction: ltr;
+}
 #wrapper{
     min-height: 900px;
     
@@ -150,7 +160,7 @@ Page Footer
 
 
 /***
-Social Icons
+Start Social Icons
 ***/
 .social-icons {
   padding: 0;
@@ -213,7 +223,7 @@ Social Icons
   background: url(../img/social/evernote.png) no-repeat;
 }
 .social-icons li .facebook {
-  background: url(../img/social/facebook.png) no-repeat;
+  background: url(http://www.keenthemes.com/preview/metronic/theme/assets/global/img/social/facebook.png) no-repeat;
 }
 .social-icons li .forrst {
   background: url(../img/social/forrst.png) no-repeat;
@@ -222,7 +232,7 @@ Social Icons
   background: url(../img/social/github.png) no-repeat;
 }
 .social-icons li .googleplus {
-  background: url(../img/social/googleplus.png) no-repeat;
+  background: url(http://www.keenthemes.com/preview/metronic/theme/assets/global/img/social/googleplus.png) no-repeat;
 }
 .social-icons li .jolicloud {
   background: url(../img/social/jolicloud.png) no-repeat;
@@ -231,7 +241,7 @@ Social Icons
   background: url(../img/social/last-fm.png) no-repeat;
 }
 .social-icons li .linkedin {
-  background: url(../img/social/linkedin.png) no-repeat;
+  background: url(http://www.keenthemes.com/preview/metronic/theme/assets/global/img/social/linkedin.png) no-repeat;
 }
 .social-icons li .picasa {
   background: url(../img/social/picasa.png) no-repeat;
@@ -255,7 +265,7 @@ Social Icons
   background: url(../img/social/tumblr.png) no-repeat;
 }
 .social-icons li .twitter {
-  background: url(../img/social/twitter.png) no-repeat;
+  background: url(http://www.keenthemes.com/preview/metronic/theme/assets/global/img/social/twitter.png) no-repeat;
 }
 .social-icons li .vimeo {
   background: url(../img/social/vimeo.png) no-repeat;
@@ -314,6 +324,10 @@ Social Icons
 }
 
 .input-group{position:relative;display:table;border-collapse:separate}
+/***
+END Social Icons
+***/
+
 
 
 /***
@@ -362,7 +376,7 @@ Inline Social Icons
   background: url(../img/social/evernote.png) no-repeat;
 }
 .social-icon.facebook {
-  background: url(../img/social/facebook.png) no-repeat;
+  background: url(http://www.keenthemes.com/preview/metronic/theme/assets/global/img/social/facebook.png) no-repeat;
 }
 .social-icon.forrst {
   background: url(../img/social/forrst.png) no-repeat;
@@ -371,7 +385,7 @@ Inline Social Icons
   background: url(../img/social/github.png) no-repeat;
 }
 .social-icon.googleplus {
-  background: url(../img/social/googleplus.png) no-repeat;
+  background: url(http://www.keenthemes.com/preview/metronic/theme/assets/global/img/social/googleplus.png) no-repeat;
 }
 .social-icon.jolicloud {
   background: url(../img/social/jolicloud.png) no-repeat;
@@ -380,7 +394,7 @@ Inline Social Icons
   background: url(../img/social/last-fm.png) no-repeat;
 }
 .social-icon.linkedin {
-  background: url(../img/social/linkedin.png) no-repeat;
+  background: url(http://www.keenthemes.com/preview/metronic/theme/assets/global/img/social/linkedin.png) no-repeat;
 }
 .social-icon.picasa {
   background: url(../img/social/picasa.png) no-repeat;
@@ -404,7 +418,7 @@ Inline Social Icons
   background: url(../img/social/tumblr.png) no-repeat;
 }
 .social-icon.twitter {
-  background: url(../img/social/twitter.png) no-repeat;
+  background: url(http://www.keenthemes.com/preview/metronic/theme/assets/global/img/social/twitter.png) no-repeat;
 }
 .social-icon.vimeo {
   background: url(../img/social/vimeo.png) no-repeat;

@@ -371,42 +371,33 @@
       <script>
      
          $(document).ready(function() {
-            $('#part_1').mouseenter(function() {
-                $('#part_1').fadeTo('fast',1);
-            });
-            $('#part_1').mouseleave(function() {
-             $('#part_1').fadeTo('fast', 0.5); 
-            });
-            $('#part_1').click(function() {
-                $('#interst_op').append('#interst_op_eye');
-                //fail
-            });
-            
-            $('#part_2').mouseenter(function() {
-                $('#part_2').fadeTo('fast',1);
-            });
-            $('#part_2').mouseleave(function() {
-             $('#part_2').fadeTo('fast', 0.5); 
-            });
-            $('#part_3').mouseenter(function() {
-                $('#part_3').fadeTo('fast',1);
-            });
-            $('#part_3').mouseleave(function() {
-             $('#part_3').fadeTo('fast', 0.5); 
-            });
-            $('#part_4').mouseenter(function() {
-                $('#part_4').fadeTo('fast',1);
-            });
-            $('#part_4').mouseleave(function() {
-             $('#part_4').fadeTo('fast', 0.5); 
-            });
-            $('#part_5').mouseenter(function() {
-                $('#part_5').fadeTo('fast',1);
-            });
-            $('#part_5').mouseleave(function() {
-             $('#part_5').fadeTo('fast', 0.5); 
-            });
-        });
+             
+             $('#part_1').hover(
+                function(){
+                    $('#part_1').addClass('check');
+                
+                },
+                function(){
+                    $('#part_1').removeClass('check');
+                });
+                
+                
+                            $('#part_1').click(function() {
+                                      alert("hi");          
+                                      var txt = $("#part_1").val();
+                                  $('#part_1').addClass('check');
+                                 $('#interst_op').append('#interst_op_eye');
+                                 $('#part_1').mouseleave(function(){
+                                     
+                                      $('#part_1').addClass('check');
+                                 });
+                    //
+                                });
+      
+                
+         });
+             
+                    
          
       </script>
       <!-- Part box jQuery end-->

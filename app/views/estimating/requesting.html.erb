@@ -271,8 +271,8 @@
                
                <!--Choice start -->
                
-                <div class="row" id="interst_op">
-                    <div class ="col s12" id="interst_op_eye">
+                <div class="row" id="interest_op">
+                    <div class ="col s12" id="interest_op_eye">
                            <div class="col s1" style = "padding-right: 0px;padding-left: 0px; ">
                                 
                                     <div class="card-panel teal" style = " text-align :center; height : 110px;">
@@ -337,9 +337,85 @@
                                     
                                 
                             </div>
+                     
                       
+                            
                    
                     </div>
+                     <!--1번 끝-->
+                     <!--2번 시작-->
+                     <div class ="col s12 disappear" id="interest_op_eye2">
+                           <div class="col s1" style = "padding-right: 0px;padding-left: 0px; ">
+                                
+                                    <div class="card-panel teal" style = " text-align :center; height : 110px;">
+                                    <span class="white-text"  style ="text-align: center; ">
+                                      <h6>눈</h6>
+                                      
+                                      </span>
+                                    
+                                    </div>
+                            </div>
+                                    
+                            
+                            <div class="col s11" style = "padding-right: 0px;padding-left: 0px;">
+                                
+                                    
+                                        <div class="col s12 card-panel white" style = " text-align :center; padding-top:10px; height : 110px; ">
+                                          
+                                                  <div class="col s3">
+                                                     <form action="#">
+                                                        <p>
+                                                          <input type="checkbox" id="qes1" />
+                                                          <label for="qes1">질문 1</label>
+                                                        </p>
+                                                    </form>
+                                                </div>
+                                                 <div class="col s3">
+                                                     <form action="#">
+                                                        <p>
+                                                          <input type="checkbox" id="qes2" />
+                                                          <label for="qes2">질문 2</label>
+                                                        </p>
+                                                    </form>
+                                                </div>
+                                                 <div class="col s3">
+                                                     <form action="#">
+                                                        <p>
+                                                          <input type="checkbox" id="qes3" />
+                                                          <label for="qes3">질문 3</label>
+                                                        </p>
+                                                    </form>
+                                                </div>
+                                                 <div class="col s3">
+                                                     <form action="#">
+                                                        <p>
+                                                          <input type="checkbox" id="qes4" />
+                                                          <label for="qes4">질문 3</label>
+                                                        </p>
+                                                    </form>
+                                                </div>
+                                               <div class="col s3">
+                                                     <form action="#">
+                                                        <p>
+                                                          <input type="checkbox" id="qes5" />
+                                                          <label for="qes5">질문 5</label>
+                                                        </p>
+                                                    </form>
+                                                    
+                                                </div>
+                                            
+                                        
+                                        </div>
+                                    
+                                
+                            </div>
+                     
+                      
+                            
+                   
+                    </div>
+                     
+                     
                 </div>
                
                <!--Choice end-->
@@ -362,40 +438,172 @@
                
                
                
-               
+               <form id="ajaxform" action="/saveFileTest.do" method="post" enctype="multipart/form-data">
+            		<input type="text" name="test2"/><br/>
+            		<textarea rows="10" cols="10" name="test3"></textarea><br/>
+            		<input type="file" name="test4" />
+            		<input type="submit" value="Submit" />
+            </form>
                </div>
               <!-- right end-->
            </div>
      </div>
      <!-- Part box jQuery-->
       <script>
-     
-         $(document).ready(function() {
-             
-             $('#part_1').hover(
-                function(){
-                    $('#part_1').addClass('check');
+      $(document).ready(function(){
+            alert("hi4");
+         //button 선택//
+         
+            // alert("hi3");
+        //   $('#part_1').hover(
+               
+        //          function(){
+        //              $('#part_1').addClass('check');
+
+        //          },
+        //          function(){
+        //              $('#part_1').removeClass('check');
+        //         });
                 
-                },
-                function(){
-                    $('#part_1').removeClass('check');
-                });
+                
+                $('#part_1').click(function() {
+                                 
+                      if($('#part_1').hasClass("form-box")){      
+                          alert("hiform-box");
+                                $('#part_1').removeClass('form-box').addClass('check');
+                                    $('#interst_op').append('#interst_op_eye');
+                                  
+                      }    
+                       else if ($('#part_1').hasClass("check")){
+                     alert("hicheck");
+                    
+                                        $('#part_1').removeClass('check').addClass('form-box');
+                                           
+                                            $('#interst_op').remove('#interst_op_eye');
+                                            
+                                    
+                                 }                  
+                             });
+                                          
+                       
+                         
+                    $('#part_2').click(function() {
+                                 
+                      if($('#part_2').hasClass("form-box")){      
+                          alert("hiform-box2");
+                                $('#part_2').removeClass('form-box').addClass('check');
+                                    $('#interst_op').append('#interst_op_eye2');
+                                     $('#interest_op_eye2').removeClass('disappear').addClass('appear');
+                                  // $('#part_1').mouseleave(function(){
+                                                 
+                                     //   $('#part_1').addClass('check');
+                                      //   });
+                      }    
+                      else if ($('#part_2').hasClass("check")){
+                     alert("hicheck2");
+                    
+                                        $('#part_2').removeClass('check').addClass('form-box');
+                                           
+                                            $('#interst_op').remove('#interst_op_eye2');
+                                            $('#interest_op_eye2').removeClass('appear').addClass('disappear');
+                                           
+                                    
+                                 }                  
+                             });
+                                          
+                         });
+         
+    // $(document).ready(function() {
+      //   alert("hi4");
+        //  //button 선택//
+        //  if($('#part_1').hasClass("form-box")){
+        //      alert("hi3");
+     //     $('#part_1').hover(
+         //        function(){
+         //            $('#part_1').addClass('check');
+                
+          //       },
+          //       function(){
+          //           $('#part_1').removeClass('check');
+           //      });
+        //         $('#part_1').click(function() {
+        //                          alert("hi");
+        //                         $('#part_1').addClass('check');
+                                   
+        //                             $('#interst_op').append('#interst_op_eye');
+        //                             $('#part_1').mouseleave(function(){
+                                                 
+        //                                 $('#part_1').addClass('check');
+        //                                   });
+        //         });
                 
                 
-                            $('#part_1').click(function() {
-                                      alert("hi");          
-                                      var txt = $("#part_1").val();
-                                  $('#part_1').addClass('check');
-                                 $('#interst_op').append('#interst_op_eye');
-                                 $('#part_1').mouseleave(function(){
-                                     
-                                      $('#part_1').addClass('check');
-                                 });
-                    //
-                                });
-      
+        //  }
+        //  else if($('#part_1').hasClass("check")){
+        //          $('#part_1').click(function() {
+        //                          alert("hi2");
+        //                         $('#part_1').addClass('form-box');
+                                   
+        //                             $('#interst_op').append('#interst_op_eye');
+        //                             $('#part_1').mouseleave(function(){
+                                                 
+        //                                 $('#part_1').addClass('form-box');
+        //                                   });
+        //         });
+        //  }
+         
+         
+   //  });
+         
+        //  $(document).ready(function() {
+        //      //button 선택//
+        //      $('#part_1').hover(
+        //         function(){
+        //             $('#part_1').addClass('check');
                 
-         });
+        //         },
+        //         function(){
+        //             $('#part_1').removeClass('check');
+        //         });
+                
+                
+        //                     $('#part_1').click(function() {
+        //                                   alert("hi");          
+        //                                   var txt = $("#part_1").val();
+        //                               $('#part_1').addClass('check');
+        //                              $('#interst_op').append('#interst_op_eye');
+        //                              $('#part_1').mouseleave(function(){
+                                         
+        //                                   $('#part_1').addClass('check');
+                                          
+        //                              });
+                                 
+        //             //
+        //                         });
+          //button 선택end//
+          
+          //사진 upload//
+//           $(function(){
+//         	//폼전송
+//         	$('#ajaxform').ajaxForm({
+//         	   //보내기전 validation check가 필요할경우
+//                     beforeSubmit: function (data, frm, opt) {
+//         			                alert("전송전!!");
+//         			                return true;
+//         			              },
+//                     //submit이후의 처리
+//                     success: function(responseText, statusText){
+//                     	alert("전송성공!!");
+//                     },
+//                     //ajax error
+//                     error: function(){
+//                     	alert("에러발생!!");
+//                     }                               
+//                   });
+// });
+//           //사진 upload end//
+                
+//          });
              
                     
          

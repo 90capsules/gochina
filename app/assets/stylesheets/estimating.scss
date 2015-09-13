@@ -3,12 +3,29 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
  .form-box{
-       background-color : white; height : 87px; text-align : center; padding-right: 0px;    padding-left: 0px;
+        height : 87px; text-align : center; padding-right: 0px;    padding-left: 0px;
         text-align: center;
         color: black;
         font-family: Verdana, Arial, Sans-Serif;
         opacity: 0.5;
+         background-color : white;  
     }
-    .check{
-                  background-color : #73BAB3;   
+   
+   
+    
+    
+    .check{height : 87px; text-align : center; padding-right: 0px;    padding-left: 0px;
+        text-align: center;
+        color: black;
+        font-family: Verdana, Arial, Sans-Serif;
+        opacity: 0.5;
+        background-color : #73BAB3;   
              }
+             
+    .disappear{ display:none;
+    
+             }
+    .appear{
+     display : block;
+     
+    }

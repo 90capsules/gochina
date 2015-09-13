@@ -1,4 +1,10 @@
 source 'https://rubygems.org'
+#게시판 gem
+gem 'bootstrap-sass', '~> 3.3.3'
+gem 'simple_form', '3.1.0'
+gem 'acts-as-taggable-on'
+gem 'carrierwave'
+gem 'mini_magick'
 
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

@@ -1,0 +1,14 @@
+.comments {
+  border: 1px solid #eaeaea;
+  border-radius: 5px;
+  background-color: #ededed;
+  margin: 1em 0;
+  padding: 1em; }
+  .comments h2 {
+    margin: 0 0 .5em; }
+  .comments ul {
+    padding-left: 1.5em; }
+    .comments ul li {
+      margin-bottom: 0.5em; }
+
+/*# sourceMappingURL=comments.css.map */

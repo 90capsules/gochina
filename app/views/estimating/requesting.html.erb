@@ -450,20 +450,12 @@
      </div>
      <!-- Part box jQuery-->
       <script>
+     
       $(document).ready(function(){
+          
+          ////v수술 부분 선택시작 //
             alert("hi4");
-         //button 선택//
-         
-            // alert("hi3");
-        //   $('#part_1').hover(
-               
-        //          function(){
-        //              $('#part_1').addClass('check');
-
-        //          },
-        //          function(){
-        //              $('#part_1').removeClass('check');
-        //         });
+      
                 $('#part_1').on({
                     mouseover: function(){
                         $('#part_1').addClass('check');
@@ -524,146 +516,39 @@
                         
                     }
                 });
+                
+                
+                  //v수술 부분 선택 끝 //
+           //사진 upload end//
+                $(document).ready(function(){
+
+                  var thumb = $('img#thumb');        
+                
+                  new AjaxUpload('imageUpload', {
+                    action: $('form#newHotnessForm').attr('action'),
+                    name: 'image',
+                    onSubmit: function(file, extension) {
+                      $('div.preview').addClass('loading');
+                    },
+                    onComplete: function(file, response) {
+                      thumb.load(function(){
+                        $('div.preview').removeClass('loading');
+                        thumb.unbind();
+                      });
+                      thumb.attr('src', response);
+                    }
+                  });
+                  
+                });
+                
+                
+                
       });
-                //-------
-                // $('#part_1').click(function() {
-                                 
-                //       if($('#part_1').hasClass("form-box")){      
-                //           alert("hiform-box");
-                //                 $('#part_1').removeClass('form-box').addClass('check');
-                //                     $('#interst_op').append('#interst_op_eye');
-                                  
-                //       }    
-                //       else if ($('#part_1').hasClass("check")){
-                //      alert("hicheck");
-                    
-                //                         $('#part_1').removeClass('check').addClass('form-box');
-                                           
-                //                             $('#interst_op').remove('#interst_op_eye');
-                                            
-                                    
-                //                  }                  
-                //              });
-                                        
-    //               //     ------
-                         
-    //                 $('#part_2').click(function() {
-                                 
-    //                   if($('#part_2').hasClass("form-box")){      
-    //                       alert("hiform-box2");
-    //                             $('#part_2').removeClass('form-box').addClass('check');
-    //                                 $('#interst_op').append('#interst_op_eye2');
-    //                                  $('#interest_op_eye2').removeClass('disappear').addClass('appear');
-    //                               // $('#part_1').mouseleave(function(){
-                                                 
-    //                                  //   $('#part_1').addClass('check');
-    //                                   //   });
-    //                   }    
-    //                   else if ($('#part_2').hasClass("check")){
-    //                  alert("hicheck2");
-                    
-    //                                     $('#part_2').removeClass('check').addClass('form-box');
-                                           
-    //                                         $('#interst_op').remove('#interst_op_eye2');
-    //                                         $('#interest_op_eye2').removeClass('appear').addClass('disappear');
-                                           
-                                    
-    //                              }                  
-    //                          });
-                                          
-    //                      });
-         
-    // // $(document).ready(function() {
-      //   alert("hi4");
-        //  //button 선택//
-        //  if($('#part_1').hasClass("form-box")){
-        //      alert("hi3");
-     //     $('#part_1').hover(
-         //        function(){
-         //            $('#part_1').addClass('check');
+               
+               
+      
                 
-          //       },
-          //       function(){
-          //           $('#part_1').removeClass('check');
-           //      });
-        //         $('#part_1').click(function() {
-        //                          alert("hi");
-        //                         $('#part_1').addClass('check');
-                                   
-        //                             $('#interst_op').append('#interst_op_eye');
-        //                             $('#part_1').mouseleave(function(){
-                                                 
-        //                                 $('#part_1').addClass('check');
-        //                                   });
-        //         });
-                
-                
-        //  }
-        //  else if($('#part_1').hasClass("check")){
-        //          $('#part_1').click(function() {
-        //                          alert("hi2");
-        //                         $('#part_1').addClass('form-box');
-                                   
-        //                             $('#interst_op').append('#interst_op_eye');
-        //                             $('#part_1').mouseleave(function(){
-                                                 
-        //                                 $('#part_1').addClass('form-box');
-        //                                   });
-        //         });
-        //  }
-         
-         
-   //  });
-         
-        //  $(document).ready(function() {
-        //      //button 선택//
-        //      $('#part_1').hover(
-        //         function(){
-        //             $('#part_1').addClass('check');
-                
-        //         },
-        //         function(){
-        //             $('#part_1').removeClass('check');
-        //         });
-                
-                
-        //                     $('#part_1').click(function() {
-        //                                   alert("hi");          
-        //                                   var txt = $("#part_1").val();
-        //                               $('#part_1').addClass('check');
-        //                              $('#interst_op').append('#interst_op_eye');
-        //                              $('#part_1').mouseleave(function(){
-                                         
-        //                                   $('#part_1').addClass('check');
-                                          
-        //                              });
-                                 
-        //             //
-        //                         });
-          //button 선택end//
-          
-          //사진 upload//
-//           $(function(){
-//         	//폼전송
-//         	$('#ajaxform').ajaxForm({
-//         	   //보내기전 validation check가 필요할경우
-//                     beforeSubmit: function (data, frm, opt) {
-//         			                alert("전송전!!");
-//         			                return true;
-//         			              },
-//                     //submit이후의 처리
-//                     success: function(responseText, statusText){
-//                     	alert("전송성공!!");
-//                     },
-//                     //ajax error
-//                     error: function(){
-//                     	alert("에러발생!!");
-//                     }                               
-//                   });
-// });
-//           //사진 upload end//
-                
-//          });
+
              
                     
          

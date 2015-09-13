@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+    resources :posts do
+    resources :comments, only: [:create, :destroy]
+  end
+    resources :bulletins do
+    resources :posts
+  end
 
   get 'review/write_review'
 
@@ -109,5 +115,4 @@ Rails.application.routes.draw do
   #     # Directs /admin/products/* to Admin::ProductsController
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
-  #   end
 end

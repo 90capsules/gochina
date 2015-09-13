@@ -11,7 +11,7 @@
         <li><%= link_to "MY PAGE", 'mypage/codi_account', :class => "white-text",method: 'get' %></li>
       <% else %>  
         <li><a href="/users/sign_in" class="white-text">LOGIN</a></li>
-        <li><a href="/users/sign_up" class="white-text">JOIN</a></li>
+        <li><a href="/users/sign_up" class="white-text">SIGN UP</a></li>
       <% end %>
     </ul>
 
@@ -29,8 +29,11 @@
       <li><a href="/estimating/requesting">견적신청</a></li>
       <li><a href="/hospital/index">병원정보</a></li>
       <li><a href="/review/index">후기</a></li>
-      <li><a href="/hospital/index">커뮤니티</a></li>
-    </ul>
+     <li class="<%= params[:bulletin_id] == '1' ? 'active' : '' %>"><%= link_to '공지사항', bulletin_posts_path('1') %></li>
+     <li class="<%= params[:bulletin_id] == '2' ? 'active' : '' %>"><%= link_to '새소식', bulletin_posts_path('2') %></li>
+     <li class="<%= params[:bulletin_id] == '3' ? 'active' : '' %>"><%= link_to '가입인사', bulletin_posts_path('3') %></li>
+     <li class="<%= params[:bulletin_id] == '4' ? 'active' : '' %>"><%= link_to '갤러리', bulletin_posts_path('4') %></li>  
+     </ul>
 
     <ul id="nav-mobile" class="side-nav">
       <li><a href="#">Navbar Link</a></li>

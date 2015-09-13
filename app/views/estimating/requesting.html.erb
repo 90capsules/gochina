@@ -1,2 +1,412 @@
-<h1>Estimating#requesting</h1>
-<p>Find me in app/views/estimating/requesting.html.erb</p>
+
+     <div class = "container">
+      <!-- MAIN-->
+    
+      <!--END MAIN-->
+           <div class = "row" style = "background-color : #e0e0e0;">
+            <!-- left -->
+               <div class="col s3">
+               <!-- user info-->
+                   <div class="card-panel red lighten-2">
+                    <div class="caption center-align">
+                      <img src="http://www.matcl.com/files/2014/05/14/49da799840fe1ca40883c77c05721d94163141.png" alt="" class="circle responsive-img" style = "height: 150px;
+                        width: 150px;" > 
+                    </div>
+                      <span class="white-text"  style ="text-align: center">
+                      <h5>Lee Jeong Min</h5>
+                      <h6>Information </h6>
+                      <h6>Information2</h6>
+                      </span>
+                    </div>
+                <!-- user infoend-->
+                <!-- user part
+                    <div class="row" style = "margin-left: 0px; margin-right: 0px;">
+                      <table style = "background-color : white" >
+                                    
+                        <tbody>
+                          <tr>
+                            <td style = "text-align :center; height: 100px;">eye</td>
+                            <td style = "text-align :center; height: 100px;">nose</td>
+                            <td style = "text-align :center; height: 100px;">mouth</td>
+                          </tr>
+                          <tr>
+                            <td style = "text-align :center">Fat</td>
+                            <td style = "text-align :center">Breast</td>
+                            <td style = "text-align :center">facial contour</td>
+                          </tr>
+                          <tr>
+                            <td style = "text-align :center">skin</td>
+                            <td style = "text-align :center">forehead</td>
+                            <td style = "text-align :center">liposuction</td>
+                          </tr>
+                          <tr>
+                            <td style = "text-align :center">double jaw surgery</td>
+                            <td style = "text-align :center">Filler</td>
+                            <td style = "text-align :center">hair transplantation</td>
+                          </tr>
+                          <tr>
+                            <td style = "text-align :center">Forever Makeup</td>
+                            <td style = "text-align :center">Baby face</td>
+                            <td style = "text-align :center">etc</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      </div>
+                
+                part-->
+                <!-- user part test-->
+                <div class="card-panel white" style = "padding-top: 0px;    padding-right: 0px;    padding-bottom: 0px;    padding-left: 0px;">
+                    <div class = "row" style = "margin: 0.5rem 0 1rem 0;">
+                    
+                        <div class="col s4 form-box" id ="part_1" style = "padding-right: 0px;    padding-left: 0px;">eye</div>
+                        <div class="col s4 form-box" id ="part_2" style = "padding-right: 0px;    padding-left: 0px;">eye</div>
+                        <div class="col s4 form-box" id ="part_3" style = "padding-right: 0px;    padding-left: 0px;">eye</div>
+                        <div class="col s4 form-box" id ="part_4" style = "padding-right: 0px;    padding-left: 0px;">nose</div>
+                        <div class="col s4 form-box" id ="part_5" style = "padding-right: 0px;    padding-left: 0px;">nose</div>
+                        <div class="col s4 form-box" id ="part" style = "padding-right: 0px;    padding-left: 0px;">nose</div>
+                        <div class="col s4 form-box" id ="part" style = "padding-right: 0px;    padding-left: 0px;">mouth</div>
+                        <div class="col s4 form-box" id ="part" style = "padding-right: 0px;    padding-left: 0px;">mouth</div>
+                        <div class="col s4 form-box" id ="part" style = "padding-right: 0px;    padding-left: 0px;">mouth</div>
+                        
+                    </div>
+                </div>
+                    
+                
+                <!-- user part test-->
+                
+                
+                <!-- user desire-->
+                <div class="card-panel white">    
+                        
+                        
+                    
+                        
+                        <div class="row">
+                            <div class="input-field col s9">
+                              <input id="desire_cost" type="text" class="validate">
+                              <label for="desire_cost"><span style = "text-color : black;">희망 비용</span></label>
+                            </div>
+                            <div class = "col s3">
+                            <p>원</p>
+                            </div>
+                          </div>
+                          
+                       <div class="row">
+                            <div class="input-field col s9">
+                              <input id="desire_period" type="text" class="validate">
+                              <label for="desire_period">희망 기간</label>
+                            </div>
+                            <div class = "col s3">
+                            <p>일 이내</p>
+                            </div>
+                          </div>
+                          
+                        <div class="row" >
+                           <div class="col s12"> 
+                                희망 기간
+                                <input type="date" class="datepicker">
+                                </div>
+                            </div>
+                          
+                          <div class="row">
+                            <div class="input-field col s9">
+                              <input id="sleep_time" type="text" class="validate">
+                              <label for="sleep_time">평균 수면 시간</label>
+                            </div>
+                            <div class = "col s3">
+                            <p>시간</p>
+                            </div>
+                          </div>
+                         
+                          <label>선호 지역</label>
+                                <select class="browser-default">
+                                  <option value="" disabled selected>지역 선택</option>
+                                  <option value="1">신사</option>
+                                  <option value="2">강남</option>
+                                  <option value="3">종로</option>
+                                </select>
+                         <div class ="row">
+                             <div class="col s12">
+                              <p> 약물 부작용 </p>
+                                  <div class="col s6">
+                                         <form action="#">
+                                            <p>
+                                              <input type="checkbox" id="test5" />
+                                              <label for="test5">항생제</label>
+                                            </p>
+                                        </form>
+                                    </div>
+                            
+                                <div class="col s6">
+                                     <form action="#">
+                                        <p>
+                                          <input type="checkbox" id="test6" />
+                                          <label for="test6">진통제</label>
+                                        </p>
+                                    </form>
+                                </div>
+                            </div>
+                                
+                    
+                        </div>
+                        
+                </div>
+                <!-- user desire end-->
+                </div>
+                
+            <!--left end -->
+            
+            <!--right start-->
+               <div class="col s9">
+                   
+               
+                <!--right start-->
+                
+                <!--Userpicture , Wannabe star-->
+                <div class="row">
+                    <div class ="col s12">
+                           <div class="col s9">
+                                <div class = "row"   style=  "width: 100%;">
+                                    <div class="col s12 card-panel teal" style = " text-align :center;">
+                                    <span class="white-text"  style ="text-align: center">
+                                      <h6>나의 사진</h6>
+                                      
+                                      </span>
+                                    
+                                    </div>
+                                    <div class="col s4 card-panel white"  style = " text-align :center;margin-top: 0px;height : 230px">
+                                        <div class = "row"   style=  "text-align:center;">
+                                        
+                                         <form action="#">
+                                            <div class="file-field input-field">
+                                              <input class="file-path validate" type="file">
+                                              <div class="btn">
+                                                <span>정면 사진</span>
+                                                <input type="file" >
+                                              </div>
+                                            </div>
+                                          </form>
+                                          
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="col s4 card-panel white" style = " text-align :center;margin-top: 0px;height : 230px">
+                                        <div class = "row"   style=  "width: 100%;">
+                                                <form action="#">
+                                                    <div class="file-field input-field">
+                                                      <input class="file-path validate" type="file">
+                                                      <div class="btn">
+                                                        <span>좌측 사진</span>
+                                                        <input type="file" >
+                                                      </div>
+                                                    </div>
+                                                  </form>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="col s4 card-panel white" style = " text-align :center;margin-top: 0px ;height : 230px">
+                                        <div class = "row"   style=  "width: 100%;">
+                                        
+                                                <form action="#">
+                                                    <div class="file-field input-field">
+                                                      <input class="file-path validate" type="file">
+                                                      <div class="btn">
+                                                        <span>좌측 사진</span>
+                                                        <input type="file" >
+                                                      </div>
+                                                    </div>
+                                                  </form>
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                            <div class="col s3">
+                                <div class = "row">
+                                    <div class="col s12 card-panel teal" style = " text-align :center; ">
+                                        <span class="white-text"  style ="text-align: center">
+                                      <h6>스타 사진</h6>
+                                      
+                                      </span>
+                                    
+                                    </div>
+                                    
+                                     <div class="col s12 card-panel white" style = " text-align :center;margin-top: 0px;height : 230px">
+                                        <div class = "row"   style=  "width: 100%;">
+                                        <form action="#">
+                                                    <div class="file-field input-field">
+                                                      <input class="file-path validate" type="file">
+                                                      <div class="btn">
+                                                        <span>스타사진</span>
+                                                        <input type="file" >
+                                                      </div>
+                                                    </div>
+                                                  </form>
+                                        
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                      </div>
+                   
+                   
+                </div>
+                
+                
+                
+                 
+               <!--Userpicture , Wannabe starend-->
+               <!-- 관심수술-->
+               <div class="col s12 card-panel teal" style = " text-align :center;  margin-top:-25px;margin-bottom: 10px;">
+                                    <span class="white-text"  style ="text-align: center">
+                                      <h6>관심 수술</h6>
+                                      
+                                      </span>
+                                    
+                                    </div>
+               <!--관심수술-->
+               
+               <!--Choice start -->
+               
+                <div class="row" id="interst_op">
+                    <div class ="col s12" id="interst_op_eye">
+                           <div class="col s1" style = "padding-right: 0px;padding-left: 0px; ">
+                                
+                                    <div class="card-panel teal" style = " text-align :center; height : 110px;">
+                                    <span class="white-text"  style ="text-align: center; ">
+                                      <h6>눈</h6>
+                                      
+                                      </span>
+                                    
+                                    </div>
+                            </div>
+                                    
+                            
+                            <div class="col s11" style = "padding-right: 0px;padding-left: 0px;">
+                                
+                                    
+                                        <div class="col s12 card-panel white" style = " text-align :center; padding-top:10px; height : 110px; ">
+                                          
+                                                  <div class="col s3">
+                                                     <form action="#">
+                                                        <p>
+                                                          <input type="checkbox" id="qes1" />
+                                                          <label for="qes1">질문 1</label>
+                                                        </p>
+                                                    </form>
+                                                </div>
+                                                 <div class="col s3">
+                                                     <form action="#">
+                                                        <p>
+                                                          <input type="checkbox" id="qes2" />
+                                                          <label for="qes2">질문 2</label>
+                                                        </p>
+                                                    </form>
+                                                </div>
+                                                 <div class="col s3">
+                                                     <form action="#">
+                                                        <p>
+                                                          <input type="checkbox" id="qes3" />
+                                                          <label for="qes3">질문 3</label>
+                                                        </p>
+                                                    </form>
+                                                </div>
+                                                 <div class="col s3">
+                                                     <form action="#">
+                                                        <p>
+                                                          <input type="checkbox" id="qes4" />
+                                                          <label for="qes4">질문 3</label>
+                                                        </p>
+                                                    </form>
+                                                </div>
+                                               <div class="col s3">
+                                                     <form action="#">
+                                                        <p>
+                                                          <input type="checkbox" id="qes5" />
+                                                          <label for="qes5">질문 5</label>
+                                                        </p>
+                                                    </form>
+                                                    
+                                                </div>
+                                            
+                                        
+                                        </div>
+                                    
+                                
+                            </div>
+                      
+                   
+                    </div>
+                </div>
+               
+               <!--Choice end-->
+               <!-- send button start-->
+               
+        
+                    <div class="row">
+                         <div class ="col s12">
+                            <div class = "col s10"><p></p> </div>
+                            <div class = "col s2">
+                                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                                    <i class="material-icons">send</i>
+                                  </button>
+                            </div>
+                        </div>
+                                              
+                    </div>
+                    
+                <!-- send button end-->
+               
+               
+               
+               
+               </div>
+              <!-- right end-->
+           </div>
+     </div>
+     <!-- Part box jQuery-->
+      <script>
+     
+         $(document).ready(function() {
+            $('#part_1').mouseenter(function() {
+                $('#part_1').fadeTo('fast',1);
+            });
+            $('#part_1').mouseleave(function() {
+             $('#part_1').fadeTo('fast', 0.5); 
+            });
+            $('#part_1').click(function() {
+                $('#interst_op').append('#interst_op_eye');
+                //fail
+            });
+            
+            $('#part_2').mouseenter(function() {
+                $('#part_2').fadeTo('fast',1);
+            });
+            $('#part_2').mouseleave(function() {
+             $('#part_2').fadeTo('fast', 0.5); 
+            });
+            $('#part_3').mouseenter(function() {
+                $('#part_3').fadeTo('fast',1);
+            });
+            $('#part_3').mouseleave(function() {
+             $('#part_3').fadeTo('fast', 0.5); 
+            });
+            $('#part_4').mouseenter(function() {
+                $('#part_4').fadeTo('fast',1);
+            });
+            $('#part_4').mouseleave(function() {
+             $('#part_4').fadeTo('fast', 0.5); 
+            });
+            $('#part_5').mouseenter(function() {
+                $('#part_5').fadeTo('fast',1);
+            });
+            $('#part_5').mouseleave(function() {
+             $('#part_5').fadeTo('fast', 0.5); 
+            });
+        });
+         
+      </script>
+      <!-- Part box jQuery end-->

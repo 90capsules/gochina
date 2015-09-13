@@ -61,8 +61,8 @@
                         <div class="col s4 form-box" id ="part_1" style = "padding-right: 0px;    padding-left: 0px;">eye</div>
                         <div class="col s4 form-box" id ="part_2" style = "padding-right: 0px;    padding-left: 0px;">eye</div>
                         <div class="col s4 form-box" id ="part_3" style = "padding-right: 0px;    padding-left: 0px;">eye</div>
-                        <div class="col s4 form-box" id ="part" style = "padding-right: 0px;    padding-left: 0px;">nose</div>
-                        <div class="col s4 form-box" id ="part" style = "padding-right: 0px;    padding-left: 0px;">nose</div>
+                        <div class="col s4 form-box" id ="part_4" style = "padding-right: 0px;    padding-left: 0px;">nose</div>
+                        <div class="col s4 form-box" id ="part_5" style = "padding-right: 0px;    padding-left: 0px;">nose</div>
                         <div class="col s4 form-box" id ="part" style = "padding-right: 0px;    padding-left: 0px;">nose</div>
                         <div class="col s4 form-box" id ="part" style = "padding-right: 0px;    padding-left: 0px;">mouth</div>
                         <div class="col s4 form-box" id ="part" style = "padding-right: 0px;    padding-left: 0px;">mouth</div>
@@ -271,8 +271,8 @@
                
                <!--Choice start -->
                
-                <div class="row">
-                    <div class ="col s12">
+                <div class="row" id="interst_op">
+                    <div class ="col s12" id="interst_op_eye">
                            <div class="col s1" style = "padding-right: 0px;padding-left: 0px; ">
                                 
                                     <div class="card-panel teal" style = " text-align :center; height : 110px;">
@@ -370,23 +370,43 @@
      <!-- Part box jQuery-->
       <script>
      
-     $(document).ready(function() {
-        $('#part_1').mouseenter(function() {
-            $(('#part_1').fadeTo('fast',1);
+         $(document).ready(function() {
+            $('#part_1').mouseenter(function() {
+                $('#part_1').fadeTo('fast',1);
+            });
+            $('#part_1').mouseleave(function() {
+             $('#part_1').fadeTo('fast', 0.5); 
+            });
+            $('#part_1').click(function() {
+                $('#interst_op').append('#interst_op_eye');
+                //fail
+            });
+            
+            $('#part_2').mouseenter(function() {
+                $('#part_2').fadeTo('fast',1);
+            });
+            $('#part_2').mouseleave(function() {
+             $('#part_2').fadeTo('fast', 0.5); 
+            });
+            $('#part_3').mouseenter(function() {
+                $('#part_3').fadeTo('fast',1);
+            });
+            $('#part_3').mouseleave(function() {
+             $('#part_3').fadeTo('fast', 0.5); 
+            });
+            $('#part_4').mouseenter(function() {
+                $('#part_4').fadeTo('fast',1);
+            });
+            $('#part_4').mouseleave(function() {
+             $('#part_4').fadeTo('fast', 0.5); 
+            });
+            $('#part_5').mouseenter(function() {
+                $('#part_5').fadeTo('fast',1);
+            });
+            $('#part_5').mouseleave(function() {
+             $('#part_5').fadeTo('fast', 0.5); 
+            });
         });
-        $(('#part_1').mouseleave(function() {
-         $(('#part_1').fadeTo('fast', 0.5); 
-        });
-        
-        
-    });
-     $(document).ready(function() {
-        $('#part_2').mouseenter(function() {
-            $('#part_2').fadeTo('fast',1);
-        });
-        $('#part_2').mouseleave(function() {
-         $('#part_2').fadeTo('fast', 0.5); 
-        });
-    });
+         
       </script>
       <!-- Part box jQuery end-->

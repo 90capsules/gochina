@@ -37,6 +37,9 @@
   <!-- Wrapper-->
   <div id="wrapper" class="<%= params[:controller] %>.<%= params[:action] %>">
 
+
+<!-- 게시판 알림-->
+<%= render partial: "shared/flash_messages", flash: flash %>
     <!-- Main view  -->
     <%= yield %>
 
@@ -52,7 +55,7 @@
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
   <!-- Include javascript per-controller - vendor plugins -->
-  <%= javascript_include_tag params[:controller] if ::Rails.application.assets.find_asset("#{params[:controller]}.js") %>		
+  <%#= javascript_include_tag params[:controller] if ::Rails.application.assets.find_asset("#{params[:controller]}.js") %>		
 
 
 

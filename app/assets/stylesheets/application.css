@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+ @import 'comments';
 #wrapper{
     min-height: 900px;
     

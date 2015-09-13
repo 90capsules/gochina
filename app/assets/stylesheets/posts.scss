@@ -1,0 +1,56 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+// .post {
+//   border: 1px solid $gray-light;
+//   border-radius: 5px;
+//   padding:1em;
+//   margin-bottom: 1em;
+//   .title {
+//     font-weight: bold;
+//     font-size: 1.5em;
+//     margin-bottom:.5em;
+//   }
+// }
+.gallery {
+          
+            overflow:auto;
+            }
+.picture {
+            position:relative;
+            margin:1.5em 0;   
+    
+        }
+        
+.image img {
+            border: 1px solid #928c75;
+            }
+.tag_list {
+            margin-bottom: .5em;
+            }
+.title {}
+.content {}
+.actions {
+            position:absolute;
+             
+}
+
+a.tag {
+border:1px solid #eaeaea;
+border-radius:3px;
+background-color: #f4f4f4;
+padding:.1em .2em;
+&:hover {
+    text-decoration: none;
+    color: white;
+    background-color: #265484;
+    border:1px solid #265484;
+       }    
+    
+}
+ul#posts_tagged {
+margin-top:2em;
+li {
+margin-bottom: .5em;
+    }
+}

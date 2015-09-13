@@ -4,5 +4,18 @@
   text-align: center;
   padding-right: 0px;
   padding-left: 0px; }
+.check {
+  background-color: #80C5BF;
+  height: 87px;
+  text-align: center;
+  padding-right: 0px;
+  padding-left: 0px; }
+  
+.disappear{
+ display:none; 
+}
 
+.appear{ display:block;
+  
+}
 /*# sourceMappingURL=estimating.css.map */

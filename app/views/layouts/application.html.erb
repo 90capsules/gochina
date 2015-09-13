@@ -32,14 +32,11 @@
 
 </head>
 <body>
-  <!--백용수 경고메세지-->
-  <p class="notice"><%=notice%></p>
-  <p class="alert"><%=alert%></p>
   
-  <% if params[:controller] != 'users/sessions' && params[:action] != 'create' %>
+  
   <!-- Page topnavbar -->
   <%= render 'layouts/topnavbar' %>
-  <% end %>
+  
 
   <!-- Wrapper-->
   <div id="wrapper" class="<%= params[:controller] %>.<%= params[:action] %>">
@@ -53,10 +50,10 @@
   </div>
   <!-- End wrapper-->
 
-  <% if params[:controller] != 'users/sessions' && params[:action] != 'create' %>
+  
   <!-- Footer -->
   <%= render 'layouts/footer2' %>
-  <% end %>
+  
 
 
   <!-- jquery here -->
@@ -64,9 +61,7 @@
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
   <!-- Include javascript per-controller - vendor plugins -->
-<<<<<<< HEAD
-  <%#= javascript_include_tag params[:controller] if ::Rails.application.assets.find_asset("#{params[:controller]}.js") %>		
-=======
+
   
   <%= javascript_include_tag 'base/jquery.min' %>
   <%= javascript_include_tag 'base/jquery-migrate.min' %>
@@ -108,7 +103,7 @@
   <!-- END PAGE LEVEL SCRIPTS -->
   
   <%= javascript_include_tag params[:controller] if ::Rails.application.assets.find_asset("#{params[:controller]}.js") %>		
->>>>>>> dfbd01a4929eb01585ec1bb110329bacb555de09
+
 
   <script>
     jQuery(document).ready(function() {    

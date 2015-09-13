@@ -33,10 +33,10 @@
 </head>
 <body>
   
-  <% if params[:controller] != 'users/sessions' && params[:action] != 'create' %>
+  
   <!-- Page topnavbar -->
   <%= render 'layouts/topnavbar' %>
-  <% end %>
+  
 
   <!-- Wrapper-->
   <div id="wrapper" class="<%= params[:controller] %>.<%= params[:action] %>">
@@ -50,10 +50,10 @@
   </div>
   <!-- End wrapper-->
 
-  <% if params[:controller] != 'users/sessions' && params[:action] != 'create' %>
+  
   <!-- Footer -->
   <%= render 'layouts/footer2' %>
-  <% end %>
+  
 
 
   <!-- jquery here -->

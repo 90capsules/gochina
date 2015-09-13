@@ -7,7 +7,7 @@ Login page
 ***/
 /* logo page */
 .login {
-  background-color: #444 !important;
+  background-color: #ff8a80 !important;
 }
 
 .login .logo {
@@ -193,9 +193,9 @@ Login page
 }
 
 
-.login a #login_title{
+#login_title{
   color: white;
-  font-size:30px;
+  font-size:45px;
 }
 
 /***

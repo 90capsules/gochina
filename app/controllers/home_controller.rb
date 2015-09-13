@@ -4,6 +4,7 @@ class HomeController < ApplicationController
   end
 
   def detail
+    
   end
   
 end

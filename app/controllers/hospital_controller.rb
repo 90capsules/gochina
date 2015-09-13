@@ -1,12 +1,9 @@
 class HospitalController < ApplicationController
   def index
-     @hospitals = Hospital.all
-     
-  
+    @hospitals = Hospital.all
+    
   end
 
-
-  
   def detail
     
       @a_hospital = Hospital.where(:id => params[:id].to_i).take

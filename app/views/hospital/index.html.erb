@@ -5,12 +5,12 @@
   <div class="row">
     <% @hospitals.each do |t| %>
       <div class="col l4 m6 s12">
-        <div class="card">
+        <div class="card"style = "height: 466px">
           <div class="card-image">
             <img src="/assets/<%= t.hos_name_eng %>_main.jpg"  width="320" height= "220">
             <span class="card-title"><%= t.hos_name_display %></span>
           </div>
-          <div class="card-content">
+          <div class="card-content" style = "height:125px">
             <p><%= t.hos_intro %></p>
           </div>
           <div class="card-action">

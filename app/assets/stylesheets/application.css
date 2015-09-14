@@ -13,6 +13,9 @@
  *= require_tree .
  *= require_self
  */
+<<<<<<< HEAD
+ @import 'comments';
+=======
  
  
 /* body {*/
@@ -23,6 +26,7 @@
 /*  font-size: 13px;*/
 /*  direction: ltr;*/
 /*}*/
+>>>>>>> dfbd01a4929eb01585ec1bb110329bacb555de09
 #wrapper{
   min-height: 900px;
     

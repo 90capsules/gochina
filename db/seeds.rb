@@ -15,4 +15,12 @@ Hospital.create(hos_name_display: "메가성형외과", hos_address: "서울 강
 체계화된 분야별 협력진료", hos_name_eng: "mega")
 Hospital.create(hos_name_display: "리젠성형외과", hos_address: "서울 서초구 강남대로 463 리젠타워", hos_intro: "분야별 우수의료진, 상담원장 직접수술, 철저한 사후관리
 수많은 진료경험, 환자의 안전 최우선", hos_name_eng: "regen")
+<<<<<<< HEAD
 User.create(nickname: "eatanddie")
+=======
+
+Bulletin.create! title: '공지사항'
+Bulletin.create! title: '새소식'
+Bulletin.create! title: '가입인사', post_type: 'blog'
+Bulletin.create! title: '갤러리', post_type: 'gallery'
+>>>>>>> 6f4753b54e96bf0470763674405c7ecdc6c27bda

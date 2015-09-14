@@ -1,0 +1,33 @@
+.gallery {
+  overflow: auto; }
+
+.picture {
+  position: relative;
+  margin: 1.5em 0; }
+
+.image img {
+  border: 1px solid #928c75; }
+
+.tag_list {
+  margin-bottom: .5em; }
+
+.actions {
+  position: absolute; }
+
+a.tag {
+  border: 1px solid #eaeaea;
+  border-radius: 3px;
+  background-color: #f4f4f4;
+  padding: .1em .2em; }
+  a.tag:hover {
+    text-decoration: none;
+    color: white;
+    background-color: #265484;
+    border: 1px solid #265484; }
+
+ul#posts_tagged {
+  margin-top: 2em; }
+  ul#posts_tagged li {
+    margin-bottom: .5em; }
+
+/*# sourceMappingURL=posts.css.map */

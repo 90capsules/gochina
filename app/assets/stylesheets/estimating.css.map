@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAGC,SAAS;EACF,gBAAgB,EAAG,KAAK;EAAE,MAAM,EAAG,IAAI;EAAE,UAAU,EAAG,MAAM;EAAE,aAAa,EAAE,GAAG;EAAK,YAAY,EAAE,GAAG",
+"sources": ["estimating.scss"],
+"names": [],
+"file": "estimating.css"
+}

@@ -1,0 +1,24 @@
+<%= simple_form_for(@bulletin) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :description, input_html: { rows: 5 } %>
+    
+  <!--<div class="input-field col s12">-->
+  <!--  <%#= f.input :post_type, collection: [ ['게시판', 'bulletin'], ['블로그', 'blog'], ['갤러리', 'gallery'] ] %>-->
+ 
+ 
+  <label>Post type</label>
+    <select class="browser-default" name="bulletin[post_type]" id="bulletin_post_type">
+      <option value="" disabled selected>Choose your option</option>
+      <option value="bulletin">게시판</option>
+      <option value="blog">블로그</option>
+      <option value="gallery">갤러리</option>
+    </select>
+</br>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

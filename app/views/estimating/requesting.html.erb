@@ -271,8 +271,8 @@
                
                <!--Choice start -->
                
-                <div class="row" id="interst_op">
-                    <div class ="col s12" id="interst_op_eye">
+                <div class="row" id="interest_op">
+                    <div class ="col s12 disappear" id="interest_op_eye">
                            <div class="col s1" style = "padding-right: 0px;padding-left: 0px; ">
                                 
                                     <div class="card-panel teal" style = " text-align :center; height : 110px;">
@@ -293,40 +293,40 @@
                                                   <div class="col s3">
                                                      <form action="#">
                                                         <p>
-                                                          <input type="checkbox" id="qes1" />
-                                                          <label for="qes1">질문 1</label>
+                                                          <input type="checkbox" id="qes1_1" />
+                                                          <label for="qes1_1">질문 1</label>
                                                         </p>
                                                     </form>
                                                 </div>
                                                  <div class="col s3">
                                                      <form action="#">
                                                         <p>
-                                                          <input type="checkbox" id="qes2" />
-                                                          <label for="qes2">질문 2</label>
+                                                          <input type="checkbox" id="qes1_2" />
+                                                          <label for="qes1_2">질문 2</label>
                                                         </p>
                                                     </form>
                                                 </div>
                                                  <div class="col s3">
                                                      <form action="#">
                                                         <p>
-                                                          <input type="checkbox" id="qes3" />
-                                                          <label for="qes3">질문 3</label>
+                                                          <input type="checkbox" id="qes1_3" />
+                                                          <label for="qes1_3">질문 3</label>
                                                         </p>
                                                     </form>
                                                 </div>
                                                  <div class="col s3">
                                                      <form action="#">
                                                         <p>
-                                                          <input type="checkbox" id="qes4" />
-                                                          <label for="qes4">질문 3</label>
+                                                          <input type="checkbox" id="qes1_4" />
+                                                          <label for="qes1_4">질문 3</label>
                                                         </p>
                                                     </form>
                                                 </div>
                                                <div class="col s3">
                                                      <form action="#">
                                                         <p>
-                                                          <input type="checkbox" id="qes5" />
-                                                          <label for="qes5">질문 5</label>
+                                                          <input type="checkbox" id="qes1_5" />
+                                                          <label for="qes1_5">질문 5</label>
                                                         </p>
                                                     </form>
                                                     
@@ -337,9 +337,85 @@
                                     
                                 
                             </div>
+                     
                       
+                            
                    
                     </div>
+                     <!--1번 끝-->
+                     <!--2번 시작-->
+                     <div class ="col s12 disappear" id="interest_op_eye2">
+                           <div class="col s1" style = "padding-right: 0px;padding-left: 0px; ">
+                                
+                                    <div class="card-panel teal" style = " text-align :center; height : 110px;">
+                                    <span class="white-text"  style ="text-align: center; ">
+                                      <h6>코</h6>
+                                      
+                                      </span>
+                                    
+                                    </div>
+                            </div>
+                                    
+                            
+                            <div class="col s11" style = "padding-right: 0px;padding-left: 0px;">
+                                
+                                    
+                                        <div class="col s12 card-panel white" style = " text-align :center; padding-top:10px; height : 110px; ">
+                                          
+                                                  <div class="col s3">
+                                                     <form action="#">
+                                                        <p>
+                                                          <input type="checkbox" id="qes2_1" />
+                                                          <label for="qes2_1">질문 1</label>
+                                                        </p>
+                                                    </form>
+                                                </div>
+                                                 <div class="col s3">
+                                                     <form action="#">
+                                                        <p>
+                                                          <input type="checkbox" id="qes2_2" />
+                                                          <label for="qes2_2">질문 2</label>
+                                                        </p>
+                                                    </form>
+                                                </div>
+                                                 <div class="col s3">
+                                                     <form action="#">
+                                                        <p>
+                                                          <input type="checkbox" id="qes2_3" />
+                                                          <label for="qes2_3">질문 3</label>
+                                                        </p>
+                                                    </form>
+                                                </div>
+                                                 <div class="col s3">
+                                                     <form action="#">
+                                                        <p>
+                                                          <input type="checkbox" id="qes2_4" />
+                                                          <label for="qes2_4">질문 3</label>
+                                                        </p>
+                                                    </form>
+                                                </div>
+                                               <div class="col s3">
+                                                     <form action="#">
+                                                        <p>
+                                                          <input type="checkbox" id="qes2_5" />
+                                                          <label for="qes2_5">질문 5</label>
+                                                        </p>
+                                                    </form>
+                                                    
+                                                </div>
+                                            
+                                        
+                                        </div>
+                                    
+                                
+                            </div>
+                     
+                      
+                            
+                   
+                    </div>
+                     
+                     
                 </div>
                
                <!--Choice end-->
@@ -362,7 +438,12 @@
                
                
                
-               
+               <form id="ajaxform" action="/saveFileTest.do" method="post" enctype="multipart/form-data">
+            		<input type="text" name="test2"/><br/>
+            		<textarea rows="10" cols="10" name="test3"></textarea><br/>
+            		<input type="file" name="test4" />
+            		<input type="submit" value="Submit" />
+            </form>
                </div>
               <!-- right end-->
            </div>
@@ -370,43 +451,87 @@
      <!-- Part box jQuery-->
       <script>
      
-         $(document).ready(function() {
-            $('#part_1').mouseenter(function() {
-                $('#part_1').fadeTo('fast',1);
-            });
-            $('#part_1').mouseleave(function() {
-             $('#part_1').fadeTo('fast', 0.5); 
-            });
-            $('#part_1').click(function() {
-                $('#interst_op').append('#interst_op_eye');
-                //fail
-            });
-            
-            $('#part_2').mouseenter(function() {
-                $('#part_2').fadeTo('fast',1);
-            });
-            $('#part_2').mouseleave(function() {
-             $('#part_2').fadeTo('fast', 0.5); 
-            });
-            $('#part_3').mouseenter(function() {
-                $('#part_3').fadeTo('fast',1);
-            });
-            $('#part_3').mouseleave(function() {
-             $('#part_3').fadeTo('fast', 0.5); 
-            });
-            $('#part_4').mouseenter(function() {
-                $('#part_4').fadeTo('fast',1);
-            });
-            $('#part_4').mouseleave(function() {
-             $('#part_4').fadeTo('fast', 0.5); 
-            });
-            $('#part_5').mouseenter(function() {
-                $('#part_5').fadeTo('fast',1);
-            });
-            $('#part_5').mouseleave(function() {
-             $('#part_5').fadeTo('fast', 0.5); 
-            });
-        });
+      $(document).ready(function(){
+          
+          ////v수술 부분 선택시작 //
+            alert("hi4");
+      
+                $('#part_1').on({
+                    mouseover: function(){
+                        $('#part_1').addClass('check');
+                    },
+                     mouseleave: function(){
+                         $('#part_1').removeClass('check');
+                    },
+                    click: function(){
+                        if($('#part_1').hasClass("form-box")){      
+                          alert("hiform-box");
+                                $('#part_1').removeClass('form-box').addClass('check');
+                                $('#interest_op_eye').removeClass('disappear').addClass('appear');
+                                $('#part_1').off("mouseleave");
+                                  
+                      }    
+                      else if ($('#part_1').hasClass("check")){
+                     alert("hicheck");
+                    
+                                        $('#part_1').removeClass('check').addClass('form-box');
+                                        $('#interest_op_eye').removeClass('appear').addClass('disappear');   
+                                        $('#part_1').on('mouseleave', function(){
+                                            $('#part_1').removeClass('check');
+                                            });
+
+                                 }    
+                                 
+                        
+                    }
+                });
+                
+                 $('#part_2').on({
+                    mouseover: function(){
+                        $('#part_2').addClass('check');
+                    },
+                     mouseleave: function(){
+                         $('#part_2').removeClass('check');
+                    },
+                    click: function(){
+                        if($('#part_2').hasClass("form-box")){      
+                          alert("hiform-box2");
+                                $('#part_2').removeClass('form-box').addClass('check');
+                                $('#interest_op_eye2').removeClass('disappear').addClass('appear');
+                                 $('#part_2').off('mouseleave');
+                                  
+                      }    
+                      else if ($('#part_2').hasClass("check")){
+                     alert("hicheck");
+                    
+                                        $('#part_2').removeClass('check').addClass('form-box');
+                                        $('#interest_op_eye2').removeClass('appear').addClass('disappear');   
+                                        $('#part_2').on('mouseleave', function(){
+                                            $('#part_2').removeClass('check');
+                                            });   
+                                            
+
+                                 }    
+                             
+                        
+                    }
+                });
+                
+                
+                  //v수술 부분 선택 끝 //
+           //사진 upload end//
+               
+                
+                
+                
+      });
+               
+               
+      
+                
+
+             
+                    
          
       </script>
       <!-- Part box jQuery end-->

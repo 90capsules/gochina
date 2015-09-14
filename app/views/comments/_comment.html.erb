@@ -1,0 +1,7 @@
+<li id="comment_<%=comment.id %>">
+<%= comment.body %>,
+<%= time_ago_in_words(comment.created_at) %> ago
+<i class="tiny material-icons"><%= link_to "clear", [comment.post, comment], method: :delete, remote: true, data: { confirm: "Are you sure?" } %>
+</i>
+
+</li>

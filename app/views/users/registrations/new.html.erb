@@ -1,63 +1,141 @@
-<h2>Sign up</h2>
+<body class="page-md login">
+  
+  <div class="logo">
+  	
+  </div>
+  <!-- END LOGO -->
+  <!-- BEGIN SIGN UP -->
+  <div class="content">
+  	<!-- BEGIN SIGN UP FORM -->
+  	
+  	
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html:{ class: "login-form"}) do |f| %>
+      <%= devise_error_messages! %>
+  		<h3 class="form-title">Sign Up</h3>
+  		<div class="alert alert-danger display-hide">
+  			<button class="close" data-close="alert"></button>
+  			<span>
+  			Enter any Email and password. </span>
+  		</div>
+  		
+  		<div class="form-group">
+  			<!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+  			<label class="control-label visible-ie8 visible-ie9">Email</label>
+  			<div class="input-icon">
+  				<i class="fa fa-user"></i>
+  				<%= f.email_field :email, autofocus: true, html:{ class: "form-control placeholder-no-fix"}, autocomplete: "off" %>
+  			</div>
+  		</div>
+  		
+  		<div class="form-group">
+  			<label class="control-label visible-ie8 visible-ie9">Password</label>
+  			<div class="input-icon">
+  				<i class="fa fa-lock"></i>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, html:{ class: "form-control placeholder-no-fix"}, autocomplete: "off" %>
+  			</div>
+  		</div>
+  		
+  		<div class="form-group">
+  			<label class="control-label visible-ie8 visible-ie9">Password_Confirmation</label>
+  			<div class="input-icon">
+  				<i class="fa fa-lock"></i>
+          <%= f.password_field :password_confirmation, html:{ class: "form-control placeholder-no-fix"}, autocomplete: "off" %>
+  			</div>
+  		</div>  		
+  		
+  		<div class="form-group">
+  			<label class="control-label visible-ie8 visible-ie9">Nickname</label>
+  			<div class="input-icon">
+          <%= f.text_field :nickname, html:{ class: "form-control placeholder-no-fix"}, autocomplete: "off" %>
+  			</div>
+  		</div>   		
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-  
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :nickname %><br />
-    <%= f.text_field :nickname, autofocus: true %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :realname, autofocus: true %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :sex %><br />
+  		<div class="form-group">
+  			<label class="control-label visible-ie8 visible-ie9">Name</label>
+  			<div class="input-icon">
+          <%= f.text_field :realname, html:{ class: "form-control placeholder-no-fix"}, autocomplete: "off" %>
+  			</div>
+  		</div> 
+  		
+  		<div class="form-group">
+  			<label class="control-label visible-ie8 visible-ie9">Sex</label>
+  			<div class="input-icon">
+			    <%= f.radio_button(:sex, "male") %>
+          <%= f.label(:sex_male, "MALE") %>
+          <%= f.radio_button(:sex, "female") %>
+          <%= f.label(:sex_female, "FEMALE") %>
+  			</div>
+  		</div>   		
+  		
 
-    <%= f.radio_button(:sex, "male") %>
-    <%= f.label(:sex_male, "MALE") %>
-    <%= f.radio_button(:sex, "female") %>
-    <%= f.label(:sex_female, "FEMALE") %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :age %><br />
-    <%= f.number_field :age, autofocus: true %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :phonenumber %><br />
-    <%= f.telephone_field :phonenumber, autofocus: true %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :interested_operation %><br />
-    <%= f.text_field :interested_operation, autofocus: true %>
-  </div>
+      <div class="field">
+        <%= f.label :age %><br />
+        <%= f.number_field :age %>
+      </div>
+      
+      <div class="field">
+        <%= f.label :phonenumber %><br />
+        <%= f.telephone_field :phonenumber %>
+      </div>
+      
+      <div class="field">
+        <%= f.label :interested_operation %><br />
+        <%= f.text_field :interested_operation %>
+      </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  		
+  		<div class="form-actions">
+  			<%= button_tag( :class => "btn yellow pull-right") do %>
+          Sign Up <i class="m-icon-swapright m-icon-white"></i>
+        <% end %>
+  		</div>  		
+  		
+  		
+  		<div class="login-options">
+  			<h4>Or sign up with</h4>
+  			<ul class="social-icons">
+  				<li>
+  					<a class="facebook" data-original-title="facebook" href="javascript:;">
+  					</a>
+  				</li>
+  				<li>
+  					<a class="twitter" data-original-title="Twitter" href="javascript:;">
+  					</a>
+  				</li>
+  				<li>
+  					<a class="googleplus" data-original-title="Goole Plus" href="javascript:;">
+  					</a>
+  				</li>
+  				<li>
+  					<a class="linkedin" data-original-title="Linkedin" href="javascript:;">
+  					</a>
+  				</li>
+  			</ul>
+  		  <h4>Are you a coordinator?</h4>
+  		  <p>
+  				 Please, click <a href="/codis/sign_in" id="forget-password">
+  				here </a> to login
+  			</p>
+  		</div>
+  		
+  		<%= render "users/shared/links" %>
+  		
+  		
+  	<% end %>
+  	<!-- END LOGIN FORM -->
   </div>
-<% end %>
-<a href="/codis/sign_up">Coordinator SIGN UP</a></br>
-<%= render "users/shared/links" %>
+  <!-- END LOGIN -->
+  
+  <div class="logo">
+  	
+  </div>
+</body>
+
+
+
+
+
+

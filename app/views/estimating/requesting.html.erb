@@ -236,19 +236,18 @@
               
               <div class="col s11" style = "padding-right: 0px;padding-left: 0px;">
                 <div class="col s12 card-panel white" style = " text-align :center; padding-top:10px; height : 110px; ">
+                  <% for i in (1..value[1].length) do%>
                   <div class="col s3">
                     <form action="#">
-                      <% for i in (1..value[1].length) do%>
                         <p>
                           <input type="checkbox" id="<%= key %>_<%= i %>" />
                           <label for="<%= key %>_<%= i %>"><%= value[1][i-1] %></label>
                         </p>
-                      <% end %>
                     </form>
                   </div>
+                  <% end %>
                 </div>
               </div>
-             
             </div>
                <!--1번 끝-->
           </div>

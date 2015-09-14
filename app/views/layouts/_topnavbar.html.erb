@@ -26,7 +26,14 @@
   <div class="nav-wrapper container">
     <ul class="left hide-on-med-and-down">
       
+      
+      
+      <% if user_signed_in? %>
       <li><a href="/estimating/requesting">견적신청</a></li>
+      <% elsif codi_signed_in? %>
+      <li><a href="/estimating/codi_index">견적함</a></li>
+      <% end %>
+      
       <li><a href="/hospital/index">병원정보</a></li>
       <li><a href="/review/index">후기</a></li>
      <li class="<%= params[:bulletin_id] == '1' ? 'active' : '' %>"><%= link_to '공지사항', bulletin_posts_path('1') %></li>

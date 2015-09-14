@@ -9,6 +9,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :nickname,           null: false, default: ""
       t.string :phonenumber
       t.string :interested_operation
+      t.string :profile_img
       
       ## Database authenticatable
       t.string :email,              null: false, default: ""

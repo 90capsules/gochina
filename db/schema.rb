@@ -113,14 +113,18 @@ ActiveRecord::Schema.define(version: 20150913080102) do
   create_table "requestings", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "priority"
-    t.string   "img"
+    t.string   "img_front"
+    t.string   "img_left"
+    t.string   "img_right"
     t.string   "prefer_img"
     t.datetime "want_time"
     t.string   "prefer_region"
     t.text     "special"
-    t.string   "switch",        default: "on"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.string   "switch",          default: "on"
+    t.string   "sleep_time"
+    t.string   "drug_sideeffect"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   create_table "review_boxes", force: :cascade do |t|
@@ -190,6 +194,7 @@ ActiveRecord::Schema.define(version: 20150913080102) do
     t.string   "nickname",               default: "", null: false
     t.string   "phonenumber"
     t.string   "interested_operation"
+    t.string   "profile_img"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"

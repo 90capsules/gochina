@@ -13,20 +13,10 @@
  *= require_tree .
  *= require_self
  */
-<<<<<<< HEAD
- @import 'comments';
-=======
- 
- 
-/* body {*/
-/*  color: #333333;*/
-/*  font-family: "Open Sans", sans-serif;*/
-/*  padding: 0px !important;*/
-/*  margin: 0px !important;*/
-/*  font-size: 13px;*/
-/*  direction: ltr;*/
-/*}*/
->>>>>>> dfbd01a4929eb01585ec1bb110329bacb555de09
+
+html {
+font-family: "Microsoft Yahei", tahoma, "segoe UI",  "Microsoft Jhenghei", meiryo, "malgun gothic"
+}
 #wrapper{
   min-height: 900px;
     

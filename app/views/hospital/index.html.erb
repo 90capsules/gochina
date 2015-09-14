@@ -14,14 +14,18 @@
             <p><%= t.hos_intro %></p>
           </div>
           <div class="card-action">
+            <%=t.avg.round(1)%> 점 (<%=t.hos_replies.count%> 명)
             <a href="/hospital/detail/<%= t.id %>">자세히보기</a>
           
-          <span class="star-rating small">
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i class = "on"></i>
+           <span class="star-rating small">
+            <% 1.upto(5) do |i| %>
+              <% if i == t.avg.round(0) %>
+                <i class="on"></i>
+              <% else %>
+                <i></i>
+              <% end %>
+            <% end %>
+            </span>
           </span>
           
           </div>

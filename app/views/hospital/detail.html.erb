@@ -1,21 +1,76 @@
+<%unless current_user %>
+  <script>
+    
+    alert("로그인을 해주세요");
+  </script>
+  <br><br><br><br><br><br><center><a href = "/">돌아가기</a></center>
+<% else %>
+<div class="card">
+  <div class="card-image" style="background-position: center;">
+    <center>
+    <img src="/assets/<%= @a_hospital.hos_name_eng %>_detail1.jpg" style = "width:1000px">
+    <img src="/assets/<%= @a_hospital.hos_name_eng %>_detail2.jpg" style = "width:1000px">
+    </center>
+    <span class="card-title"><%= @a_hospital.hos_name_display %></span>
+  </div>
+  <div class="card-content" style = "text-align: center;">
+    <p><%= @a_hospital.hos_intro %></p>
+     <span class="star-rating">
+      <% 1.upto(5) do |i| %>
+      <% if i == @a_hospital.avg.round(0) %>
+        <i class="on"></i>
+      <% else %>
+        <i></i>
+      <% end %>
+    <% end %>>
+  </span>
+    <p><%= @a_hospital.avg.round(1)%> 점 (<%=@a_hospital.hos_replies.count%> 명)</p>
+  </div>
+  <div class="card-action" style = "text-align: center;">
+    <a href="#">병원 홈페이지 이동</a>
+  </div>
+</div>
 
+
+    
+    <%=form_tag "/hospital/score_evaluate", method: "post" do %>
+    <input type="hidden" name="id" value="<%=@a_hospital.id%>">
+    
+    <div class="star-rating small">
+      <input type="radio" name="rating" value="1"><i></i>
+      <input type="radio" name="rating" value="2"><i></i>
+      <input type="radio" name="rating" value="3"><i></i>
+      <input type="radio" name="rating" value="4"><i></i>
+      <input type="radio" name="rating" value="5"><i></i>
+    </div>
+    <br>
+    <input type="text" class="form-control" name="msg" placeholder="별점 체크 후 평가를 남겨주세요">
+    <br>
+    <button class="btn btn-success" href="/hospital/score_evaluate" role="button">평가하기</button>
+  <% end %>
 
 <div class="row">
-        <div class="col l12 s12 m7">
-          <div class="card">
-            <div class="card-image">
-              <img src="/assets/<%= @a_hospital.hos_name_eng %>_detail<%=[1,2].sample(1)[0]%>.jpg">
-              <span class="card-title">Card Title</span>
-            </div>
-            <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-              <a href="#">병원 홈페이지 이동</a>
-            </div>
-          </div>
-        </div>
+  <div class="col-lg-12">
+    <!-- 각 코멘트들 -->
+    <% @a_hospital.hos_replies.reverse.each do |c| %>
+      <div class="well">
+        <span class="star-rating small">
+          <% 1.upto(5) do |i| %>
+            <% if i == c.hos_score %>
+              <i class="on"></i>
+            <% else %>
+              <i></i>
+            <% end %>
+          <% end %>
+        </span>
+        
+        <p><%=c.created_at.in_time_zone("Seoul")%></p>
+        <% if current_user %>
+        <p><%= c.user.email %> : <%= c.content %></p>
+        <% end %>
       </div>
-
-
+  <% end %>
+  </div>
+  
+</div>
+<% end %>

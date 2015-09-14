@@ -65,9 +65,10 @@ ActiveRecord::Schema.define(version: 20150912075326) do
   end
 
   create_table "hos_replies", force: :cascade do |t|
-    t.string   "user_id"
-    t.string   "content"
-    t.string   "hospital_id"
+    t.integer  "user_id"
+    t.text     "content"
+    t.integer  "hospital_id"
+    t.integer  "hos_score"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

@@ -196,20 +196,21 @@ var Metronic = function() {
     };
 
     // Handles custom checkboxes & radios using jQuery Uniform plugin
-    var handleUniform = function() {
-        if (!$().uniform) {
-            return;
-        }
-        var test = $("input[type=checkbox]:not(.toggle, .md-check, .md-radiobtn, .make-switch, .icheck), input[type=radio]:not(.toggle, .md-check, .md-radiobtn, .star, .make-switch, .icheck)");
-        if (test.size() > 0) {
-            test.each(function() {
-                if ($(this).parents(".checker").size() === 0) {
-                    $(this).show();
-                    $(this).uniform();
-                }
-            });
-        }
-    };
+    
+    // var handleUniform = function() {
+    //     if (!$().uniform) {
+    //         return;
+    //     }
+    //     var test = $("input[type=checkbox]:not(.toggle, .md-check, .md-radiobtn, .make-switch, .icheck), input[type=radio]:not(.toggle, .md-check, .md-radiobtn, .star, .make-switch, .icheck)");
+    //     if (test.size() > 0) {
+    //         test.each(function() {
+    //             if ($(this).parents(".checker").size() === 0) {
+    //                 $(this).show();
+    //                 $(this).uniform();
+    //             }
+    //         });
+    //     }
+    // };
 
     // Handlesmaterial design checkboxes
     var handleMaterialDesign = function() {

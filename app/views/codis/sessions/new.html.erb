@@ -1,26 +1,112 @@
-<h2>Coordinator Log in</h2>
+<!--<h2>Coordinator Log in</h2>-->
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+<!--<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>-->
+<!--  <div class="field">-->
+<!--    <%= f.label :email %><br />-->
+<!--    <%= f.email_field :email, autofocus: true %>-->
+<!--  </div>-->
+
+<!--  <div class="field">-->
+<!--    <%= f.label :password %><br />-->
+<!--    <%= f.password_field :password, autocomplete: "off" %>-->
+<!--  </div>-->
+
+<!--  <% if devise_mapping.rememberable? -%>-->
+<!--    <div class="field">-->
+<!--      <%= f.check_box :remember_me %>-->
+<!--      <%= f.label :remember_me %>-->
+<!--    </div>-->
+<!--  <% end -%>-->
+
+<!--  <div class="actions">-->
+<!--    <%= f.submit "Log in" %>-->
+<!--  </div>-->
+<!--<% end %>-->
+
+<!--<%= render "codis/shared/links" %>-->
+
+
+
+<body class="page-md login">
+  
+  <div class="logo">
+  
   </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+  <!-- END LOGO -->
+  <!-- BEGIN LOGIN -->
+  <div class="content">
+  	<!-- BEGIN LOGIN FORM -->
+  	<%= form_for(resource, as: resource_name, url: session_path(resource_name), html:{ class: "login-form"}) do |f| %>
+  		<h3 class="form-title">Coordinator Log in</h3>
+  		<div class="alert alert-danger display-hide">
+  			<button class="close" data-close="alert"></button>
+  			<span>
+  			Enter any Email and password. </span>
+  		</div>
+  		<div class="form-group">
+  			<!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+  			<label class="control-label visible-ie8 visible-ie9">Email</label>
+  			<div class="input-icon">
+  				<i class="fa fa-user"></i>
+  				<%= f.email_field :email, autofocus: true, html:{ class: "form-control placeholder-no-fix"}, autocomplete: "off" %>
+  			</div>
+  		</div>
+  		<div class="form-group">
+  			<label class="control-label visible-ie8 visible-ie9">Password</label>
+  			<div class="input-icon">
+  				<i class="fa fa-lock"></i>
+  				<%= f.password_field :password, html:{ class: "form-control placeholder-no-fix"}, autocomplete: "off" %>
+  			</div>
+  		</div>
+  		<div class="form-actions">
+	      <% if devise_mapping.rememberable? -%>
+          
+  			<label class="checkbox">
+  			<%= f.check_box :remember_me %>   Remember me </label>
+  			
+  			<% end -%>
+  			
+  			<%= button_tag( :class => "btn green-haze pull-right") do %>
+          Login <i class="m-icon-swapright m-icon-white"></i>
+        <% end %>
+  			
+  			
+  			
+  			
+  		</div>
+  		<div class="login-options">
+  			<h4>Or login with</h4>
+  			<ul class="social-icons">
+  				<li>
+  					<a class="facebook" data-original-title="facebook" href="javascript:;">
+  					</a>
+  				</li>
+  				<li>
+  					<a class="twitter" data-original-title="Twitter" href="javascript:;">
+  					</a>
+  				</li>
+  				<li>
+  					<a class="googleplus" data-original-title="Goole Plus" href="javascript:;">
+  					</a>
+  				</li>
+  				<li>
+  					<a class="linkedin" data-original-title="Linkedin" href="javascript:;">
+  					</a>
+  				</li>
+  			</ul>
+  		</div>
+  		
+  		
+  		
+  	<% end %>
+  	<%= render "codis/shared/links" %>
+  	<!-- END LOGIN FORM -->
   </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
+  <!-- END LOGIN -->
+  
+ 
+  <div class="logo">
+  	
   </div>
-<% end %>
-
-<%= render "codis/shared/links" %>
+  
+</body>

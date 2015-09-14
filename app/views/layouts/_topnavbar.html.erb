@@ -28,10 +28,10 @@
       
       
       
-      <% if user_signed_in? %>
-      <li><a href="/estimating/requesting">견적신청</a></li>
-      <% elsif codi_signed_in? %>
+      <% if codi_signed_in? %>
       <li><a href="/estimating/codi_index">견적함</a></li>
+      <% else %>
+      <li><a href="/estimating/requesting">견적신청</a></li>
       <% end %>
       
       <li><a href="/hospital/index">병원정보</a></li>

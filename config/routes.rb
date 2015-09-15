@@ -36,13 +36,20 @@ Rails.application.routes.draw do
 
   post 'estimating/requesting_complete'
 
-  get 'estimating/manage'
+  get 'estimating/requesting_complete'
 
-  get 'estimating/counsel'
-
-  get 'estimating/couunsel_complete'
 
   get 'estimating/codi_index'
+
+  get 'estimating/manage'
+  get 'estimating/manage_waiting'
+  get 'estimating/manage_complete'
+
+  get 'estimating/counsel'
+  get 'estimating/counsel_waiting'
+  get 'estimating/couunsel_complete'
+  
+
 
 
   devise_for :codis, controllers: {

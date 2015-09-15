@@ -3,7 +3,6 @@ class CreateRequestings < ActiveRecord::Migration
     create_table :requestings do |t|
       
       t.integer :user_id
-      t.string :priority
       t.string :img_front
       t.string :img_left
       t.string :img_right

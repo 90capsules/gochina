@@ -32,7 +32,9 @@ Rails.application.routes.draw do
 
   get 'estimating/requesting'
 
-  get 'estimating/requesting_complete'
+  get 'estimating/requesting_content'
+
+  post 'estimating/requesting_complete'
 
   get 'estimating/manage'
 

@@ -1,492 +1,328 @@
-
-     <div class = "container">
-      <!-- MAIN-->
-    
-      <!--END MAIN-->
-           <div class = "row" style = "background-color : #e0e0e0;">
-            <!-- left -->
-               <div class="col s3">
-               <!-- user info-->
-                   <div class="card-panel red lighten-2">
-                    <div class="caption center-align">
-                      <img src="http://www.matcl.com/files/2014/05/14/49da799840fe1ca40883c77c05721d94163141.png" alt="" class="circle responsive-img" style = "height: 150px;
-                        width: 150px;" > 
-                    </div>
-                      <span class="white-text"  style ="text-align: center">
-                      <h5>Lee Jeong Min</h5>
-                      <h6>Information </h6>
-                      <h6>Information2</h6>
-                      </span>
-                    </div>
-                <!-- user infoend-->
-                <!-- user part
-                    <div class="row" style = "margin-left: 0px; margin-right: 0px;">
-                      <table style = "background-color : white" >
-                                    
-                        <tbody>
-                          <tr>
-                            <td style = "text-align :center; height: 100px;">eye</td>
-                            <td style = "text-align :center; height: 100px;">nose</td>
-                            <td style = "text-align :center; height: 100px;">mouth</td>
-                          </tr>
-                          <tr>
-                            <td style = "text-align :center">Fat</td>
-                            <td style = "text-align :center">Breast</td>
-                            <td style = "text-align :center">facial contour</td>
-                          </tr>
-                          <tr>
-                            <td style = "text-align :center">skin</td>
-                            <td style = "text-align :center">forehead</td>
-                            <td style = "text-align :center">liposuction</td>
-                          </tr>
-                          <tr>
-                            <td style = "text-align :center">double jaw surgery</td>
-                            <td style = "text-align :center">Filler</td>
-                            <td style = "text-align :center">hair transplantation</td>
-                          </tr>
-                          <tr>
-                            <td style = "text-align :center">Forever Makeup</td>
-                            <td style = "text-align :center">Baby face</td>
-                            <td style = "text-align :center">etc</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                      </div>
-                
-                part-->
-                <!-- user part test-->
-                <div class="slider">
-                <ul class="slides">
-                  <li>
-                    <img src="http://lorempixel.com/580/250/nature/1"> <!-- random image -->
-                    <div class="caption center-align">
-                      <h3>This is our big Tagline!</h3>
-                      <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-                    </div>
-                  </li>
-                  <li>
-                    <img src="http://lorempixel.com/580/250/nature/2"> <!-- random image -->
-                    <div class="caption left-align">
-                      <h3>Left Aligned Caption</h3>
-                      <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-                    </div>
-                  </li>
-                  <li>
-                    <img src="http://lorempixel.com/580/250/nature/3"> <!-- random image -->
-                    <div class="caption right-align">
-                      <h3>Right Aligned Caption</h3>
-                      <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-                    </div>
-                  </li>
-                  <li>
-                    <img src="http://lorempixel.com/580/250/nature/4"> <!-- random image -->
-                    <div class="caption center-align">
-                      <h3>This is our big Tagline!</h3>
-                      <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-                    </div>
-                  </li>
-                </ul>
+<div class = "container">
+<!-- MAIN-->
+<!--END MAIN-->
+  <div class = "row" style = "background-color : #e0e0e0;">
+    <!-- left -->
+    <div class="col s3">
+     <!-- user info-->
+        <div class="card-panel red lighten-2">
+          <div class="caption center-align">
+            <img src="" alt="" class="circle responsive-img" style = "height: 150px;
+                    width: 150px;" > 
+          </div>
+          <span class="white-text"  style ="text-align: center">
+            <h5></h5>
+            <h6>年龄 :  </h6>
+            <h6>性別 : </h6>
+          </span>
+        </div>
+          <!-- user infoend-->
+          <!-- user part test-->
+          <div class="card-panel white" style = "padding-top: 0px;    padding-right: 0px;    padding-bottom: 0px;    padding-left: 0px;">
+              <div class = "row" style = "margin: 0.5rem 0 1rem 0;">
+                  <% @tags.each do |key, value|%>
+                      <div class= "col s4 form-box", id= <%=key%> style= "padding-right: 0px; padding-left: 0px;">
+                      <img src="/assets/part_picture/<%= key %>.png" alt="" style = "height: 50px; width: 50px;" ></br>
+                      <span id = "<%= key %>_val"><%= value[0] %></span>
+                      </div> 
+                  <% end %>
               </div>
-                              
-                    
-                
-                <!-- user part test-->
-                
-                
-                <!-- user desire-->
-                <div class="card-panel white">    
-                        
-                        
-                    
-                        
-                        <div class="row">
-                            <div class="input-field col s9">
-                              <input id="desire_cost" type="text" class="validate">
-                              <label for="desire_cost"><span style = "text-color : black;">희망 비용</span></label>
-                            </div>
-                            <div class = "col s3">
-                            <p>원</p>
-                            </div>
-                          </div>
-                          
-                       <div class="row">
-                            <div class="input-field col s9">
-                              <input id="desire_period" type="text" class="validate">
-                              <label for="desire_period">희망 기간</label>
-                            </div>
-                            <div class = "col s3">
-                            <p>일 이내</p>
-                            </div>
-                          </div>
-                          
-                        <div class="row" >
-                           <div class="col s12"> 
-                                희망 기간
-                                <input type="date" class="datepicker">
-                                </div>
-                            </div>
-                          
-                          <div class="row">
-                            <div class="input-field col s9">
-                              <input id="sleep_time" type="text" class="validate">
-                              <label for="sleep_time">평균 수면 시간</label>
-                            </div>
-                            <div class = "col s3">
-                            <p>시간</p>
-                            </div>
-                          </div>
-                         
-                          <label>선호 지역</label>
-                                <select class="browser-default">
-                                  <option value="" disabled selected>지역 선택</option>
-                                  <option value="1">신사</option>
-                                  <option value="2">강남</option>
-                                  <option value="3">종로</option>
-                                </select>
-                         <div class ="row">
-                             <div class="col s12">
-                              <p> 약물 부작용 </p>
-                                  <div class="col s6">
-                                         <form action="#">
-                                            <p>
-                                              <input type="checkbox" id="test5" />
-                                              <label for="test5">항생제</label>
-                                            </p>
-                                        </form>
-                                    </div>
-                            
-                                <div class="col s6">
-                                     <form action="#">
-                                        <p>
-                                          <input type="checkbox" id="test6" />
-                                          <label for="test6">진통제</label>
-                                        </p>
-                                    </form>
-                                </div>
-                            </div>
-                                
-                    
-                        </div>
-                        
-                </div>
-                <!-- user desire end-->
-                </div>
-                
-            <!--left end -->
-            
-            <!--right start-->
-               <div class="col s9">
-                   
-               
-                <!--right start-->
-                
-                <!--Userpicture , Wannabe star-->
-                <div class="row">
-                    <div class ="col s12">
-                           <div class="col s9">
-                                <div class = "row"   style=  "width: 100%;">
-                                    <div class="col s12 card-panel teal" style = " text-align :center;">
-                                    <span class="white-text"  style ="text-align: center">
-                                      <h6>나의 사진</h6>
-                                      
-                                      </span>
-                                    
-                                    </div>
-                                    <div class="col s4 card-panel white"  style = " text-align :center;margin-top: 0px;height : 230px">
-                                        <div class = "row"   style=  "text-align:center;">
-                                        
-                                         <form action="#">
-                                            <div class="file-field input-field">
-                                              <input class="file-path validate" type="file">
-                                              <div class="btn">
-                                                <span>정면 사진</span>
-                                                <input type="file" >
-                                              </div>
-                                            </div>
-                                          </form>
-                                          
-                                        </div>
-                                        
-                                    </div>
-                                    <div class="col s4 card-panel white" style = " text-align :center;margin-top: 0px;height : 230px">
-                                        <div class = "row"   style=  "width: 100%;">
-                                                <form action="#">
-                                                    <div class="file-field input-field">
-                                                      <input class="file-path validate" type="file">
-                                                      <div class="btn">
-                                                        <span>좌측 사진</span>
-                                                        <input type="file" >
-                                                      </div>
-                                                    </div>
-                                                  </form>
-                                        </div>
-                                        
-                                    </div>
-                                    <div class="col s4 card-panel white" style = " text-align :center;margin-top: 0px ;height : 230px">
-                                        <div class = "row"   style=  "width: 100%;">
-                                        
-                                                <form action="#">
-                                                    <div class="file-field input-field">
-                                                      <input class="file-path validate" type="file">
-                                                      <div class="btn">
-                                                        <span>좌측 사진</span>
-                                                        <input type="file" >
-                                                      </div>
-                                                    </div>
-                                                  </form>
-                                        </div>
-                                        
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                            
-                            <div class="col s3">
-                                <div class = "row">
-                                    <div class="col s12 card-panel teal" style = " text-align :center; ">
-                                        <span class="white-text"  style ="text-align: center">
-                                      <h6>스타 사진</h6>
-                                      
-                                      </span>
-                                    
-                                    </div>
-                                    
-                                     <div class="col s12 card-panel white" style = " text-align :center;margin-top: 0px;height : 230px">
-                                        <div class = "row"   style=  "width: 100%;">
-                                        <form action="#">
-                                                    <div class="file-field input-field">
-                                                      <input class="file-path validate" type="file">
-                                                      <div class="btn">
-                                                        <span>스타사진</span>
-                                                        <input type="file" >
-                                                      </div>
-                                                    </div>
-                                                  </form>
-                                        
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
+          </div>
+          <!-- user part test-->
+          <!-- user desire-->
+          <div class="card-panel white">    
+                  <div class="row">
+                      <div class="input-field col s9">
+                        <input id="desire_cost" type="text" class="validate">
+                        <label for="desire_cost"><span style = "text-color : black;">희망 비용</span></label>
                       </div>
-                   
-                   
-                </div>
-                
-                
-                
-                 
-               <!--Userpicture , Wannabe starend-->
-               <!-- 관심수술-->
-               <div class="col s12 card-panel teal" style = " text-align :center;  margin-top:-25px;margin-bottom: 10px;">
-                                    <span class="white-text"  style ="text-align: center">
-                                      <h6>관심 수술</h6>
-                                      
-                                      </span>
-                                    
-                                    </div>
-               <!--관심수술-->
-               
-               <!--Choice start -->
-               
-                <div class="row" id="interest_op">
-                    <div class ="col s12 disappear" id="interest_op_eye">
-                           <div class="col s1" style = "padding-right: 0px;padding-left: 0px; ">
-                                
-                                    <div class="card-panel teal" style = " text-align :center; height : 110px;">
-                                    <span class="white-text"  style ="text-align: center; ">
-                                      <h6>눈</h6>
-                                      
-                                      </span>
-                                    
-                                    </div>
-                            </div>
-                                    
-                            
-                            <div class="col s11" style = "padding-right: 0px;padding-left: 0px;">
-                                
-                                    
-                                        <div class="col s12 card-panel white" style = " text-align :center; padding-top:10px; height : 110px; ">
-                                          
-                                                  <div class="col s3">
-                                                     <form action="#">
-                                                        <p>
-                                                          <input type="checkbox" id="qes1_1" />
-                                                          <label for="qes1_1">질문 1</label>
-                                                        </p>
-                                                    </form>
-                                                </div>
-                                                 <div class="col s3">
-                                                     <form action="#">
-                                                        <p>
-                                                          <input type="checkbox" id="qes1_2" />
-                                                          <label for="qes1_2">질문 2</label>
-                                                        </p>
-                                                    </form>
-                                                </div>
-                                                 <div class="col s3">
-                                                     <form action="#">
-                                                        <p>
-                                                          <input type="checkbox" id="qes1_3" />
-                                                          <label for="qes1_3">질문 3</label>
-                                                        </p>
-                                                    </form>
-                                                </div>
-                                                 <div class="col s3">
-                                                     <form action="#">
-                                                        <p>
-                                                          <input type="checkbox" id="qes1_4" />
-                                                          <label for="qes1_4">질문 3</label>
-                                                        </p>
-                                                    </form>
-                                                </div>
-                                               <div class="col s3">
-                                                     <form action="#">
-                                                        <p>
-                                                          <input type="checkbox" id="qes1_5" />
-                                                          <label for="qes1_5">질문 5</label>
-                                                        </p>
-                                                    </form>
-                                                    
-                                                </div>
-                                            
-                                        
-                                        </div>
-                                    
-                                
-                            </div>
-                     
-                      
-                            
-                   
+                      <div class = "col s3">
+                      <p>원</p>
+                      </div>
                     </div>
-                     <!--1번 끝-->
-                     <!--2번 시작-->
-                     <div class ="col s12 disappear" id="interest_op_eye2">
-                           <div class="col s1" style = "padding-right: 0px;padding-left: 0px; ">
-                                
-                                    <div class="card-panel teal" style = " text-align :center; height : 110px;">
-                                    <span class="white-text"  style ="text-align: center; ">
-                                      <h6>코</h6>
-                                      
-                                      </span>
-                                    
-                                    </div>
-                            </div>
-                                    
-                            
-                            <div class="col s11" style = "padding-right: 0px;padding-left: 0px;">
-                                
-                                    
-                                        <div class="col s12 card-panel white" style = " text-align :center; padding-top:10px; height : 110px; ">
-                                          
-                                                  <div class="col s3">
-                                                     <form action="#">
-                                                        <p>
-                                                          <input type="checkbox" id="qes2_1" />
-                                                          <label for="qes2_1">질문 1</label>
-                                                        </p>
-                                                    </form>
-                                                </div>
-                                                 <div class="col s3">
-                                                     <form action="#">
-                                                        <p>
-                                                          <input type="checkbox" id="qes2_2" />
-                                                          <label for="qes2_2">질문 2</label>
-                                                        </p>
-                                                    </form>
-                                                </div>
-                                                 <div class="col s3">
-                                                     <form action="#">
-                                                        <p>
-                                                          <input type="checkbox" id="qes2_3" />
-                                                          <label for="qes2_3">질문 3</label>
-                                                        </p>
-                                                    </form>
-                                                </div>
-                                                 <div class="col s3">
-                                                     <form action="#">
-                                                        <p>
-                                                          <input type="checkbox" id="qes2_4" />
-                                                          <label for="qes2_4">질문 3</label>
-                                                        </p>
-                                                    </form>
-                                                </div>
-                                               <div class="col s3">
-                                                     <form action="#">
-                                                        <p>
-                                                          <input type="checkbox" id="qes2_5" />
-                                                          <label for="qes2_5">질문 5</label>
-                                                        </p>
-                                                    </form>
-                                                    
-                                                </div>
-                                            
-                                        
-                                        </div>
-                                    
-                                
-                            </div>
-                     
-                      
-                            
-                   
+                    
+                 <div class="row">
+                      <div class="input-field col s9">
+                        <input id="desire_period" type="text" class="validate">
+                        <label for="desire_period">희망 기간</label>
+                      </div>
+                      <div class = "col s3">
+                      <p>일 이내</p>
+                      </div>
                     </div>
-                     
-                     
-                </div>
-               
-               <!--Choice end-->
-               <!-- send button start-->
-               
-        
+                    
+                  <div class="row" >
+                     <div class="col s12"> 
+                          희망 기간
+                          <input id="desire_time" type="date" class="datepicker">
+                          </div>
+                      </div>
+                    
                     <div class="row">
-                         <div class ="col s12">
-                            <div class = "col s10"><p></p> </div>
-                            <div class = "col s2">
-                                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-                                    <i class="material-icons">send</i>
-                                  </button>
-                            </div>
-                        </div>
-                                              
+                      <div class="input-field col s9">
+                        <input id="sleep_time" type="text" class="validate">
+                        <label for="sleep_time">평균 수면 시간</label>
+                      </div>
+                      <div class = "col s3">
+                      <p>시간</p>
+                      </div>
                     </div>
-                    
-                <!-- send button end-->
-               
-               
-               
-               <form id="ajaxform" action="/saveFileTest.do" method="post" enctype="multipart/form-data">
-            		<input type="text" name="test2"/><br/>
-            		<textarea rows="10" cols="10" name="test3"></textarea><br/>
-            		<input type="file" name="test4" />
-            		<input type="submit" value="Submit" />
-            </form>
-               </div>
-              <!-- right end-->
-           </div>
-     </div>
-     <!-- Part box jQuery-->
-      <script>
-     
-      $(document).ready(function(){
+        <label>선호 지역</label>
+        <select class="browser-default" id="region">
+          <option value="" disabled selected>지역 선택</option>
+          <option value="1">신사</option>
+          <option value="2">강남</option>
+          <option value="3">종로</option>
+        </select>
+        <div class ="row">
+          <div class="col s12">
+            <p> 약물 부작용 </p>
+            <div class="col s6">
+              <p>
+                <input type="checkbox" id="antibiotic" value="antibiotic : yes"/>
+                <label for="antibiotic">항생제</label>
+              </p>
+            </div>
+            <div class="col s6">
+              <p>
+                <input type="checkbox" id="painkiller" value="painkiller : yes"/>
+                <label for="painkiller">진통제</label>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+          <!-- user desire end-->
+    </div>
           
+      <!--left end -->
       
-        //slidebar시작
-        $('.slider').slider({full_width: true});
-        //slidebar끝
-            
-                
-      });
-               
-               
-      
-                
-             
-                    
+      <!--right start-->
+    <div class="col s9">
+          <!--right start-->
+          <!--Userpicture , Wannabe star-->
+      <div class="row">
+        <div class ="col s12">
+           <div class="col s9">
+            <div class = "row"   style=  "width: 100%;">
+              <div class="col s12 card-panel teal" style = " text-align :center;">
+                <span class="white-text"  style ="text-align: center">
+                  <h6>나의 사진</h6>
+                </span>
+              </div>
+            <div class="col s4 card-panel white"  style = " text-align :center;margin-top: 0px;height : 230px">
+              <div class = "row"   style=  "text-align:center;">
+               <form action="#">
+                  <div class="file-field input-field">
+                    <input id="front_face" class="file-path validate" type="file">
+                    <div class="btn">
+                      <span>정면 사진</span>
+                      <input type="file" >
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="col s4 card-panel white" style = " text-align :center;margin-top: 0px;height : 230px">
+              <div class = "row"   style=  "width: 100%;">
+                <form action="#">
+                  <div class="file-field input-field">
+                    <input id="left_face" class="file-path validate" type="file">
+                    <div class="btn">
+                      <span>좌측 사진</span>
+                      <input type="file" >
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="col s4 card-panel white" style = " text-align :center;margin-top: 0px ;height : 230px">
+              <div class = "row"   style=  "width: 100%;">
+                <form action="#">
+                  <div class="file-field input-field">
+                    <input id="right_face" class="file-path validate" type="file">
+                    <div class="btn">
+                      <span>우측 사진</span>
+                      <input type="file" >
+                    </div>
+                  </div>
+                </form>
+              </div>                
+            </div>
+          </div>
+        </div>
+        <div class="col s3">
+          <div class = "row">
+            <div class="col s12 card-panel teal" style = " text-align :center; ">
+              <span class="white-text"  style ="text-align: center">
+                <h6>스타 사진</h6>
+              </span>
+            </div>
+           <div class="col s12 card-panel white" style = " text-align :center;margin-top: 0px;height : 230px">
+              <div class = "row"   style=  "width: 100%;">
+                <form action="#">
+                  <div class="file-field input-field">
+                    <input id="desire_face" class="file-path validate" type="file">
+                    <div class="btn">
+                      <span>스타사진</span>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+         <!--Userpicture , Wannabe starend-->
+         <!-- 관심수술-->
+     <div class="col s12 card-panel teal" style = " text-align :center;  margin-top:-25px;margin-bottom: 10px;">
+      <span class="white-text"  style ="text-align: center">
+        <h6>관심 수술</h6>
+      </span>
+    </div>
+     <!--관심수술-->
          
-      </script>
-      <!-- Part box jQuery end-->
+         <!--Choice start -->
+   <% @tags.each do |key, value| %>
+    <div class="row" id="interest_op">
+      <div class ="col s12 disappear" id="interest_op_<%= key %>">
+        <div class="col s1" style = "padding-right: 0px;padding-left: 0px; ">
+          <div class="card-panel teal" style = " text-align :center; height : 110px;">
+            <span class="white-text"  style ="text-align: center; ">
+              <h6><%=value[0]%></h6>
+            </span>
+          </div>
+        </div>
+        <!--체크박스 시작-->
+        <div class="col s11" style = "padding-right: 0px;padding-left: 0px;">
+          <div class="col s12 card-panel white" style = " text-align :center; padding-top:10px; height : 110px; ">
+            <% for i in (1..value[1].length) do%>
+              <div class="col s3">
+                <form action="#">
+                  <p>
+                    <input type="checkbox" id="<%= key %>_<%= i %>_val" name="<%= key %>" value="<%= value[1][i-1] %> : no" />
+                    <label for="<%= key %>_<%= i %>_val"><%= value[1][i-1] %></label>
+                  </p>
+                </form>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <!--체크박스 끝-->
+      </div>
+    </div>
+   <% end %>
+         <!--Choice end-->
+         <!-- send button start-->
+    <div class="row">
+     <div class ="col s12">
+      <div class = "col s10"><p></p> </div>
+        <div class = "col s2">
+          <button class="btn waves-effect waves-light" id="submit_button" type="submit" name="action">Submit
+            <i class="material-icons">send</i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- send button end-->
+   </div>
+  <!-- right end-->
+ </div>
+</div>
+<!-- Part box jQuery-->
+<script>
 
-
+$(document).ready(function(){
+    
+    ////v수술 부분 선택시작 //
+      alert("hi4");
+      <% @tags.each do |key, value| %>
+          $('#<%= key %>').on({
+              mouseover: function(){
+                  $('#<%= key %>').addClass('check');
+              },
+               mouseleave: function(){
+                   $('#<%= key %>').removeClass('check');
+              },
+              click: function(){
+                  if($('#<%= key %>').hasClass("form-box")){      
+                    $('#<%= key %>').removeClass('form-box').addClass('check');
+                    $('#interest_op_<%= key %>').removeClass('disappear').addClass('appear');
+                    $('#<%= key %>').off("mouseleave");
+                  }    
+                  else if ($('#<%= key %>').hasClass("check")){
+                    $('#<%= key %>').removeClass('check').addClass('form-box');
+                    $('#interest_op_<%= key %>').removeClass('appear').addClass('disappear');   
+                    $('#<%= key %>').on('mouseleave', function(){
+                            $('#<%= key %>').removeClass('check');
+                            });    
+                  }
+              }
+          });
+          <% for i in (1..value[1].length) do %>
+            $("#<%=key%>_<%=i%>_val").click(function(){
+              $("#<%=key%>_<%=i%>_val").attr('value',"<%= value[1][i-1] %> : yes");
+            });
+          <% end %>
+      <% end %>
+      
+      $('#submit_button').click(function(){
+        var region = $("#region option:selected").val();
+        var checking1 = $("#antibiotic").is(":checked")
+        var checking2 = $("#painkiller").is(":checked")
+        if(checking1){
+          var antibiotic = $("#antibiotic").val()
+        }
+        if(checking2){
+          var painkiller = $("#painkiller").val()
+        }
+        
+        $.ajax({
+          data: {
+            desire_cost: $("#desire_cost").val(),
+            // desire_period: $("#desire_period ").val(),
+            desire_time: $("#desire_time").val(),
+            sleep_time: $("#sleep_time").val(),
+            region: region,
+            antibiotic: antibiotic,
+            painkiller: painkiller
+          },
+          url:"/estimating/requesting_complete",
+          success: function(){
+            alert("good");
+          }
+        });
+       <% @tags.each do |key, value| %>
+         if($('#<%=key%>').hasClass('check')){
+            $.ajax({
+              data: {
+                part: $("#<%= key %>_val").html(),
+                <% for i in (1..value[1].length) do %>
                  
+                  <%if i != value[1].length %>
+                    check_values<%= i %>: $("#<%= key %>_<%= i %>_val").val(),
+                  <% else %>
+                    check_values<%= i %>: $("#<%= key %>_<%= i %>_val").val()
+                  <% end %>
+                
+                <% end %>
+                },
+              method: "get",
+              url: "/estimating/requesting_content",
+              success: function(){
+                alert("hi");
+              },
+              error: function(){
+                alert("bye");
+              }
+            });
+         }
+       <% end %>
+     });
+});
+
+//slider js
+$('.slider').slider({full_width: true});
+</script>
+<!-- Part box jQuery end-->

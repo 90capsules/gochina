@@ -29,9 +29,23 @@
       
       
       <% if codi_signed_in? %>
-      <li><a href="/estimating/codi_index" style="color: black;">견적함</a></li>
+        <li>
+          <!-- Dropdown Trigger -->
+          <a class='dropdown' href='#' data-activates='dropdown1' style="color: black;">
+            견적함&nbsp&nbsp<i class="fa fa-angle-down" style="font-size: 18px; display: inline;"></i>
+          </a>
+        
+          <!-- Dropdown Structure -->
+          <ul id='dropdown1' class='dropdown-content'>
+            <li><a href="/estimating/counsel_waiting" style="color: black; font-size:1rem;">상담대기</a></li>
+            <li><a href="/estimating/counsel_complete" style="color: black; font-size:1rem;">상담완료</a></li>
+            <li class="divider"></li>
+            <li><a href="/estimating/manage_waiting" style="color: black; font-size:1rem;">추가상담대기</a></li>
+            <li><a href="/estimating/manage_complete" style="color: black; font-size:1rem;">추가상담완료</a></li>
+          </ul>
+        </li>
       <% else %>
-      <li><a href="/estimating/requesting" style="color: black;">견적신청</a></li>
+        <li><a href="/estimating/requesting" style="color: black;">견적신청</a></li>
       <% end %>
       
       <li><a href="/hospital/index" style="color: black;">병원정보</a></li>
@@ -52,3 +66,20 @@
     <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
   </div>
 </nav>
+<script>
+$(document).ready(function(){
+      $('.dropdown').dropdown({
+      inDuration: 300,
+      outDuration: 225,
+      constrain_width: false, // Does not change width of dropdown to that of the activator
+      hover: true, // Activate on hover
+      gutter: 0, // Spacing from edge
+      belowOrigin: true, // Displays dropdown below the button
+      alignment: 'left' // Displays dropdown with edge aligned to the left of button
+    }
+  );
+  
+  
+});
+
+</script>

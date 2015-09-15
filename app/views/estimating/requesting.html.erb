@@ -185,10 +185,10 @@
          
          <!--Choice start -->
    <% @tags.each do |key, value| %>
-    <div class="row" id="interest_op">
+    <div class="row" id="interest_op" style = "margin-bottom: 0px;">
       <div class ="col s12 disappear" id="interest_op_<%= key %>">
         <div class="col s1" style = "padding-right: 0px;padding-left: 0px; ">
-          <div class="card-panel teal" style = " text-align :center; height : 110px;">
+          <div class="card-panel teal" style = " text-align :center; height : 125px;">
             <span class="white-text"  style ="text-align: center; ">
               <h6><%=value[0]%></h6>
             </span>
@@ -196,7 +196,7 @@
         </div>
         <!--체크박스 시작-->
         <div class="col s11" style = "padding-right: 0px;padding-left: 0px;">
-          <div class="col s12 card-panel white" style = " text-align :center; padding-top:10px; height : 110px; ">
+          <div class="col s12 card-panel white" style = " text-align :center; height : 125px; ">
             <% for i in (1..value[1].length) do%>
               <div class="col s3">
                 <form action="#">

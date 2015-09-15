@@ -112,41 +112,43 @@
               </div>
             <div class="col s4 card-panel white"  style = " text-align :center;margin-top: 0px;height : 230px">
               <div class = "row"   style=  "text-align:center;">
-               <form action="#">
-                  <div class="file-field input-field">
-                    <input id="front_face" class="file-path validate" type="file">
-                    <div class="btn">
-                      <span>정면 사진</span>
-                      <input type="file" >
-                    </div>
-                  </div>
-                </form>
+              
+              
+                     <article style = "position: absolute;">
+                         <label for="files" class="button" style = "position: absolute; text-align:center"> <span class ="white-text" >정면 사진</span> </label>
+                          <input id="front" type="file" style = "position: absolute; background-color: transparent;  cursor: pointer;  border: none; height:230px; width : 230px" >
+                          <output id="result_front"style = "position: absolute;">
+                      </article>
+                      
+                      
               </div>
             </div>
             <div class="col s4 card-panel white" style = " text-align :center;margin-top: 0px;height : 230px">
               <div class = "row"   style=  "width: 100%;">
-                <form action="#">
-                  <div class="file-field input-field">
-                    <input id="left_face" class="file-path validate" type="file">
-                    <div class="btn">
-                      <span>좌측 사진</span>
-                      <input type="file" >
-                    </div>
-                  </div>
-                </form>
+              
+                  <article style = "position: absolute;">
+                         <label for="files" class="button" style = "position: absolute; text-align:center"> <span class ="white-text" >좌측 사진</span> </label>
+                          <input id="left" type="file" style = "position: absolute; background-color: transparent;  cursor: pointer;  border: none; height:230px; width : 230px" >
+                          <output id="result_left"style = "position: absolute;">
+                      </article>
+                  
+                 
+                   
+                
               </div>
             </div>
             <div class="col s4 card-panel white" style = " text-align :center;margin-top: 0px ;height : 230px">
               <div class = "row"   style=  "width: 100%;">
-                <form action="#">
-                  <div class="file-field input-field">
-                    <input id="right_face" class="file-path validate" type="file">
-                    <div class="btn">
-                      <span>우측 사진</span>
-                      <input type="file" >
-                    </div>
-                  </div>
-                </form>
+              
+                
+                   <article style = "position: absolute;">
+                         <label for="files" class="button" style = "position: absolute; text-align:center"> <span class ="white-text" >우측 사진</span> </label>
+                          <input id="right" type="file" style = "position: absolute; background-color: transparent;  cursor: pointer;  border: none; height:230px; width : 230px" >
+                          <output id="result_right"style = "position: absolute;">
+                      </article>
+                
+                
+                
               </div>                
             </div>
           </div>
@@ -160,14 +162,11 @@
             </div>
            <div class="col s12 card-panel white" style = " text-align :center;margin-top: 0px;height : 230px">
               <div class = "row"   style=  "width: 100%;">
-                <form action="#">
-                  <div class="file-field input-field">
-                    <input id="desire_face" class="file-path validate" type="file">
-                    <div class="btn">
-                      <span>스타사진</span>
-                    </div>
-                  </div>
-                </form>
+                 <article style = "position: absolute;">
+                         <label for="files" class="button_240" style = "position: absolute; text-align:center"> <span class ="white-text" >스타 사진</span> </label>
+                          <input id="star" type="file" style = "position: absolute; background-color: transparent;  cursor: pointer;  border: none; height:230px; width : 240px" >
+                          <output id="result_star"style = "position: absolute;">
+                      </article>
               </div>
             </div>
           </div>
@@ -232,6 +231,190 @@
 </div>
 <!-- Part box jQuery-->
 <script>
+
+window.onload = function(){
+        
+    //Check File API support
+    
+    
+    //정면 사진 start//
+    if(window.File && window.FileList && window.FileReader)
+    {
+        var filesInput = document.getElementById("front");
+        
+        filesInput.addEventListener("change", function(event){
+            
+            var files = event.target.files; //FileList object
+            var output = document.getElementById("result_front");
+            
+            for(var i = 0; i< files.length; i++)
+            {
+                var file = files[i];
+                
+                //Only pics
+                if(!file.type.match('image'))
+                  continue;
+                
+                var picReader = new FileReader();
+                
+                picReader.addEventListener("load",function(event){
+                    
+                    var picFile = event.target;
+                    
+                    var div = document.createElement("div");
+                    
+                    div.innerHTML = "<img class='thumbnail' src='" + picFile.result + "'" +
+                            "title='" + picFile.name + "' style = 'width : 230px; height : 230px'/>";
+                    
+                    output.insertBefore(div,null);            
+                
+                });
+                
+                 //Read the image
+                picReader.readAsDataURL(file);
+            }                               
+           
+        });
+    }
+    else
+    {
+        console.log("Your browser does not support File API");
+    }
+    //정면 사진 end//
+     //좌측 사진 start//
+    if(window.File && window.FileList && window.FileReader)
+    {
+        var filesInput = document.getElementById("left");
+        
+        filesInput.addEventListener("change", function(event){
+            
+            var files = event.target.files; //FileList object
+            var output = document.getElementById("result_left");
+            
+            for(var i = 0; i< files.length; i++)
+            {
+                var file = files[i];
+                
+                //Only pics
+                if(!file.type.match('image'))
+                  continue;
+                
+                var picReader = new FileReader();
+                
+                picReader.addEventListener("load",function(event){
+                    
+                    var picFile = event.target;
+                    
+                    var div = document.createElement("div");
+                    
+                    div.innerHTML = "<img class='thumbnail' src='" + picFile.result + "'" +
+                            "title='" + picFile.name + "' style = 'width : 230px; height : 230px; z-index : 9;'>";
+                    
+                    output.insertBefore(div,null);            
+                
+                });
+                
+                 //Read the image
+                picReader.readAsDataURL(file);
+            }                               
+           
+        });
+    }
+    else
+    {
+        console.log("Your browser does not support File API");
+    }
+    //좌측 사진 end//
+     //우측 사진 start//
+    if(window.File && window.FileList && window.FileReader)
+    {
+        var filesInput = document.getElementById("right");
+        
+        filesInput.addEventListener("change", function(event){
+            
+            var files = event.target.files; //FileList object
+            var output = document.getElementById("result_right");
+            
+            for(var i = 0; i< files.length; i++)
+            {
+                var file = files[i];
+                
+                //Only pics
+                if(!file.type.match('image'))
+                  continue;
+                
+                var picReader = new FileReader();
+                
+                picReader.addEventListener("load",function(event){
+                    
+                    var picFile = event.target;
+                    
+                    var div = document.createElement("div");
+                    
+                    div.innerHTML = "<img class='thumbnail' src='" + picFile.result + "'" +
+                            "title='" + picFile.name + "' style = 'width : 230px; height : 230px; z-index : 9;'>";
+                    
+                    output.insertBefore(div,null);            
+                
+                });
+                
+                 //Read the image
+                picReader.readAsDataURL(file);
+            }                               
+           
+        });
+    }
+    else
+    {
+        console.log("Your browser does not support File API");
+    }
+    //우측 사진 end//
+     //스타 사진 start//
+    if(window.File && window.FileList && window.FileReader)
+    {
+        var filesInput = document.getElementById("star");
+        
+        filesInput.addEventListener("change", function(event){
+            
+            var files = event.target.files; //FileList object
+            var output = document.getElementById("result_star");
+            
+            for(var i = 0; i< files.length; i++)
+            {
+                var file = files[i];
+                
+                //Only pics
+                if(!file.type.match('image'))
+                  continue;
+                
+                var picReader = new FileReader();
+                
+                picReader.addEventListener("load",function(event){
+                    
+                    var picFile = event.target;
+                    
+                    var div = document.createElement("div");
+                    
+                    div.innerHTML = "<img class='thumbnail' src='" + picFile.result + "'" +
+                            "title='" + picFile.name + "' style = 'width : 240px; height : 230px; z-index : 9;'>";
+                    
+                    output.insertBefore(div,null);            
+                
+                });
+                
+                 //Read the image
+                picReader.readAsDataURL(file);
+            }                               
+           
+        });
+    }
+    else
+    {
+        console.log("Your browser does not support File API");
+    }
+    //스타 사진 end//
+}
+
 
 $(document).ready(function(){
     

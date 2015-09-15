@@ -31,16 +31,19 @@ Rails.application.routes.draw do
   get 'hospital/detail'
 
   get 'estimating/requesting'
-
   get 'estimating/requesting_complete'
 
+  get 'estimating/codi_index'
+
   get 'estimating/manage'
+  get 'estimating/manage_waiting'
+  get 'estimating/manage_complete'
 
   get 'estimating/counsel'
-
+  get 'estimating/counsel_waiting'
   get 'estimating/couunsel_complete'
+  
 
-  get 'estimating/codi_index'
 
 
   devise_for :codis, controllers: {

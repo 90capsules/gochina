@@ -39,9 +39,18 @@ class EstimatingController < ApplicationController
   def manage
   end
 
+  def manage_waiting
+  end
+  
+  def manage_complete
+  end
+  
   def counsel
   end
 
+  def counsel_waiting
+  end
+  
   def couunsel_complete
   end
 

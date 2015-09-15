@@ -29,21 +29,25 @@
       
       
       <% if codi_signed_in? %>
-      <li><a href="/estimating/codi_index">견적함</a></li>
+      <li><a href="/estimating/codi_index" style="color: black;">견적함</a></li>
       <% else %>
-      <li><a href="/estimating/requesting">견적신청</a></li>
+      <li><a href="/estimating/requesting" style="color: black;">견적신청</a></li>
       <% end %>
       
-      <li><a href="/hospital/index">병원정보</a></li>
-      <li><a href="/review/index">후기</a></li>
+      <li><a href="/hospital/index" style="color: black;">병원정보</a></li>
+      <li><a href="/review/index" style="color: black;">후기</a></li>
+     
      <li class="<%= params[:bulletin_id] == '1' ? 'active' : '' %>"><%= link_to '공지사항', bulletin_posts_path('1') %></li>
      <li class="<%= params[:bulletin_id] == '2' ? 'active' : '' %>"><%= link_to '새소식', bulletin_posts_path('2') %></li>
      <li class="<%= params[:bulletin_id] == '3' ? 'active' : '' %>"><%= link_to '가입인사', bulletin_posts_path('3') %></li>
      <li class="<%= params[:bulletin_id] == '4' ? 'active' : '' %>"><%= link_to '갤러리', bulletin_posts_path('4') %></li>  
+      
+      
+     
      </ul>
 
     <ul id="nav-mobile" class="side-nav">
-      <li><a href="#">Navbar Link</a></li>
+      <li style="color: black;"><a href="#">Navbar Link</a></li>
     </ul>
     <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
   </div>

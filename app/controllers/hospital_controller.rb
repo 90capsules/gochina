@@ -1,11 +1,13 @@
 class HospitalController < ApplicationController
+  before_action :authenticate_user!, only: [:score_evaluate]
+  layout false
+  
   def index
     @hospitals = Hospital.all
     
   end
 
   def detail
-    
       @a_hospital = Hospital.where(:id => params[:id].to_i).take
      
   end
@@ -27,8 +29,3 @@ class HospitalController < ApplicationController
   end
 
 end
-# t.integer :user_id
-#       t.text :content
-#       t.integer :hospital_id
-#       t.integer :hos_score
-

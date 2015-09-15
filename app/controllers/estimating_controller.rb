@@ -51,9 +51,10 @@ class EstimatingController < ApplicationController
   def counsel_waiting
   end
   
-  def couunsel_complete
+  def counsel_complete
   end
 
   def codi_index
+    redirect_to '/estimating/counsel_waiting'
   end
 end

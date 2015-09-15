@@ -54,7 +54,7 @@
                   <div class="row" >
                      <div class="col s12"> 
                           희망 기간
-                          <input type="date" class="datepicker">
+                          <input id="desire_time" type="date" class="datepicker">
                           </div>
                       </div>
                     
@@ -68,7 +68,7 @@
                       </div>
                     </div>
         <label>선호 지역</label>
-        <select class="browser-default">
+        <select class="browser-default" id="region">
           <option value="" disabled selected>지역 선택</option>
           <option value="1">신사</option>
           <option value="2">강남</option>
@@ -78,20 +78,16 @@
           <div class="col s12">
             <p> 약물 부작용 </p>
             <div class="col s6">
-               <form action="#">
-                  <p>
-                    <input type="checkbox" id="test5" />
-                    <label for="test5">항생제</label>
-                  </p>
-                </form>
+              <p>
+                <input type="checkbox" id="antibiotic" value="antibiotic : yes"/>
+                <label for="antibiotic">항생제</label>
+              </p>
             </div>
             <div class="col s6">
-               <form action="#">
-                  <p>
-                    <input type="checkbox" id="test6" />
-                    <label for="test6">진통제</label>
-                  </p>
-              </form>
+              <p>
+                <input type="checkbox" id="painkiller" value="painkiller : yes"/>
+                <label for="painkiller">진통제</label>
+              </p>
             </div>
           </div>
         </div>
@@ -118,7 +114,7 @@
               <div class = "row"   style=  "text-align:center;">
                <form action="#">
                   <div class="file-field input-field">
-                    <input class="file-path validate" type="file">
+                    <input id="front_face" class="file-path validate" type="file">
                     <div class="btn">
                       <span>정면 사진</span>
                       <input type="file" >
@@ -131,7 +127,7 @@
               <div class = "row"   style=  "width: 100%;">
                 <form action="#">
                   <div class="file-field input-field">
-                    <input class="file-path validate" type="file">
+                    <input id="left_face" class="file-path validate" type="file">
                     <div class="btn">
                       <span>좌측 사진</span>
                       <input type="file" >
@@ -144,9 +140,9 @@
               <div class = "row"   style=  "width: 100%;">
                 <form action="#">
                   <div class="file-field input-field">
-                    <input class="file-path validate" type="file">
+                    <input id="right_face" class="file-path validate" type="file">
                     <div class="btn">
-                      <span>좌측 사진</span>
+                      <span>우측 사진</span>
                       <input type="file" >
                     </div>
                   </div>
@@ -166,10 +162,9 @@
               <div class = "row"   style=  "width: 100%;">
                 <form action="#">
                   <div class="file-field input-field">
-                    <input class="file-path validate" type="file">
+                    <input id="desire_face" class="file-path validate" type="file">
                     <div class="btn">
                       <span>스타사진</span>
-                      <input type="file" >
                     </div>
                   </div>
                 </form>
@@ -199,21 +194,22 @@
             </span>
           </div>
         </div>
-              
+        <!--체크박스 시작-->
         <div class="col s11" style = "padding-right: 0px;padding-left: 0px;">
           <div class="col s12 card-panel white" style = " text-align :center; padding-top:10px; height : 110px; ">
             <% for i in (1..value[1].length) do%>
               <div class="col s3">
                 <form action="#">
                   <p>
-                    <input type="checkbox" id="<%= key %>_<%= i %>" />
-                    <label for="<%= key %>_<%= i %>"><%= value[1][i-1] %></label>
+                    <input type="checkbox" id="<%= key %>_<%= i %>_val" name="<%= key %>" value="<%= value[1][i-1] %> : no" />
+                    <label for="<%= key %>_<%= i %>_val"><%= value[1][i-1] %></label>
                   </p>
                 </form>
               </div>
             <% end %>
           </div>
         </div>
+        <!--체크박스 끝-->
       </div>
     </div>
    <% end %>
@@ -264,27 +260,65 @@ $(document).ready(function(){
                   }
               }
           });
+          <% for i in (1..value[1].length) do %>
+            $("#<%=key%>_<%=i%>_val").click(function(){
+              $("#<%=key%>_<%=i%>_val").attr('value',"<%= value[1][i-1] %> : yes");
+            });
+          <% end %>
       <% end %>
       
       $('#submit_button').click(function(){
-         <% @tags.each do |key, value| %>
-           if($('#<%=key%>').hasClass('check')){
-             alert("click");
-              $.ajax({
-                data: {
-                  message: $("#<%= key %>_val").html()
-                  },
-                method: "get",
-                url: "/estimating/requesting_complete",
-                success: function(){
-                  alert("hi");
+        var region = $("#region option:selected").val();
+        var checking1 = $("#antibiotic").is(":checked")
+        var checking2 = $("#painkiller").is(":checked")
+        if(checking1){
+          var antibiotic = $("#antibiotic").val()
+        }
+        if(checking2){
+          var painkiller = $("#painkiller").val()
+        }
+        
+        $.ajax({
+          data: {
+            desire_cost: $("#desire_cost").val(),
+            // desire_period: $("#desire_period ").val(),
+            desire_time: $("#desire_time").val(),
+            sleep_time: $("#sleep_time").val(),
+            region: region,
+            antibiotic: antibiotic,
+            painkiller: painkiller
+          },
+          url:"/estimating/requesting_complete",
+          success: function(){
+            alert("good");
+          }
+        });
+       <% @tags.each do |key, value| %>
+         if($('#<%=key%>').hasClass('check')){
+            $.ajax({
+              data: {
+                part: $("#<%= key %>_val").html(),
+                <% for i in (1..value[1].length) do %>
+                 
+                  <%if i != value[1].length %>
+                    check_values<%= i %>: $("#<%= key %>_<%= i %>_val").val(),
+                  <% else %>
+                    check_values<%= i %>: $("#<%= key %>_<%= i %>_val").val()
+                  <% end %>
+                
+                <% end %>
                 },
-                error: function(){
-                  alert("bye");
-                }
-              });
-           }
-         <% end %>
+              method: "get",
+              url: "/estimating/requesting_content",
+              success: function(){
+                alert("hi");
+              },
+              error: function(){
+                alert("bye");
+              }
+            });
+         }
+       <% end %>
      });
 });
 </script>

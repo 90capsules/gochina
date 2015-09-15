@@ -18,4 +18,23 @@
 .appear{ display:block;
   
 }
+
+.button {
+  background-color: #009688;
+  border: none;
+  width : 230px;
+  height : 25px;
+  position: absolute;
+  
+  z-index : 5;
+}
+.button_240{
+  background-color: #009688;
+  border: none;
+  width : 240px;
+  height : 25px;
+  position: absolute;
+  
+  z-index : 5;
+}
 /*# sourceMappingURL=estimating.css.map */

@@ -12,8 +12,7 @@
           </div>
           <span class="white-text"  style ="text-align: center">
             <h5></h5>
-            <h6>年龄 :  </h6>
-            <h6>性別 : </h6>
+            <h6>코디 :  </h6>
           </span>
         </div>
           <!-- user infoend-->
@@ -27,71 +26,19 @@
                       </div> 
                   <% end %>
               </div>
+                <div id="wanted_op">
+               
+                    
+                    
+                </div>
           </div>
           <!-- user part test-->
           <!-- user desire-->
-          <div class="card-panel white">    
-                  <div class="row">
-                      <div class="input-field col s9">
-                        <input id="desire_cost" type="text" class="validate">
-                        <label for="desire_cost"><span style = "text-color : black;">희망 비용</span></label>
-                      </div>
-                      <div class = "col s3">
-                      <p>원</p>
-                      </div>
-                    </div>
+              
+
                     
-                 <div class="row">
-                      <div class="input-field col s9">
-                        <input id="desire_period" type="text" class="validate">
-                        <label for="desire_period">희망 기간</label>
-                      </div>
-                      <div class = "col s3">
-                      <p>일 이내</p>
-                      </div>
-                    </div>
-                    
-                  <div class="row" >
-                     <div class="col s12"> 
-                          희망 기간
-                          <input id="desire_time" type="date" class="datepicker">
-                          </div>
-                      </div>
-                    
-                    <div class="row">
-                      <div class="input-field col s9">
-                        <input id="sleep_time" type="text" class="validate">
-                        <label for="sleep_time">평균 수면 시간</label>
-                      </div>
-                      <div class = "col s3">
-                      <p>시간</p>
-                      </div>
-                    </div>
-        <label>선호 지역</label>
-        <select class="browser-default" id="region">
-          <option value="" disabled selected>지역 선택</option>
-          <option value="1">신사</option>
-          <option value="2">강남</option>
-          <option value="3">종로</option>
-        </select>
-        <div class ="row">
-          <div class="col s12">
-            <p> 약물 부작용 </p>
-            <div class="col s6">
-              <p>
-                <input type="checkbox" id="antibiotic" value="antibiotic : yes"/>
-                <label for="antibiotic">항생제</label>
-              </p>
-            </div>
-            <div class="col s6">
-              <p>
-                <input type="checkbox" id="painkiller" value="painkiller : yes"/>
-                <label for="painkiller">진통제</label>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+                
+      
           <!-- user desire end-->
     </div>
           
@@ -103,51 +50,40 @@
           <!--Userpicture , Wannabe star-->
       <div class="row">
         <div class ="col s12">
-           <div class="col s9">
+            <div class = "row"   style=  "width: 100%;">
+                <div class = "col s4 card-panel teal" >
+                이름
+                </div>
+                <div class = "col s4 card-panel teal" >
+                ID
+                </div>
+                <div class = "col s4 card-panel teal" >
+                예약날짜
+                </div>
+            </div>
+            <div class="col s9">
+            
+               
             <div class = "row"   style=  "width: 100%;">
               <div class="col s12 card-panel teal" style = " text-align :center;">
                 <span class="white-text"  style ="text-align: center">
-                  <h6>나의 사진</h6>
+                  <h6>회원 사진</h6>
                 </span>
               </div>
             <div class="col s4 card-panel white"  style = " text-align :center;margin-top: 0px;height : 230px">
-              <div class = "row"   style=  "text-align:center;">
-               <form action="#">
-                  <div class="file-field input-field">
-                    <input id="front_face" class="file-path validate" type="file">
-                    <div class="btn">
-                      <span>정면 사진</span>
-                      <input type="file" >
-                    </div>
-                  </div>
-                </form>
+              <div class = "row"   >
+                <img class="materialboxed" data-caption="좌측 사진" width="100%" src="http://mimgnews2.naver.net/image/022/2015/09/14/20150914004555_0_99_20150914203713.jpg?type=w540">
               </div>
             </div>
             <div class="col s4 card-panel white" style = " text-align :center;margin-top: 0px;height : 230px">
-              <div class = "row"   style=  "width: 100%;">
-                <form action="#">
-                  <div class="file-field input-field">
-                    <input id="left_face" class="file-path validate" type="file">
-                    <div class="btn">
-                      <span>좌측 사진</span>
-                      <input type="file" >
-                    </div>
-                  </div>
-                </form>
+              <div class = "row" >
+                <img class="materialboxed" data-caption="정면 사진" width="100%" src="http://mimgnews2.naver.net/image/022/2015/09/14/20150914004555_0_99_20150914203713.jpg?type=w540">
               </div>
             </div>
             <div class="col s4 card-panel white" style = " text-align :center;margin-top: 0px ;height : 230px">
-              <div class = "row"   style=  "width: 100%;">
-                <form action="#">
-                  <div class="file-field input-field">
-                    <input id="right_face" class="file-path validate" type="file">
-                    <div class="btn">
-                      <span>우측 사진</span>
-                      <input type="file" >
-                    </div>
-                  </div>
-                </form>
-              </div>                
+              <div class = "row" >
+                <img class="materialboxed" data-caption="우측 사진" width="100%" src="http://mimgnews2.naver.net/image/022/2015/09/14/20150914004555_0_99_20150914203713.jpg?type=w540">
+              </div>              
             </div>
           </div>
         </div>
@@ -158,16 +94,9 @@
                 <h6>스타 사진</h6>
               </span>
             </div>
-           <div class="col s12 card-panel white" style = " text-align :center;margin-top: 0px;height : 230px">
-              <div class = "row"   style=  "width: 100%;">
-                <form action="#">
-                  <div class="file-field input-field">
-                    <input id="desire_face" class="file-path validate" type="file">
-                    <div class="btn">
-                      <span>스타사진</span>
-                    </div>
-                  </div>
-                </form>
+            <div class="col s12 card-panel white" style = " text-align :center;margin-top: 0px;height : 230px">
+              <div class = "row" >
+                <img class="materialboxed" data-caption="스타 사진" width="100%" src="http://mimgnews2.naver.net/image/022/2015/09/14/20150914004555_0_99_20150914203713.jpg?type=w540">
               </div>
             </div>
           </div>
@@ -178,7 +107,7 @@
          <!-- 관심수술-->
      <div class="col s12 card-panel teal" style = " text-align :center;  margin-top:-25px;margin-bottom: 10px;">
       <span class="white-text"  style ="text-align: center">
-        <h6>관심 수술</h6>
+        <h6>요청 수술</h6>
       </span>
     </div>
      <!--관심수술-->
@@ -324,5 +253,10 @@ $(document).ready(function(){
 
 //slider js
 $('.slider').slider({full_width: true});
+
+
+
+
+
 </script>
 <!-- Part box jQuery end-->

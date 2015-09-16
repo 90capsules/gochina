@@ -31,7 +31,7 @@ class EstimatingController < ApplicationController
     a_requesting_content = RequestingContent.new()
     params.each do |key, value|
       if key == "part" 
-        a_requesting_content.content = "#{key} : #{value} \n"
+        a_requesting_content.content = "#{key} : #{value} \n 요청부위 "
       else
         a_requesting_content.content += "#{value} \n"
       end

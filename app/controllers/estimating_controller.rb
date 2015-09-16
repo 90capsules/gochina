@@ -1,6 +1,12 @@
 class EstimatingController < ApplicationController
+  
+  
+  
+  
+  
+  
   def requesting
-
+    
 
     unless user_signed_in?
       redirect_to '/users/sign_in'
@@ -70,12 +76,15 @@ class EstimatingController < ApplicationController
       'breast'=>['乳房', ['가슴 답변1','가슴 답변2','가슴 답변3']],
       'fat'=>['吸脂', ['지방 답변1','지방 답변2','지방 답변3','지방 답변4']],
       }
-    
+    @each_requesting = Requesting.find(params[:id])    
     
     
   end
 
   def counsel_waiting
+    
+    @all_requesting = Requesting.all
+  
   end
   
   def counsel_complete

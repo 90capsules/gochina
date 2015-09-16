@@ -1,4 +1,9 @@
 class MypageController < ApplicationController
+  
+  @all_counsels = Counsel.all
+  
+  
+  
   def trace
   end
 
@@ -15,5 +20,8 @@ class MypageController < ApplicationController
   end
   
   def estimating_box
+    
+    
+    
   end
 end

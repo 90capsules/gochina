@@ -9,7 +9,7 @@ class CreateRequestings < ActiveRecord::Migration
       t.string :prefer_img
       t.datetime :want_time
       t.string :prefer_region
-      t.text :special
+      t.string :desire_cost
       t.string :switch, default: "on"
       t.string :sleep_time
       t.string :drug_sideeffect

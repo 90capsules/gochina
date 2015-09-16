@@ -134,6 +134,7 @@ ActiveRecord::Schema.define(version: 20150916130041) do
     t.string   "prefer_img"
     t.datetime "want_time"
     t.string   "prefer_region"
+    t.string   "desire_cost"
     t.text     "special"
     t.string   "switch",          default: "on"
     t.string   "sleep_time"

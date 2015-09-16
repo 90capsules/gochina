@@ -200,7 +200,7 @@
               <div class="col s3">
                 <form action="#">
                   <p>
-                    <input type="checkbox" id="<%= key %>_<%= i %>_val" name="<%= key %>" value="<%= value[1][i-1] %> : no" />
+                    <input type="checkbox" id="<%= key %>_<%= i %>_val" name="<%= key %>" value="<%= value[1][i-1] %>" />
                     <label for="<%= key %>_<%= i %>_val"><%= value[1][i-1] %></label>
                   </p>
                 </form>
@@ -443,23 +443,29 @@ $(document).ready(function(){
                   }
               }
           });
-          <% for i in (1..value[1].length) do %>
-            $("#<%=key%>_<%=i%>_val").click(function(){
-              $("#<%=key%>_<%=i%>_val").attr('value',"<%= value[1][i-1] %> : yes");
-            });
-          <% end %>
       <% end %>
       
       $('#submit_button').click(function(){
         var region = $("#region option:selected").val();
-        var checking1 = $("#antibiotic").is(":checked")
-        var checking2 = $("#painkiller").is(":checked")
+        var checking1 = $("#antibiotic").is(":checked");
+        var checking2 = $("#painkiller").is(":checked");
         if(checking1){
           var antibiotic = $("#antibiotic").val()
         }
         if(checking2){
           var painkiller = $("#painkiller").val()
         }
+        
+        <% @tags.each do |key, value| %>
+        <% for i in (1..value[1].length) do %>
+        var checking_val<%= i %> = $("#<%= key %>_<%= i %>_val").is(":checked");
+        if(checking_val<%= i %>){
+          $("#<%=key%>_<%=i%>_val").attr("id","<%= key %>_<%= i %>_yes")
+        } else{
+          $("#<%=key%>_<%=i%>_val").attr("id","<%= key %>_<%= i %>_no")
+        }
+        <% end %>
+        <% end %>
         
         $.ajax({
           data: {
@@ -476,19 +482,19 @@ $(document).ready(function(){
             alert("good");
           }
         });
+        
        <% @tags.each do |key, value| %>
-         if($('#<%=key%>').hasClass('check')){
+          
+         if($("#<%=key%>").hasClass('check')){
             $.ajax({
               data: {
                 part: $("#<%= key %>_val").html(),
                 <% for i in (1..value[1].length) do %>
-                 
                   <%if i != value[1].length %>
-                    check_values<%= i %>: $("#<%= key %>_<%= i %>_val").val(),
+                    check_values<%= i %>: $("#<%= key %>_<%= i %>_yes").val(),
                   <% else %>
-                    check_values<%= i %>: $("#<%= key %>_<%= i %>_val").val()
+                    check_values<%= i %>: $("#<%= key %>_<%= i %>_yes").val()
                   <% end %>
-                
                 <% end %>
                 },
               method: "get",

@@ -74,7 +74,7 @@ class EstimatingController < ApplicationController
       'eye' => ['眼睛', ['좌우가 길다','좌우가 좁다','아래 위 폭이 넓다','아래 위 폭이 좁다','눈두덩이 두껍다','눈두덩이 꺼졌다']],
       'nose'=>['鼻子', ['메부리코','콧볼이 넓다','들창코','화살코','콧대가 없다','콧망울이 없다']],
       'breast'=>['乳房', ['가슴 답변1','가슴 답변2','가슴 답변3']],
-      'fat'=>['吸脂', ['지방 답변1','지방 답변2','지방 답변3','지방 답변4']],
+      'fat'=>['吸脂', ['지방 답변1','지방 답변2','지방 답변3','지방 답변4']]
       }
     @each_requesting = Requesting.find(params[:id])    
   end
@@ -100,6 +100,10 @@ class EstimatingController < ApplicationController
   end
   
   def counsel_complete
+    coun = Counsel.new()
+    coun.codi_id = current_codi.id
+    coun.save
+    render :text => ""
   end
 
   def codi_index

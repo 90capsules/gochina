@@ -1,36 +1,70 @@
-
+<div class = "container">
+    <!-- MAIN-->
+    <!--END MAIN-->
+    <div class = "row" style = "background-color : #e0e0e0;">
+        <!-- left -->
+        <div class="col s3">
+            <!-- user info-->
+            <div class="card-panel red lighten-2">
+                <div class="caption center-align">
+                    <img src="" alt="" class="circle responsive-img" style = "height: 150px; width: 150px;" > 
+                </div>
+                <span class="white-text"  style ="text-align: center">
+                    <h5></h5>
+                    <h6>코디 :  </h6>
+                </span>
+            </div>
+            <!-- user infoend-->
+        </div>
+        <!--left end -->
+            
+        <!--right start-->
+        <div class="col s9">
+            <!--right start-->
+            <!--Userpicture , Wannabe star-->
+            <div class="row">
+            
+                <table border="1">
+                    <tr>
+                        <div>
+                            <th>견적 id(글번호)</th>
+                            <th>유저메일</th>
+                            <th>유저이름</th>
+                            <th>정면사진</th>
+                            <th>스타사진</th>
+                            <th>요청부위</th>
+                        </div>
+                    </tr>
+                    <% @all_requesting.each do |rq| %>
+                    <tr>
+                        <a href="/estimating/counsel/<%= rq.id %>">
+                            <div>
+                                d
+                                <td><%= rq.id %></td>
+                                <td><%= rq.user.email %></td>
+                                <td><%= rq.user.realname %></td>
+                                <td><%= rq.img_front %></td>
+                                <td><%= rq.prefer_img %></td>
+                                <% rq.requesting_contents.each do |con| %>
+                                    <td><%= con.content %></td>
+                                <% end %>
+                            </div>
+                        </a>
+                    </tr>
+                    <% end %>
+                </table>
+            
+            
+            
+            
+            <!-- right end-->
+            </div>
+        </div>
+    </div>
+</div>
     
 
 
-<table border="1">
-    <tr>
-        <div>
-            <th>견적 id(글번호)</th>
-            <th>유저메일</th>
-            <th>유저이름</th>
-            <th>정면사진</th>
-            <th>스타사진</th>
-            <th>요청부위</th>
-        </div>
-    </tr>
-    <% @all_requesting.each do |rq| %>
-    <tr>
-        <a href="/estimating/counsel/<%= rq.id %>">
-            <div>
-                d
-                <td><%= rq.id %></td>
-                <td><%= rq.user.email %></td>
-                <td><%= rq.user.realname %></td>
-                <td><%= rq.img_front %></td>
-                <td><%= rq.prefer_img %></td>
-                <% rq.requesting_contents.each do |con| %>
-                    <td><%= con.content %></td>
-                <% end %>
-            </div>
-        </a>
-    </tr>
-    <% end %>
-</table>
 
 
 

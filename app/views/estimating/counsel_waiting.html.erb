@@ -1,0 +1,36 @@
+
+    
+
+
+<table border="1">
+    <tr>
+        <div>
+            <th>견적 id(글번호)</th>
+            <th>유저메일</th>
+            <th>유저이름</th>
+            <th>정면사진</th>
+            <th>스타사진</th>
+            <th>요청부위</th>
+        </div>
+    </tr>
+    <% @all_requesting.each do |rq| %>
+    <tr>
+        <a href="/estimating/counsel/<%= rq.id %>">
+            <div>
+                d
+                <td><%= rq.id %></td>
+                <td><%= rq.user.email %></td>
+                <td><%= rq.user.realname %></td>
+                <td><%= rq.img_front %></td>
+                <td><%= rq.prefer_img %></td>
+                <% rq.requesting_contents.each do |con| %>
+                    <td><%= con.content %></td>
+                <% end %>
+            </div>
+        </a>
+    </tr>
+    <% end %>
+</table>
+
+
+

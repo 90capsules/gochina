@@ -8,9 +8,12 @@ class MypageController < ApplicationController
   def codi_account
   end
 
-  def savebox
+  def save_box
   end
 
   def saving_box
+  end
+  
+  def estimating_box
   end
 end

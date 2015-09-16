@@ -1,0 +1,71 @@
+<div class = "container">
+  <div class = "row" style = "background-color : #e0e0e0;">
+    <!-- 왼쪽 navbar -->
+    <div class="col s3">
+        <!-- user info-->
+        <div class="card-panel red lighten-2">
+          <div class="caption center-align">
+            <img src="<%current_user.profile_img%>" alt="" class="circle responsive-img" style = "height: 150px;
+                    width: 150px;" > 
+          </div>
+          <span class="white-text"  style ="text-align: center">
+            <h5><%=current_user.realname%></h5>
+            <h6>年龄 : <%=current_user.age%> </h6>
+            <h6>性別 : <%=current_user.sex%></h6>
+          </span>
+        </div>
+        <!-- END user info-->
+        
+        <nav class="white" role="navigation">
+          <a href="/mypage/estimating_box" style="color: black;">
+            <div class="nav-wrapper container">
+              견적함
+            </div>
+          </a>
+        </nav>
+        <nav class="white" role="navigation">
+          <a href="/mypage/save_box" style="color: black;">
+            <div class="nav-wrapper container">
+              후기 보관함
+            </div>
+          </a>
+        </nav>  
+        
+        <nav class="white" role="navigation">
+          <a href="/mypage/trace" style="color: black;">
+            <div class="nav-wrapper container">
+              내가 쓴 글
+            </div>
+          </a>
+        </nav>        
+        <nav class="white" role="navigation">
+          <a href="#" style="color: black;">
+            <div class="nav-wrapper container">
+              내가 받은 수술
+            </div>
+          </a>
+        </nav>        
+        <nav class="white" role="navigation">
+          <a href="/mypage/account" style="color: black;">
+            <div class="nav-wrapper container">
+              Account
+            </div>
+          </a>
+        </nav>        
+         
+          
+    </div>
+    <!-- END 왼쪽 navbar -->
+      
+      <!--right start-->
+    <div class="col s9">
+          <!--right start-->
+          <!--Userpicture , Wannabe star-->
+      <div class="row">
+     
+  
+    <!-- send button end-->
+   </div>
+  <!-- right end-->
+ </div>
+</div>

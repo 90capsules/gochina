@@ -22,9 +22,10 @@ Rails.application.routes.draw do
 
   get 'mypage/codi_account'
 
-  get 'mypage/savebox'
+  get 'mypage/save_box'
 
   get 'mypage/saving_box'
+  get 'mypage/estimating_box'
 
   get 'hospital/index'
 

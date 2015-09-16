@@ -1,6 +1,7 @@
 class Post < ActiveRecord::Base
   belongs_to :bulletin
   has_many :comments, dependent: :destroy
+  belongs_to :user
   mount_uploader :picture, PictureUploader
   acts_as_taggable
 

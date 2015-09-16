@@ -1,7 +1,8 @@
 class CommentsController < ApplicationController
   before_action :set_post
   before_action :set_comment, only: :destroy
-
+  before_action :authenticate_user!, except: [ :index, :show ]
+  
   def create
     @comment = @post.comments.new(comment_params)
     @comment.save

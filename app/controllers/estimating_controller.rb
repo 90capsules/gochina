@@ -77,8 +77,20 @@ class EstimatingController < ApplicationController
       'fat'=>['吸脂', ['지방 답변1','지방 답변2','지방 답변3','지방 답변4']],
       }
     @each_requesting = Requesting.find(params[:id])    
-    
-    
+  end
+  
+  def counsel_content
+    a_counsel_content = CounselContent.new()
+    params.each do |key, value|
+      if key == "part" 
+        a_counsel_content.content = "#{key} : #{value} \n"
+      else
+        a_counsel_content.content += "#{value} \n"
+      end
+    end
+    a_counsel_content.counsel_id = Counsel.where(:codi_id => current_codi.id).last().id
+    a_counsel_content.save()
+    render :text => ""
   end
 
   def counsel_waiting

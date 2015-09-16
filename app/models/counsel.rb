@@ -6,5 +6,10 @@ class Counsel < ActiveRecord::Base
     # has_one :counsel_content
     has_one :chat_room
     belongs_to :requesting
+    has_many :counsel_contents
+    
+    
+
+    
     
 end

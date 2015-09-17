@@ -24,7 +24,7 @@
                     <% @tags.each do |key, value|%>
                         <button name="<%=key%>" class= "col s4 form-box" type="button" id= <%=key%> style= "padding-right: 0px; padding-left: 0px;">
                         <img src="/assets/part_picture/<%= key %>.png" alt="" style = "height: 50px; width: 50px;" ></br>
-                        <%= value[0] %>
+                        <%= value[0][0] %>
                         </button> 
                     <% end %>
                 </div>
@@ -71,22 +71,22 @@
           <label>선호 지역</label>
           <select class="browser-default" id="region">
             <option value="" disabled selected>지역 선택</option>
-            <option value="1">신사</option>
-            <option value="2">강남</option>
-            <option value="3">종로</option>
+            <option value="신사">신사</option>
+            <option value="강남">강남</option>
+            <option value="종로">종로</option>
           </select>
           <div class ="row">
             <div class="col s12">
               <p> 약물 부작용 </p>
               <div class="col s6">
                 <p>
-                  <input name="antibiotic" type="checkbox" id="antibiotic" value="antibiotic : yes"/>
+                  <input name="antibiotic" type="checkbox" id="antibiotic" value="항생제 : yes"/>
                   <label for="antibiotic">항생제</label>
                 </p>
               </div>
               <div class="col s6">
                 <p>
-                  <input name="painkiller" type="checkbox" id="painkiller" value="painkiller : yes"/>
+                  <input name="painkiller" type="checkbox" id="painkiller" value="진통제 : yes"/>
                   <label for="painkiller">진통제</label>
                 </p>
               </div>
@@ -187,7 +187,7 @@
           <div class="col s1" style = "padding-right: 0px;padding-left: 0px; ">
             <div class="card-panel teal" style = " text-align :center; height : 125px;">
               <span class="white-text"  style ="text-align: center; ">
-                <h6><%=value[0]%></h6>
+                <h6><%=value[0][0]%></h6>
               </span>
             </div>
           </div>
@@ -197,8 +197,8 @@
               <% for i in (1..value[1].length) do%>
                 <div class="col s3">
                     <p>
-                      <input type="checkbox" id="<%= key %>[<%= i %>]" name="<%= key %>[<%= i %>]" value="<%= value[1][i-1] %>" />
-                      <label for="<%= key %>[<%= i %>]"><%= value[1][i-1] %></label>
+                      <input type="checkbox" id="<%= key %>[<%= i %>]" name="<%= key %>[<%= i %>]" value="<%= value[1][i-1][1] %>" />
+                      <label for="<%= key %>[<%= i %>]"><%= value[1][i-1][0] %></label>
                     </p>
                 </div>
               <% end %>

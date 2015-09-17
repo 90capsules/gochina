@@ -22,10 +22,10 @@
             <div class="card-panel white" style = "padding-top: 0px;    padding-right: 0px;    padding-bottom: 0px;    padding-left: 0px;">
                 <div class = "row" style = "margin: 0.5rem 0 1rem 0;">
                     <% @tags.each do |key, value|%>
-                        <div class= "col s4 form-box", id= <%=key%> style= "padding-right: 0px; padding-left: 0px;">
-                        <img src="/assets/part_picture/<%= key %>.png" alt="" style = "height: 50px; width: 50px;" ></br>
-                        <span id = "<%= key %>_val"><%= value[0][1] %></span>
-                        </div> 
+                      <button class= "col s4 form-box", name="<%=key%>" id= <%=key%> style= "padding-right: 0px; padding-left: 0px;">
+                      <img src="/assets/part_picture/<%= key %>.png" alt="" style = "height: 50px; width: 50px;" ></br>
+                      <span id = "<%= key %>_val"><%= value[0][1] %></span>
+                      </button> 
                     <% end %>
                 </div>
                   <div id="wanted_op">

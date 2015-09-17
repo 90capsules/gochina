@@ -121,7 +121,7 @@ class EstimatingController < ApplicationController
         if part_status.nil? # 체크박스에서 체크 안 된 것들은 넘김
           next
         end
-        a_counsel_content.content += part_status + "\n"
+        a_counsel_content.content += part_status + "\n "
       end
       a_counsel_content.counsel_id = current_codi.counsels.last.id
       # a_counsel_content.counsel_id = Counsel.where(:codi_id => current_codi.id).last().id

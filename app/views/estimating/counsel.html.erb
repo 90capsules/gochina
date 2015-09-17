@@ -75,17 +75,17 @@
               </div>
             <div class="col s4 card-panel white"  style = " text-align :center;margin-top: 0px;height : 230px">
               <div class = "row"   >
-                <img class="materialboxed" data-caption="좌측 사진" width="100%" src="http://mimgnews2.naver.net/image/022/2015/09/14/20150914004555_0_99_20150914203713.jpg?type=w540">
+                <img class="materialboxed" data-caption="좌측 사진" width="100%" src="<%= @each_requesting.img_left.url %>">
               </div>
             </div>
             <div class="col s4 card-panel white" style = " text-align :center;margin-top: 0px;height : 230px">
               <div class = "row" >
-                <img class="materialboxed" data-caption="정면 사진" width="100%" src="http://mimgnews2.naver.net/image/022/2015/09/14/20150914004555_0_99_20150914203713.jpg?type=w540">
+                <img class="materialboxed" data-caption="정면 사진" width="100%" src="<%= @each_requesting.img_front.url %>">
               </div>
             </div>
             <div class="col s4 card-panel white" style = " text-align :center;margin-top: 0px ;height : 230px">
               <div class = "row" >
-                <img class="materialboxed" data-caption="우측 사진" width="100%" src="http://mimgnews2.naver.net/image/022/2015/09/14/20150914004555_0_99_20150914203713.jpg?type=w540">
+                <img class="materialboxed" data-caption="우측 사진" width="100%" src="<%= @each_requesting.img_right.url %>">
               </div>              
             </div>
           </div>
@@ -99,7 +99,7 @@
             </div>
             <div class="col s12 card-panel white" style = " text-align :center;margin-top: 0px;height : 230px">
               <div class = "row" >
-                <img class="materialboxed" data-caption="스타 사진" width="100%" src="http://mimgnews2.naver.net/image/022/2015/09/14/20150914004555_0_99_20150914203713.jpg?type=w540">
+                <img class="materialboxed" data-caption="스타 사진" width="100%" src="<%= @each_requesting.prefer_img.url %>">
               </div>
             </div>
           </div>
@@ -192,52 +192,39 @@ $(document).ready(function(){
                   }
               }
           });
-          <% for i in (1..value[1].length) do %>
-            $("#<%=key%>_<%=i%>_val").click(function(){
-              $("#<%=key%>_<%=i%>_val").attr('value',"<%= value[1][i-1] %> : yes");
-            });
-          <% end %>
       <% end %>
       
       $('#submit_button').click(function(){
-        var region = $("#region option:selected").val();
-        var checking1 = $("#antibiotic").is(":checked")
-        var checking2 = $("#painkiller").is(":checked")
-        if(checking1){
-          var antibiotic = $("#antibiotic").val()
-        }
-        if(checking2){
-          var painkiller = $("#painkiller").val()
-        }
+        <% @tags.each do |key, value| %>
+          <% for i in (1..value[1].length) do %>
+          var checking_val<%= i %> = $("#<%= key %>_<%= i %>_val").is(":checked");
+          if(checking_val<%= i %>){
+            $("#<%=key%>_<%=i%>_val").attr("id","<%= key %>_<%= i %>_yes")
+          } else{
+            $("#<%=key%>_<%=i%>_val").attr("id","<%= key %>_<%= i %>_no")
+          }
+          <% end %>
+        <% end %>
         
         $.ajax({
-          data: {
-            desire_cost: $("#desire_cost").val(),
-            // desire_period: $("#desire_period ").val(),
-            desire_time: $("#desire_time").val(),
-            sleep_time: $("#sleep_time").val(),
-            region: region,
-            antibiotic: antibiotic,
-            painkiller: painkiller
-          },
           url:"/estimating/counsel_complete",
           success: function(){
             alert("good");
           }
         });
+        
        <% @tags.each do |key, value| %>
-         if($('#<%=key%>').hasClass('check')){
+          
+         if($("#<%=key%>").hasClass('check')){
             $.ajax({
               data: {
                 part: $("#<%= key %>_val").html(),
                 <% for i in (1..value[1].length) do %>
-                 
                   <%if i != value[1].length %>
-                    check_values<%= i %>: $("#<%= key %>_<%= i %>_val").val(),
+                    check_values<%= i %>: $("#<%= key %>_<%= i %>_yes").val(),
                   <% else %>
-                    check_values<%= i %>: $("#<%= key %>_<%= i %>_val").val()
+                    check_values<%= i %>: $("#<%= key %>_<%= i %>_yes").val()
                   <% end %>
-                
                 <% end %>
                 },
               method: "get",
@@ -253,10 +240,6 @@ $(document).ready(function(){
        <% end %>
      });
 });
-
-//slider js
-$('.slider').slider({full_width: true});
-
 
 
 

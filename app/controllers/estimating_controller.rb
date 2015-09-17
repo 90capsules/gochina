@@ -1,13 +1,8 @@
 class EstimatingController < ApplicationController
   
-  
-  
-  
-  
-  
-  def requesting
-    
+  skip_before_filter  :verify_authenticity_token
 
+  def requesting
     unless user_signed_in?
       redirect_to '/users/sign_in'
     end
@@ -23,41 +18,52 @@ class EstimatingController < ApplicationController
    # 双眼皮 (쌍꺼풀) 眼形矫正术 (눈매교정) 开眼角 (트임)  眼睑下垂 (눈처짐) 眼袋 / 娇媚 (눈밑/애교)  熊猫眼 (다크써클)  再手术 (재수술)
    #코세움 융비술 (隆鼻术) 휜코 교정술 (歪鼻矫正术) 오똑한 콧대 성형 축비술 (宽鼻矫正术 )매부리코 교정술 (鹰钩鼻矫正术) 코 필러(鼻部玻尿酸) 코 끝 성형 (鼻头整形) 짧은 코 (短鼻整形术) 성형 복코
   # 유방 확대술 (隆胸术) 처진 가슴 (乳房下垂) 가슴 축소 (乳房缩小) 유두 성형 (乳头整形) 여성형 가슴 (男士整形) 가슴 재건(乳房重建术)
-  
-    
   end
 
   def requesting_content
-    a_requesting_content = RequestingContent.new()
-    params.each do |key, value|
-      if key == "part" 
-        a_requesting_content.content = "#{key} : #{value} \n 요청부위 "
-      else
-        a_requesting_content.content += "#{value} \n"
+    @tags = {
+       'eye' => ['眼睛', ['双眼皮','眼形矫正术','开眼角','眼睑下垂','眼袋 / 娇媚',' 熊猫眼','眼底脂肪','再手术', ]],
+      'nose'=>['鼻子', ['隆鼻术','歪鼻矫正术','宽鼻矫正术','鹰钩鼻矫正术', '短鼻整形术','蒜头鼻整形术','鼻头整形','再手术' ]],
+      'breast'=>['乳房', ['隆胸术','乳房下垂','乳房缩小','乳头整形','男士整形','乳房重建术','再手术']],
+      'fat'=>['吸脂', ['지방 질문1','지방 질문2','지방 질문3','지방 질문4']],
+      'skin'=>['吸脂', ['피부 1','피부 2','피부 3','피부 4']],
+      'petit'=>['微创整形', ['쁘띠 1','쁘띠 2','쁘띠 3','쁘띠 4']]
+      }
+
+      req = Requesting.new
+      req.prefer_img = params[:star_img]
+      req.img_front= params[:front_img]
+      req.img_left= params[:left_img]
+      req.img_right= params[:right_img]
+      req.desire_cost = params[:desire_cost]
+      req.want_time = params[:desire_time]
+      req.prefer_region = params[:region]
+      req.user_id = current_user.id
+      req.sleep_time = params[:sleep_time]
+      req.drug_sideeffect = params[:antibiotic].to_s + " , " + params[:painkiller].to_s
+      req.switch = "on"
+      req.save
+    
+    @tags.each do |key, value|
+      
+      if params[key].nil?
+        next
       end
+      a_requesting_content = RequestingContent.new()
+      a_requesting_content.content = "part : #{key} \n"
+      1.upto(value[1].length) do |i|
+        part_status = params[key][i.to_s] # 부위별 상태 입력
+        if part_status.nil? # 체크박스에서 체크 안 된 것들은 넘김
+          next
+        end
+        a_requesting_content.content += part_status + "\n"
+      end
+      a_requesting_content.requesting_id = Requesting.where(:user_id => current_user.id).last().id
+      a_requesting_content.save()
     end
-    a_requesting_content.requesting_id = Requesting.where(:user_id => current_user.id).last().id
-    a_requesting_content.save()
-    render :text => ""
   end
 
   def requesting_complete
-    req = Requesting.new
-    # req.prefer_img = params[:hh]
-    req.want_time = params[:desire_time]
-    req.prefer_region = params[:region]
-    # req.special = params[:hh]
-    
-    req.user_id = current_user.id
-    # req.img_front= params[:hh]
-    # req.img_left= params[:hh]
-    # req.img_right= params[:hh]
-    req.sleep_time = params[:sleep_time]
-    req.drug_sideeffect = params[:antibiotic].to_s + " , " + params[:painkiller].to_s
-    req.switch = "on"
-    req.save
-
-    render :text => ""
   end
 
   def manage
@@ -71,12 +77,14 @@ class EstimatingController < ApplicationController
   
   def counsel
     @tags = {
-      'eye' => ['眼睛', ['좌우가 길다','좌우가 좁다','아래 위 폭이 넓다','아래 위 폭이 좁다','눈두덩이 두껍다','눈두덩이 꺼졌다']],
-      'nose'=>['鼻子', ['메부리코','콧볼이 넓다','들창코','화살코','콧대가 없다','콧망울이 없다']],
-      'breast'=>['乳房', ['가슴 답변1','가슴 답변2','가슴 답변3']],
-      'fat'=>['吸脂', ['지방 답변1','지방 답변2','지방 답변3','지방 답변4']],
+       'eye' => ['眼睛', ['双眼皮','眼形矫正术','开眼角','眼睑下垂','眼袋 / 娇媚',' 熊猫眼','眼底脂肪','再手术', ]],
+      'nose'=>['鼻子', ['隆鼻术','歪鼻矫正术','宽鼻矫正术','鹰钩鼻矫正术', '短鼻整形术','蒜头鼻整形术','鼻头整形','再手术' ]],
+      'breast'=>['乳房', ['隆胸术','乳房下垂','乳房缩小','乳头整形','男士整形','乳房重建术','再手术']],
+      'fat'=>['吸脂', ['지방 질문1','지방 질문2','지방 질문3','지방 질문4']],
+      'skin'=>['吸脂', ['피부 1','피부 2','피부 3','피부 4']],
+      'petit'=>['微创整形', ['쁘띠 1','쁘띠 2','쁘띠 3','쁘띠 4']]
       }
-    @each_requesting = Requesting.find(params[:id])    
+    @each_requesting = Requesting.where(:id => params[:id]).take
   end
   
   def counsel_content
@@ -100,6 +108,10 @@ class EstimatingController < ApplicationController
   end
   
   def counsel_complete
+    coun = Counsel.new()
+    coun.codi_id = current_codi.id
+    coun.save
+    render :text => ""
   end
 
   def codi_index

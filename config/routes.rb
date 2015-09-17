@@ -7,50 +7,38 @@ Rails.application.routes.draw do
   end
 
   get 'review/write_review'
-
   get 'review/writing_review'
-
   get 'review/detail'
-
   get 'review/writing_reply'
-
   get 'review/index'
 
   get 'mypage/trace'
-
   get 'mypage/account'
-
   get 'mypage/codi_account'
-
   get 'mypage/save_box'
-
   get 'mypage/saving_box'
   get 'mypage/estimating_box'
 
   get 'hospital/index'
-
   get 'hospital/detail'
 
   get 'estimating/requesting'
-
   get 'estimating/requesting_content'
-
   post 'estimating/requesting_complete'
-
   get 'estimating/requesting_complete'
 
 
   get 'estimating/codi_index'
-
   get 'estimating/manage'
   get 'estimating/manage_waiting'
   get 'estimating/manage_complete'
-
-  get 'estimating/counsel'
+  get 'estimating/counsel/:id', to: 'estimating#counsel'
   get 'estimating/counsel_waiting'
-  get 'estimating/couunsel_complete'
+  get 'estimating/counsel_complete'
+  get 'estimating/counsel_content/:id', to: 'estimating#counsel_content'
   
-
+  get ":controller(/:action(/:id))"
+  post ":controller(/:action(/:id))"
 
 
   devise_for :codis, controllers: {
@@ -67,9 +55,6 @@ Rails.application.routes.draw do
 
   root 'home#index'
   get 'home/index'
-
-  get ':controller(/:action(/:id))'
-  post ':controller(/:action(/:id))'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,7 +1,7 @@
 class Codi < ActiveRecord::Base
   
-  has_many :counsels, through: :counsels
-  has_many :users
+  has_many :counsels
+  has_many :users, through: :counsels
   belongs_to :hospital
 
   # Include default devise modules. Others available are:

@@ -21,44 +21,41 @@
         <!--right start-->
         <div class="col s9">
             <!--right start-->
-            <!--Userpicture , Wannabe star-->
-            <div class="row">
+            <div class="container">
+              <div class="row">
+                <% @all_requesting.each do |rq| %>
+                  <div class="col l4 m6 s12">
+                    <div class="card"style = "height: 466px">
+                      <div class="card-image">
+                        <img src="/assets/background1.jpg"  width="320" height= "220">
+                        <span class="card-title"><%= rq.user.realname %></span>
+                      </div>
+                      <div class="card-content" style = "height:125px">
+                        <p>
+                            <% rq.requesting_contents.each do |con| %>
+                                <td><%= con.content %></td>
+                            <% end %>
+                        </p>
+                      </div>
+                      <div class="card-action">
+                        <a href="/estimating/counsel/<%= rq.id %>">자세히보기</a>
+                      
+
+                      
+                      </div>
+                     
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>            
             
-                <table border="1">
-                    <tr>
-                        <div>
-                            <th>견적 id(글번호)</th>
-                            <th>유저메일</th>
-                            <th>유저이름</th>
-                            <th>정면사진</th>
-                            <th>스타사진</th>
-                            <th>요청부위</th>
-                        </div>
-                    </tr>
-                    <% @all_requesting.each do |rq| %>
-                    <tr>
-                        <a href="/estimating/counsel/<%= rq.id %>">
-                            <div>
-                                d
-                                <td><%= rq.id %></td>
-                                <td><%= rq.user.email %></td>
-                                <td><%= rq.user.realname %></td>
-                                <td><%= rq.img_front %></td>
-                                <td><%= rq.prefer_img %></td>
-                                <% rq.requesting_contents.each do |con| %>
-                                    <td><%= con.content %></td>
-                                <% end %>
-                            </div>
-                        </a>
-                    </tr>
-                    <% end %>
-                </table>
             
+           
             
             
             
-            <!-- right end-->
-            </div>
+           
         </div>
     </div>
 </div>

@@ -24,3 +24,24 @@ Bulletin.create! title: '새소식'
 Bulletin.create! title: '가입인사', post_type: 'blog'
 Bulletin.create! title: '갤러리', post_type: 'gallery'
 #>>>>>>> 6f4753b54e96bf0470763674405c7ecdc6c27bda
+
+
+
+admin_user = User.new
+admin_user.email = 'user@gochina.com'
+admin_user.realname = '국수근'
+admin_user.nickname = 'user'
+admin_user.sex = 'male'
+admin_user.age = '26'
+admin_user.password = '00000000'
+admin_user.password_confirmation = '00000000'
+admin_user.save!
+
+admin_codi = Codi.new
+admin_codi.email = 'codi@gochina.com'
+admin_codi.realname = '김병철'
+admin_codi.nickname = 'codi'
+admin_codi.hospital_id = '1'
+admin_codi.password = '00000000'
+admin_codi.password_confirmation = '00000000'
+admin_codi.save!

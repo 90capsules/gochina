@@ -1,234 +1,233 @@
 <div class = "container">
-<!-- MAIN-->
-<!--END MAIN-->
-  <div class = "row" style = "background-color : #e0e0e0;">
-    <!-- left -->
-    <div class="col s3">
-     <!-- user info-->
-        <div class="card-panel red lighten-2">
-          <div class="caption center-align">
-            <img src="<%current_user.profile_img%>" alt="" class="circle responsive-img" style = "height: 150px;
-                    width: 150px;" > 
-          </div>
-          <span class="white-text"  style ="text-align: center">
-            <h5><%=current_user.realname%></h5>
-            <h6>年龄 : <%=current_user.age%> </h6>
-            <h6>性別 : <%=current_user.sex%></h6>
-          </span>
-        </div>
-          <!-- user infoend-->
-          <!-- user part test-->
-          <div class="card-panel white" style = "padding-top: 0px;    padding-right: 0px;    padding-bottom: 0px;    padding-left: 0px;">
-              <div class = "row" style = "margin: 0.5rem 0 1rem 0;">
-                  <% @tags.each do |key, value|%>
-                      <div class= "col s4 form-box", id= <%=key%> style= "padding-right: 0px; padding-left: 0px;">
-                      <img src="/assets/part_picture/<%= key %>.png" alt="" style = "height: 50px; width: 50px;" ></br>
-                      <span id = "<%= key %>_val"><%= value[0] %></span>
-                      </div> 
-                  <% end %>
-              </div>
-          </div>
-          <!-- user part test-->
-          <!-- user desire-->
-          <div class="card-panel white">    
-                  <div class="row">
-                      <div class="input-field col s9">
-                        <input id="desire_cost" type="text" class="validate">
-                        <label for="desire_cost"><span style = "text-color : black;">희망 비용</span></label>
-                      </div>
-                      <div class = "col s3">
-                      <p>원</p>
-                      </div>
-                    </div>
-                    
-                 <div class="row">
-                      <div class="input-field col s9">
-                        <input id="desire_period" type="text" class="validate">
-                        <label for="desire_period">희망 기간</label>
-                      </div>
-                      <div class = "col s3">
-                      <p>일 이내</p>
-                      </div>
-                    </div>
-                    
-                  <div class="row" >
-                     <div class="col s12"> 
-                          희망 기간
-                          <input id="desire_time" type="date" class="datepicker">
-                          </div>
-                      </div>
-                    
-                    <div class="row">
-                      <div class="input-field col s9">
-                        <input id="sleep_time" type="text" class="validate">
-                        <label for="sleep_time">평균 수면 시간</label>
-                      </div>
-                      <div class = "col s3">
-                      <p>시간</p>
-                      </div>
-                    </div>
-        <label>선호 지역</label>
-        <select class="browser-default" id="region">
-          <option value="" disabled selected>지역 선택</option>
-          <option value="1">신사</option>
-          <option value="2">강남</option>
-          <option value="3">종로</option>
-        </select>
-        <div class ="row">
-          <div class="col s12">
-            <p> 약물 부작용 </p>
-            <div class="col s6">
-              <p>
-                <input type="checkbox" id="antibiotic" value="antibiotic : yes"/>
-                <label for="antibiotic">항생제</label>
-              </p>
+  <form action="/estimating/requesting_content" enctype="multipart/form-data" method="POST">
+  <!-- MAIN-->
+  <!--END MAIN-->
+    <div class = "row" style = "background-color : #e0e0e0;">
+      <!-- left -->
+      <div class="col s3">
+       <!-- user info-->
+          <div class="card-panel red lighten-2">
+            <div class="caption center-align">
+              <img src="<%current_user.profile_img%>" alt="" class="circle responsive-img" style = "height: 150px;
+                      width: 150px;" > 
             </div>
-            <div class="col s6">
-              <p>
-                <input type="checkbox" id="painkiller" value="painkiller : yes"/>
-                <label for="painkiller">진통제</label>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-          <!-- user desire end-->
-    </div>
-          
-      <!--left end -->
-      
-      <!--right start-->
-    <div class="col s9">
-          <!--right start-->
-          <!--Userpicture , Wannabe star-->
-      <div class="row">
-        <div class ="col s12">
-           <div class="col s9">
-            <div class = "row"   style=  "width: 100%;">
-              <div class="col s12 card-panel teal" style = " text-align :center;">
-                <span class="white-text"  style ="text-align: center">
-                  <h6>나의 사진</h6>
-                </span>
-              </div>
-            <div class="col s4 card-panel white"  style = " text-align :center;margin-top: 0px;height : 230px">
-              <div class = "row"   style=  "text-align:center;">
-              
-              
-                     <article style = "position: absolute;">
-                         <label for="files" class="button" style = "position: absolute; text-align:center"> <span class ="white-text" >정면 사진</span> </label>
-                          <input id="front" type="file" name = "front_img" style = "position: absolute; background-color: transparent;  cursor: pointer;  border: none; height:230px; width : 230px" >
-                          <output id="result_front"style = "position: absolute;">
-                      </article>
-                      
-                      
-              </div>
-            </div>
-            <div class="col s4 card-panel white" style = " text-align :center;margin-top: 0px;height : 230px">
-              <div class = "row"   style=  "width: 100%;">
-              
-                  <article style = "position: absolute;">
-                         <label for="files" class="button" style = "position: absolute; text-align:center"> <span class ="white-text" >좌측 사진</span> </label>
-                          <input id="left" type="file" name = "left_img" style = "position: absolute; background-color: transparent;  cursor: pointer;  border: none; height:230px; width : 230px" >
-                          <output id="result_left"style = "position: absolute;">
-                      </article>
-                  
-                 
-                   
-                
-              </div>
-            </div>
-            <div class="col s4 card-panel white" style = " text-align :center;margin-top: 0px ;height : 230px">
-              <div class = "row"   style=  "width: 100%;">
-              
-                
-                   <article style = "position: absolute;">
-                         <label for="files" class="button" style = "position: absolute; text-align:center"> <span class ="white-text" >우측 사진</span> </label>
-                          <input id="right" type="file" name = "right_img" style = "position: absolute; background-color: transparent;  cursor: pointer;  border: none; height:230px; width : 230px" >
-                          <output id="result_right"style = "position: absolute;">
-                      </article>
-                
-                
-                
-              </div>                
-            </div>
-          </div>
-        </div>
-        <div class="col s3">
-          <div class = "row">
-            <div class="col s12 card-panel teal" style = " text-align :center; ">
-              <span class="white-text"  style ="text-align: center">
-                <h6>스타 사진</h6>
-              </span>
-            </div>
-           <div class="col s12 card-panel white" style = " text-align :center;margin-top: 0px;height : 230px">
-              <div class = "row"   style=  "width: 100%;">
-                 <article style = "position: absolute;">
-                         <label for="files" class="button_240" style = "position: absolute; text-align:center"> <span class ="white-text" >스타 사진</span> </label>
-                          <input id="star" type="file" name = "star_img" style = "position: absolute; background-color: transparent;  cursor: pointer;  border: none; height:230px; width : 240px" >
-                          <output id="result_star"style = "position: absolute;">
-                      </article>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-         <!--Userpicture , Wannabe starend-->
-         <!-- 관심수술-->
-     <div class="col s12 card-panel teal" style = " text-align :center;  margin-top:-25px;margin-bottom: 10px;">
-      <span class="white-text"  style ="text-align: center">
-        <h6>관심 수술</h6>
-      </span>
-    </div>
-     <!--관심수술-->
-         
-         <!--Choice start -->
-   <% @tags.each do |key, value| %>
-    <div class="row" id="interest_op" style = "margin-bottom: 0px;">
-      <div class ="col s12 disappear" id="interest_op_<%= key %>">
-        <div class="col s1" style = "padding-right: 0px;padding-left: 0px; ">
-          <div class="card-panel teal" style = " text-align :center; height : 125px;">
-            <span class="white-text"  style ="text-align: center; ">
-              <h6><%=value[0]%></h6>
+            <span class="white-text"  style ="text-align: center">
+              <h5><%=current_user.realname%></h5>
+              <h6>年龄 : <%=current_user.age%> </h6>
+              <h6>性別 : <%=current_user.sex%></h6>
             </span>
           </div>
-        </div>
-        <!--체크박스 시작-->
-        <div class="col s11" style = "padding-right: 0px;padding-left: 0px;">
-          <div class="col s12 card-panel white" style = " text-align :center; height : 125px; ">
-            <% for i in (1..value[1].length) do%>
-              <div class="col s3">
-                <form action="#">
-                  <p>
-                    <input type="checkbox" id="<%= key %>_<%= i %>_val" name="<%= key %>" value="<%= value[1][i-1] %>" />
-                    <label for="<%= key %>_<%= i %>_val"><%= value[1][i-1] %></label>
-                  </p>
-                </form>
+            <!-- user infoend-->
+            <!-- user part test-->
+            <div class="card-panel white" style = "padding-top: 0px;    padding-right: 0px;    padding-bottom: 0px;    padding-left: 0px;">
+                <div class = "row" style = "margin: 0.5rem 0 1rem 0;">
+                    <% @tags.each do |key, value|%>
+                        <button name="<%=key%>" class= "col s4 form-box" type="button" id= <%=key%> style= "padding-right: 0px; padding-left: 0px;">
+                        <img src="/assets/part_picture/<%= key %>.png" alt="" style = "height: 50px; width: 50px;" ></br>
+                        <%= value[0] %>
+                        </button> 
+                    <% end %>
+                </div>
+            </div>
+            <!-- user part test-->
+            <!-- user desire-->
+            <div class="card-panel white">    
+                    <div class="row">
+                        <div class="input-field col s9">
+                          <input name="desire_cost" id="desire_cost" type="text" class="validate">
+                          <label for="desire_cost"><span style = "text-color : black;">희망 비용</span></label>
+                        </div>
+                        <div class = "col s3">
+                        <p>원</p>
+                        </div>
+                      </div>
+                      
+                   <div class="row">
+                        <div class="input-field col s9">
+                          <input name="desire_period" id="desire_period" type="text" class="validate">
+                          <label for="desire_period">희망 기간</label>
+                        </div>
+                        <div class = "col s3">
+                        <p>일 이내</p>
+                        </div>
+                      </div>
+                      
+                    <div class="row" >
+                       <div class="col s12"> 
+                            희망 기간
+                            <input name="desire_time" id="desire_time" type="date" class="datepicker">
+                            </div>
+                        </div>
+                      
+                      <div class="row">
+                        <div class="input-field col s9">
+                          <input name="sleep_time" id="sleep_time" type="text" class="validate">
+                          <label for="sleep_time">평균 수면 시간</label>
+                        </div>
+                        <div class = "col s3">
+                        <p>시간</p>
+                        </div>
+                      </div>
+          <label>선호 지역</label>
+          <select class="browser-default" id="region">
+            <option value="" disabled selected>지역 선택</option>
+            <option value="1">신사</option>
+            <option value="2">강남</option>
+            <option value="3">종로</option>
+          </select>
+          <div class ="row">
+            <div class="col s12">
+              <p> 약물 부작용 </p>
+              <div class="col s6">
+                <p>
+                  <input name="antibiotic" type="checkbox" id="antibiotic" value="antibiotic : yes"/>
+                  <label for="antibiotic">항생제</label>
+                </p>
               </div>
-            <% end %>
+              <div class="col s6">
+                <p>
+                  <input name="painkiller" type="checkbox" id="painkiller" value="painkiller : yes"/>
+                  <label for="painkiller">진통제</label>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-        <!--체크박스 끝-->
+            <!-- user desire end-->
       </div>
-    </div>
-   <% end %>
-         <!--Choice end-->
-         <!-- send button start-->
-    <div class="row">
-     <div class ="col s12">
-      <div class = "col s10"><p></p> </div>
-        <div class = "col s2">
-          <button class="btn waves-effect waves-light" id="submit_button" type="submit" name="action">Submit
-            <i class="material-icons">send</i>
-          </button>
+            
+        <!--left end -->
+        
+        <!--right start-->
+      <div class="col s9">
+            <!--right start-->
+            <!--Userpicture , Wannabe star-->
+        <div class="row">
+          <div class ="col s12">
+             <div class="col s9">
+              <div class = "row"   style=  "width: 100%;">
+                <div class="col s12 card-panel teal" style = " text-align :center;">
+                  <span class="white-text"  style ="text-align: center">
+                    <h6>나의 사진</h6>
+                  </span>
+                </div>
+              <div class="col s4 card-panel white"  style = " text-align :center;margin-top: 0px;height : 230px">
+                <div class = "row"   style=  "text-align:center;">
+                
+                
+                       <article style = "position: absolute;">
+                           <label for="files" class="button" style = "position: absolute; text-align:center"> <span class ="white-text" >정면 사진</span> </label>
+                            <input id="front" type="file" name = "front_img" style = "position: absolute; background-color: transparent;  cursor: pointer;  border: none; height:230px; width : 230px" >
+                            <output id="result_front"style = "position: absolute;">
+                        </article>
+                        
+                        
+                </div>
+              </div>
+              <div class="col s4 card-panel white" style = " text-align :center;margin-top: 0px;height : 230px">
+                <div class = "row"   style=  "width: 100%;">
+                
+                    <article style = "position: absolute;">
+                           <label for="files" class="button" style = "position: absolute; text-align:center"> <span class ="white-text" >좌측 사진</span> </label>
+                            <input id="left" type="file" name = "left_img" style = "position: absolute; background-color: transparent;  cursor: pointer;  border: none; height:230px; width : 230px" >
+                            <output id="result_left"style = "position: absolute;">
+                        </article>
+                    
+                   
+                     
+                  
+                </div>
+              </div>
+              <div class="col s4 card-panel white" style = " text-align :center;margin-top: 0px ;height : 230px">
+                <div class = "row"   style=  "width: 100%;">
+                
+                  
+                     <article style = "position: absolute;">
+                           <label for="files" class="button" style = "position: absolute; text-align:center"> <span class ="white-text" >우측 사진</span> </label>
+                            <input id="right" type="file" name = "right_img" style = "position: absolute; background-color: transparent;  cursor: pointer;  border: none; height:230px; width : 230px" >
+                            <output id="result_right"style = "position: absolute;">
+                        </article>
+                </div>                
+              </div>
+            </div>
+          </div>
+          <div class="col s3">
+            <div class = "row">
+              <div class="col s12 card-panel teal" style = " text-align :center; ">
+                <span class="white-text"  style ="text-align: center">
+                  <h6>스타 사진</h6>
+                </span>
+              </div>
+             <div class="col s12 card-panel white" style = " text-align :center;margin-top: 0px;height : 230px">
+                <div class = "row"   style=  "width: 100%;">
+                   <article style = "position: absolute;">
+                           <label for="files" class="button_240" style = "position: absolute; text-align:center"> <span class ="white-text" >스타 사진</span> </label>
+                            <input id="star" type="file" name = "star_img" style = "position: absolute; background-color: transparent;  cursor: pointer;  border: none; height:230px; width : 240px" >
+                            <output id="result_star"style = "position: absolute;">
+                        </article>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <!-- send button end-->
+           <!--Userpicture , Wannabe starend-->
+           <!-- 관심수술-->
+       <div class="col s12 card-panel teal" style = " text-align :center;  margin-top:-25px;margin-bottom: 10px;">
+        <span class="white-text"  style ="text-align: center">
+          <h6>관심 수술</h6>
+        </span>
+      </div>
+       <!--관심수술-->
+           
+           <!--Choice start -->
+     <% @tags.each do |key, value| %>
+      <div class="row" id="interest_op" style = "margin-bottom: 0px;">
+        <div class ="col s12 disappear" id="interest_op_<%= key %>">
+          <div class="col s1" style = "padding-right: 0px;padding-left: 0px; ">
+            <div class="card-panel teal" style = " text-align :center; height : 125px;">
+              <span class="white-text"  style ="text-align: center; ">
+                <h6><%=value[0]%></h6>
+              </span>
+            </div>
+          </div>
+          <!--체크박스 시작-->
+          <div class="col s11" style = "padding-right: 0px;padding-left: 0px;">
+            <div class="col s12 card-panel white" style = " text-align :center; height : 125px; ">
+              <% for i in (1..value[1].length) do%>
+                <div class="col s3">
+                    <p>
+                      <input type="checkbox" id="<%= key %>[<%= i %>]" name="<%= key %>[<%= i %>]" value="<%= value[1][i-1] %>" />
+                      <label for="<%= key %>[<%= i %>]"><%= value[1][i-1] %></label>
+                    </p>
+                </div>
+              <% end %>
+            </div>
+          </div>
+          <!--체크박스 끝-->
+        </div>
+      </div>
+     <% end %>
+           <!--Choice end-->
+           <!-- send button start-->
+      <div class="row">
+       <div class ="col s12">
+        <div class = "col s10"><p></p> </div>
+          <div class = "col s2">
+            <button class="btn waves-effect waves-light" id="submit_button" type="submit" name="action">Submit
+              <i class="material-icons">send</i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- send button end-->
+     </div>
+    <!-- right end-->
    </div>
-  <!-- right end-->
- </div>
+ </form>
 </div>
+
+
 <!-- Part box jQuery-->
 <script>
 
@@ -429,12 +428,14 @@ $(document).ready(function(){
                    $('#<%= key %>').removeClass('check');
               },
               click: function(){
-                  if($('#<%= key %>').hasClass("form-box")){      
+                  if($('#<%= key %>').hasClass("form-box")){
+                    $("#<%= key %>").attr("name", "<%= key %>click")
                     $('#<%= key %>').removeClass('form-box').addClass('check');
                     $('#interest_op_<%= key %>').removeClass('disappear').addClass('appear');
                     $('#<%= key %>').off("mouseleave");
                   }    
                   else if ($('#<%= key %>').hasClass("check")){
+                    $('#<%= key %>').attr("name", "<%= key %>")
                     $('#<%= key %>').removeClass('check').addClass('form-box');
                     $('#interest_op_<%= key %>').removeClass('appear').addClass('disappear');   
                     $('#<%= key %>').on('mouseleave', function(){
@@ -444,71 +445,6 @@ $(document).ready(function(){
               }
           });
       <% end %>
-      
-      $('#submit_button').click(function(){
-        var region = $("#region option:selected").val();
-        var checking1 = $("#antibiotic").is(":checked");
-        var checking2 = $("#painkiller").is(":checked");
-        if(checking1){
-          var antibiotic = $("#antibiotic").val()
-        }
-        if(checking2){
-          var painkiller = $("#painkiller").val()
-        }
-        
-        <% @tags.each do |key, value| %>
-        <% for i in (1..value[1].length) do %>
-        var checking_val<%= i %> = $("#<%= key %>_<%= i %>_val").is(":checked");
-        if(checking_val<%= i %>){
-          $("#<%=key%>_<%=i%>_val").attr("id","<%= key %>_<%= i %>_yes")
-        } else{
-          $("#<%=key%>_<%=i%>_val").attr("id","<%= key %>_<%= i %>_no")
-        }
-        <% end %>
-        <% end %>
-        
-        $.ajax({
-          data: {
-            desire_cost: $("#desire_cost").val(),
-            // desire_period: $("#desire_period ").val(),
-            desire_time: $("#desire_time").val(),
-            sleep_time: $("#sleep_time").val(),
-            region: region,
-            antibiotic: antibiotic,
-            painkiller: painkiller
-          },
-          url:"/estimating/requesting_complete",
-          success: function(){
-            alert("good");
-          }
-        });
-        
-       <% @tags.each do |key, value| %>
-          
-         if($("#<%=key%>").hasClass('check')){
-            $.ajax({
-              data: {
-                part: $("#<%= key %>_val").html(),
-                <% for i in (1..value[1].length) do %>
-                  <%if i != value[1].length %>
-                    check_values<%= i %>: $("#<%= key %>_<%= i %>_yes").val(),
-                  <% else %>
-                    check_values<%= i %>: $("#<%= key %>_<%= i %>_yes").val()
-                  <% end %>
-                <% end %>
-                },
-              method: "get",
-              url: "/estimating/requesting_content",
-              success: function(){
-                alert("hi");
-              },
-              error: function(){
-                alert("bye");
-              }
-            });
-         }
-       <% end %>
-     });
 });
 </script>
 <!-- Part box jQuery end-->

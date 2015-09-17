@@ -5,7 +5,6 @@ class CreateCounsels < ActiveRecord::Migration
       t.integer :user_id
       t.integer :codi_id
       t.string :status
-      t.text :content
 
       t.timestamps null: false
     end

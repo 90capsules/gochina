@@ -24,6 +24,7 @@ Rails.application.routes.draw do
 
   get 'estimating/requesting'
   get 'estimating/requesting_content'
+  post 'estimating/requesting_content'
   post 'estimating/requesting_complete'
   get 'estimating/requesting_complete'
 
@@ -35,10 +36,8 @@ Rails.application.routes.draw do
   get 'estimating/counsel/:id', to: 'estimating#counsel'
   get 'estimating/counsel_waiting'
   get 'estimating/counsel_complete'
-  get 'estimating/counsel_content/:id', to: 'estimating#counsel_content'
+  post 'estimating/counsel_content'
   
-  get ":controller(/:action(/:id))"
-  post ":controller(/:action(/:id))"
 
 
   devise_for :codis, controllers: {

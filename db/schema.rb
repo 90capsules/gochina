@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 20150916130041) do
   add_index "comments", ["post_id"], name: "index_comments_on_post_id"
 
   create_table "counsel_contents", force: :cascade do |t|
+    t.string   "part"
     t.text     "content"
     t.integer  "counsel_id"
     t.datetime "created_at", null: false
@@ -83,7 +84,6 @@ ActiveRecord::Schema.define(version: 20150916130041) do
     t.integer  "user_id"
     t.integer  "codi_id"
     t.string   "status"
-    t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -120,6 +120,7 @@ ActiveRecord::Schema.define(version: 20150916130041) do
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"
 
   create_table "requesting_contents", force: :cascade do |t|
+    t.string   "part"
     t.text     "content"
     t.integer  "requesting_id"
     t.datetime "created_at",    null: false

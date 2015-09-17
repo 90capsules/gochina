@@ -429,13 +429,12 @@ $(document).ready(function(){
               },
               click: function(){
                   if($('#<%= key %>').hasClass("form-box")){
-                    $("#<%= key %>").attr("name", "<%= key %>click")
+
                     $('#<%= key %>').removeClass('form-box').addClass('check');
                     $('#interest_op_<%= key %>').removeClass('disappear').addClass('appear');
                     $('#<%= key %>').off("mouseleave");
                   }    
                   else if ($('#<%= key %>').hasClass("check")){
-                    $('#<%= key %>').attr("name", "<%= key %>")
                     $('#<%= key %>').removeClass('check').addClass('form-box');
                     $('#interest_op_<%= key %>').removeClass('appear').addClass('disappear');   
                     $('#<%= key %>').on('mouseleave', function(){

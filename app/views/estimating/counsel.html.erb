@@ -1,166 +1,184 @@
 <div class = "container">
-<!-- MAIN-->
-<!--END MAIN-->
-  <div class = "row" style = "background-color : #e0e0e0;">
-    <!-- left -->
-    <div class="col s3">
-     <!-- user info-->
-        <div class="card-panel red lighten-2">
-          <div class="caption center-align">
-            <img src="" alt="" class="circle responsive-img" style = "height: 150px;
-                    width: 150px;" > 
-          </div>
-          <span class="white-text"  style ="text-align: center">
-            <h5></h5>
-            <h6>코디 :  </h6>
-          </span>
-        </div>
-          <!-- user infoend-->
-          <!-- user part test-->
-          <div class="card-panel white" style = "padding-top: 0px;    padding-right: 0px;    padding-bottom: 0px;    padding-left: 0px;">
-              <div class = "row" style = "margin: 0.5rem 0 1rem 0;">
-                  <% @tags.each do |key, value|%>
-                      <div class= "col s4 form-box", id= <%=key%> style= "padding-right: 0px; padding-left: 0px;">
-                      <img src="/assets/part_picture/<%= key %>.png" alt="" style = "height: 50px; width: 50px;" ></br>
-                      <span id = "<%= key %>_val"><%= value[0][1] %></span>
-                      </div> 
-                  <% end %>
-              </div>
-                <div id="wanted_op">
-                  <% @each_requesting.requesting_contents.each do |con| %>
-                    <%= con.content %><br>
-                  <% end %>
-                    
-                    
-                    
-                </div>
-          </div>
-          <!-- user part test-->
-          <!-- user desire-->
-              
-
-                    
-                
-      
-          <!-- user desire end-->
-    </div>
-          
-      <!--left end -->
-      
-      <!--right start-->
-    <div class="col s9">
-          <!--right start-->
-          <!--Userpicture , Wannabe star-->
-      <div class="row">
-        <div class ="col s12">
-            <div class = "row"   style=  "width: 100%;">
-                <div class = "col s4 card-panel teal" >
-                이름 : <%= @each_requesting.user.realname %>
-                </div>
-                <div class = "col s4 card-panel teal" >
-                E-mail : <%= @each_requesting.user.email %>
-                </div>
-                <div class = "col s4 card-panel teal" >
-                예약날짜 : 
-                </div>
+  <form action="/estimating/counsel_content" enctype="multipart/form-data" method="POST">
+    <input type="hidden" name="user_id" value="<%= @each_requesting.user_id %>" />
+  <!-- MAIN-->
+  <!--END MAIN-->
+    <div class = "row" style = "background-color : #e0e0e0;">
+      <!-- left -->
+      <div class="col s3">
+       <!-- user info-->
+          <div class="card-panel red lighten-2">
+            <div class="caption center-align">
+              <img src="" alt="" class="circle responsive-img" style = "height: 150px;
+                      width: 150px;" > 
             </div>
-            <div class="col s9">
-            
-               
-            <div class = "row"   style=  "width: 100%;">
-              <div class="col s12 card-panel teal" style = " text-align :center;">
-                <span class="white-text"  style ="text-align: center">
-                  <h6>회원 사진</h6>
-                </span>
-              </div>
-            <div class="col s4 card-panel white"  style = " text-align :center;margin-top: 0px;height : 230px">
-              <div class = "row"   >
-                <img class="materialboxed" data-caption="좌측 사진" width="100%" src="<%= @each_requesting.img_left.url %>">
-              </div>
-            </div>
-            <div class="col s4 card-panel white" style = " text-align :center;margin-top: 0px;height : 230px">
-              <div class = "row" >
-                <img class="materialboxed" data-caption="정면 사진" width="100%" src="<%= @each_requesting.img_front.url %>">
-              </div>
-            </div>
-            <div class="col s4 card-panel white" style = " text-align :center;margin-top: 0px ;height : 230px">
-              <div class = "row" >
-                <img class="materialboxed" data-caption="우측 사진" width="100%" src="<%= @each_requesting.img_right.url %>">
-              </div>              
-            </div>
-          </div>
-        </div>
-        <div class="col s3">
-          <div class = "row">
-            <div class="col s12 card-panel teal" style = " text-align :center; ">
-              <span class="white-text"  style ="text-align: center">
-                <h6>스타 사진</h6>
-              </span>
-            </div>
-            <div class="col s12 card-panel white" style = " text-align :center;margin-top: 0px;height : 230px">
-              <div class = "row" >
-                <img class="materialboxed" data-caption="스타 사진" width="100%" src="<%= @each_requesting.prefer_img.url %>">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-         <!--Userpicture , Wannabe starend-->
-         <!-- 관심수술-->
-     <div class="col s12 card-panel teal" style = " text-align :center;  margin-top:-25px;margin-bottom: 10px;">
-      <span class="white-text"  style ="text-align: center">
-        <h6>요청 수술</h6>
-      </span>
-    </div>
-     <!--관심수술-->
-         
-         <!--Choice start -->
-   <% @tags.each do |key, value| %>
-    <div class="row" id="interest_op">
-      <div class ="col s12 disappear" id="interest_op_<%= key %>">
-        <div class="col s1" style = "padding-right: 0px;padding-left: 0px; ">
-          <div class="card-panel teal" style = " text-align :center; height : 110px;">
-            <span class="white-text"  style ="text-align: center; ">
-              <h6><%=value[0][1]%></h6>
+            <span class="white-text"  style ="text-align: center">
+              <h5></h5>
+              <h6>코디 :  </h6>
             </span>
           </div>
-        </div>
-        <!--체크박스 시작-->
-        <div class="col s11" style = "padding-right: 0px;padding-left: 0px;">
-          <div class="col s12 card-panel white" style = " text-align :center; padding-top:10px; height : 110px; ">
-            <% for i in (1..value[1].length) do%>
-              <div class="col s3">
-                <form action="#">
-                  <p>
-                    <input type="checkbox" id="<%= key %>_<%= i %>_val" name="<%= key %>" value="<%= value[1][i-1][1] %> : no" />
-                    <label for="<%= key %>_<%= i %>_val"><%= value[1][i-1][1] %></label>
-                  </p>
-                </form>
+            <!-- user infoend-->
+            <!-- user part test-->
+            <div class="card-panel white" style = "padding-top: 0px;    padding-right: 0px;    padding-bottom: 0px;    padding-left: 0px;">
+                <div class = "row" style = "margin: 0.5rem 0 1rem 0;">
+                    <% @tags.each do |key, value|%>
+                        <div class= "col s4 form-box", id= <%=key%> style= "padding-right: 0px; padding-left: 0px;">
+                        <img src="/assets/part_picture/<%= key %>.png" alt="" style = "height: 50px; width: 50px;" ></br>
+                        <span id = "<%= key %>_val"><%= value[0][1] %></span>
+                        </div> 
+                    <% end %>
+                </div>
+                  <div id="wanted_op">
+                    <% @each_requesting.requesting_contents.each do |con| %>
+                      요청부위 : <%= con.part %><br>
+                      <% con_list = con.content.split("\n") %>
+                      <% con_list.each do |att| %>
+                        <%= att %>
+                      <% end %>
+                      <br>
+                    <% end %>
+                  </div>
+            </div>
+            
+            <div class="card-panel white" style = "padding-top: 0px;    padding-right: 0px;    padding-bottom: 0px;    padding-left: 0px;">
+                <div class = "row" style = "margin: 0.5rem 0 1rem 0;">
+                  <% @each_requesting.requesting_contents.each do |con| %>
+                    부위 : <%= con.part %><br>
+                    <% con_list = con.content.split("\n") %>
+                    <% con_list.each_index do |i| %>
+                      <label for="<%= con_list[i] %>[<%= i %>]"><%= con_list[i] %></label>
+                      <input id="<%= con_list[i] %>[<%= i %>]" type="text" class="validate" />
+                    <% end %>
+                    <br>
+                    <br>
+                  <% end %>
+                </div>
+            </div>
+            <!-- user part test-->
+            <!-- user desire-->
+                
+  
+                      
+                  
+        
+            <!-- user desire end-->
+      </div>
+            
+        <!--left end -->
+        
+        <!--right start-->
+      <div class="col s9">
+            <!--right start-->
+            <!--Userpicture , Wannabe star-->
+        <div class="row">
+          <div class ="col s12">
+              <div class = "row"   style=  "width: 100%;">
+                  <div class = "col s4 card-panel teal" >
+                  이름 : <%= @each_requesting.user.realname %>
+                  </div>
+                  <div class = "col s4 card-panel teal" >
+                  E-mail : <%= @each_requesting.user.email %>
+                  </div>
+                  <div class = "col s4 card-panel teal" >
+                  예약날짜 : 
+                  </div>
               </div>
-            <% end %>
+              <div class="col s9">
+              
+                 
+              <div class = "row"   style=  "width: 100%;">
+                <div class="col s12 card-panel teal" style = " text-align :center;">
+                  <span class="white-text"  style ="text-align: center">
+                    <h6>회원 사진</h6>
+                  </span>
+                </div>
+              <div class="col s4 card-panel white"  style = " text-align :center;margin-top: 0px;height : 230px">
+                <div class = "row"   >
+                  <img class="materialboxed" data-caption="좌측 사진" width="100%" src="<%= @each_requesting.img_left.url %>">
+                </div>
+              </div>
+              <div class="col s4 card-panel white" style = " text-align :center;margin-top: 0px;height : 230px">
+                <div class = "row" >
+                  <img class="materialboxed" data-caption="정면 사진" width="100%" src="<%= @each_requesting.img_front.url %>">
+                </div>
+              </div>
+              <div class="col s4 card-panel white" style = " text-align :center;margin-top: 0px ;height : 230px">
+                <div class = "row" >
+                  <img class="materialboxed" data-caption="우측 사진" width="100%" src="<%= @each_requesting.img_right.url %>">
+                </div>              
+              </div>
+            </div>
+          </div>
+          <div class="col s3">
+            <div class = "row">
+              <div class="col s12 card-panel teal" style = " text-align :center; ">
+                <span class="white-text"  style ="text-align: center">
+                  <h6>스타 사진</h6>
+                </span>
+              </div>
+              <div class="col s12 card-panel white" style = " text-align :center;margin-top: 0px;height : 230px">
+                <div class = "row" >
+                  <img class="materialboxed" data-caption="스타 사진" width="100%" src="<%= @each_requesting.prefer_img.url %>">
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <!--체크박스 끝-->
       </div>
-    </div>
-   <% end %>
-         <!--Choice end-->
-         <!-- send button start-->
-    <div class="row">
-     <div class ="col s12">
-      <div class = "col s10"><p></p> </div>
-        <div class = "col s2">
-          <button class="btn waves-effect waves-light" id="submit_button" type="submit" name="action">Submit
-            <i class="material-icons">send</i>
-          </button>
+           <!--Userpicture , Wannabe starend-->
+           <!-- 관심수술-->
+       <div class="col s12 card-panel teal" style = " text-align :center;  margin-top:-25px;margin-bottom: 10px;">
+        <span class="white-text"  style ="text-align: center">
+          <h6>요청 수술</h6>
+        </span>
+      </div>
+       <!--관심수술-->
+           
+           <!--Choice start -->
+     <% @tags.each do |key, value| %>
+      <div class="row" id="interest_op">
+        <div class ="col s12 disappear" id="interest_op_<%= key %>">
+          <div class="col s1" style = "padding-right: 0px;padding-left: 0px; ">
+            <div class="card-panel teal" style = " text-align :center; height : 110px;">
+              <span class="white-text"  style ="text-align: center; ">
+                <h6><%=value[0][1]%></h6>
+              </span>
+            </div>
+          </div>
+          <!--체크박스 시작-->
+          <div class="col s11" style = "padding-right: 0px;padding-left: 0px;">
+            <div class="col s12 card-panel white" style = " text-align :center; padding-top:10px; height : 110px; ">
+              <% for i in (1..value[1].length) do%>
+                <div class="col s3">
+                  <p>
+                    <input type="checkbox" id="<%= key %>[<%= i %>]" name="<%= key %>[<%= i %>]" value="<%= value[1][i-1][1] %>" />
+                    <label for="<%= key %>[<%= i %>]"><%= value[1][i-1][1] %></label>
+                  </p>
+                </div>
+              <% end %>
+            </div>
+          </div>
+          <!--체크박스 끝-->
         </div>
       </div>
-    </div>
-    <!-- send button end-->
+     <% end %>
+           <!--Choice end-->
+           <!-- send button start-->
+      <div class="row">
+       <div class ="col s12">
+        <div class = "col s10"><p></p> </div>
+          <div class = "col s2">
+            <button class="btn waves-effect waves-light" id="submit_button" type="submit" name="action">Submit
+              <i class="material-icons">send</i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- send button end-->
+     </div>
+    <!-- right end-->
    </div>
-  <!-- right end-->
- </div>
+ </form>
 </div>
 <!-- Part box jQuery-->
 <script>
@@ -194,51 +212,6 @@ $(document).ready(function(){
           });
       <% end %>
       
-      $('#submit_button').click(function(){
-        <% @tags.each do |key, value| %>
-          <% for i in (1..value[1].length) do %>
-          var checking_val<%= i %> = $("#<%= key %>_<%= i %>_val").is(":checked");
-          if(checking_val<%= i %>){
-            $("#<%=key%>_<%=i%>_val").attr("id","<%= key %>_<%= i %>_yes")
-          } else{
-            $("#<%=key%>_<%=i%>_val").attr("id","<%= key %>_<%= i %>_no")
-          }
-          <% end %>
-        <% end %>
-        
-        $.ajax({
-          url:"/estimating/counsel_complete",
-          success: function(){
-            alert("good");
-          }
-        });
-        
-       <% @tags.each do |key, value| %>
-          
-         if($("#<%=key%>").hasClass('check')){
-            $.ajax({
-              data: {
-                part: $("#<%= key %>_val").html(),
-                <% for i in (1..value[1].length) do %>
-                  <%if i != value[1].length %>
-                    check_values<%= i %>: $("#<%= key %>_<%= i %>_yes").val(),
-                  <% else %>
-                    check_values<%= i %>: $("#<%= key %>_<%= i %>_yes").val()
-                  <% end %>
-                <% end %>
-                },
-              method: "get",
-              url: "/estimating/counsel_content",
-              success: function(){
-                alert("hi");
-              },
-              error: function(){
-                alert("bye");
-              }
-            });
-         }
-       <% end %>
-     });
 });
 
 

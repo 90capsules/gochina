@@ -20,7 +20,8 @@ Rails.application.routes.draw do
   get 'mypage/estimating_box'
 
   get 'hospital/index'
-  get 'hospital/detail'
+  get 'hospital/detail/:id', to: 'hospital#detail'
+  post 'hospital/score_evaluate'
 
   get 'estimating/requesting'
   get 'estimating/requesting_content'

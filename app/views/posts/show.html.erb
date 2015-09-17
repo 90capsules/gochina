@@ -5,6 +5,9 @@
   <th>Title</th>
   <td><%= @post.title %></td>
 </tr>
+ <th>작성자</th>
+  <td><%= @post.user.present? ? @post.user.email : "n/a" %></td>
+</tr>
 <tr>
   <th>Content</th>
   <td><%= @post.content %></td>

@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 20150916130041) do
 
   create_table "counsel_contents", force: :cascade do |t|
     t.text     "content"
-    t.integer  "counse_id"
+    t.integer  "counsel_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -109,6 +109,7 @@ ActiveRecord::Schema.define(version: 20150916130041) do
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
+    t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "bulletin_id"
@@ -116,6 +117,7 @@ ActiveRecord::Schema.define(version: 20150916130041) do
   end
 
   add_index "posts", ["bulletin_id"], name: "index_posts_on_bulletin_id"
+  add_index "posts", ["user_id"], name: "index_posts_on_user_id"
 
   create_table "requesting_contents", force: :cascade do |t|
     t.text     "content"

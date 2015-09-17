@@ -13,6 +13,8 @@ class PostsController < ApplicationController
       else
         @posts = Post.all
       end
+      #최신글 부터 나열
+      @posts = Post.order(created_at: :desc)
     end
   end
 
@@ -28,7 +30,9 @@ class PostsController < ApplicationController
 
   def create
     @post = @bulletin.posts.new(post_params)
-
+    @post.user = current_user
+    @post.save
+    
     respond_to do |format|
       if @post.save
         format.html { redirect_to [@post.bulletin, @post], notice: 'Post was successfully created.' }

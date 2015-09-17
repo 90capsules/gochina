@@ -1,6 +1,6 @@
 class HospitalController < ApplicationController
   before_action :authenticate_user!, only: [:score_evaluate]
-  layout false
+  
   
   def index
     @hospitals = Hospital.all
@@ -14,7 +14,7 @@ class HospitalController < ApplicationController
 
   def score_evaluate
     score = HosReply.new
-    score.hospital_id = params[:id].to_i
+    score.hospital_id = params[:tv_id].to_i
     unless current_user.nil?
     score.user_id = current_user.id
     end

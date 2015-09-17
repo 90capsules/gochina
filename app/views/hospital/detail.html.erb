@@ -1,56 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-
-
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-	<!--Let browser know website is optimized for mobile
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-	-->	
-
-	<title>江南style</title>
-	
-
-  <!-- font CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<!-- Compiled and minified CSS -->
-	<!-- Main css styles -->
-	<!-- BEGIN PAGE LEVEL STYLES -->
-	<%= stylesheet_link_tag    'base/login3', media: 'all'%>
-	<!-- END PAGE LEVEL STYLES -->
-	<!-- BEGIN THEME STYLES -->
-	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-
-	<!-- Main javascript files -->
-	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-	
-
-  
- 
-
-	<%= csrf_meta_tags %>
-
-
-
-
-</head>
-<body>
-  
-  
-  <!-- Page topnavbar -->
-  <%= render 'layouts/topnavbar' %>
-  
-
-  <!-- Wrapper-->
-  <div id="wrapper" class="<%= params[:controller] %>.<%= params[:action] %>">
-
-
-<!-- 게시판 알림-->
-<%= render partial: "shared/flash_messages", flash: flash %>
-    <!-- Main view  -->
-  
-
-
 <div class="card">
   <div class="card-image" style="background-position: center;">
     <center>
@@ -61,16 +8,19 @@
   </div>
   <div class="card-content" style = "text-align: center;">
     <p><%= @a_hospital.hos_intro %></p>
-     <span class="star-rating">
+    <span class="star-rating">
       <% 1.upto(5) do |i| %>
-      <% if i == @a_hospital.avg.round(0) %>
-        <i class="on"></i>
-      <% else %>
-        <i></i>
+        <% if i == @a_hospital.avg.round(0) %>
+          <i class="on_star"></i>
+        <% else %>
+          <i></i>
+        <% end %>
       <% end %>
-    <% end %>>
-  </span>
-    <p><%= @a_hospital.avg.round(1)%> 점 (<%=@a_hospital.hos_replies.count%> 명)</p>
+    </span>
+  
+  
+  
+    <p><%= @a_hospital.avg.round(1) %> 점 (<%= @a_hospital.hos_replies.count%> 명)</p>
   </div>
   <div class="card-action" style = "text-align: center;">
     <a href="#">병원 홈페이지 이동</a>
@@ -79,10 +29,10 @@
 
 
     
-    <%=form_tag "/hospital/score_evaluate", method: "post" do %>
-    <input type="hidden" name="id" value="<%=@a_hospital.id%>">
+    <%= form_tag "/hospital/score_evaluate", method: "post" do %>
+    <input type="hidden" name="tv_id" value="<%= @a_hospital.id %>">
     
-    <div class="star-rating small">
+    <div class="star-rating small_star">
       <input type="radio" name="rating" value="1"><i></i>
       <input type="radio" name="rating" value="2"><i></i>
       <input type="radio" name="rating" value="3"><i></i>
@@ -92,105 +42,32 @@
     <br>
     <input type="text" class="form-control" name="msg" placeholder="별점 체크 후 평가를 남겨주세요">
     <br>
-    <button class="btn btn-success" href="/hospital/score_evaluate" role="button">평가하기</button>
+    <button class="btn btn-success" href="#" role="button">평가하기</button>
   <% end %>
+
+
+
 
 <div class="row">
   <div class="col-lg-12">
     <!-- 각 코멘트들 -->
     <% @a_hospital.hos_replies.reverse.each do |c| %>
-      <div class="well">
-        <span class="star-rating small">
+      <div>
+        <span class="star-rating small_star">
           <% 1.upto(5) do |i| %>
             <% if i == c.hos_score %>
-              <i class="on"></i>
+              <i class="on_star"></i>
             <% else %>
               <i></i>
             <% end %>
           <% end %>
         </span>
         
-        <p><%=c.created_at.in_time_zone("Seoul")%></p>
+        <p><%= c.created_at.in_time_zone("Seoul") %></p>
         <% if current_user %>
         <p><%= c.user.email %> : <%= c.content %></p>
         <% end %>
       </div>
   <% end %>
   </div>
-  
 </div>
-  </div>
-  <!-- End wrapper-->
-
-  
-  <!-- Footer -->
-  <%= render 'layouts/footer2' %>
-  
-
-
-  <!-- jquery here -->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
-  <!-- Include javascript per-controller - vendor plugins -->
-
-  
-  <%= javascript_include_tag 'base/jquery.min' %>
-  <%= javascript_include_tag 'base/jquery-migrate.min' %>
-  <!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
-  <%= javascript_include_tag 'base/jquery-ui.min' %>
-  <%= javascript_include_tag 'base/bootstrap.min' %>
-  <%= javascript_include_tag 'base/bootstrap-hover-dropdown.min' %>
-  <%= javascript_include_tag 'base/jquery.slimscroll.min' %>
-  <%= javascript_include_tag 'base/jquery.blockui.min' %>
-  <%= javascript_include_tag 'base/jquery.cokie.min' %>
-  <%= javascript_include_tag 'base/jquery.uniform.min' %>
- 
-  <!-- END CORE PLUGINS -->
-  <!-- BEGIN PAGE LEVEL PLUGINS -->
-  <%= javascript_include_tag 'base/jquery.vmap' %>
-  <%= javascript_include_tag 'base/jquery.vmap.russia' %>
-  <%= javascript_include_tag 'base/jquery.vmap.world' %>
-  <%= javascript_include_tag 'base/jquery.vmap.europe' %>
-  <%= javascript_include_tag 'base/jquery.vmap.germany' %>
-  <%= javascript_include_tag 'base/jquery.vmap.usa' %>
-  <%= javascript_include_tag 'base/jquery.vmap.sampledata' %>
-  
-  <%= javascript_include_tag 'base/jquery.validate.min.js' %>
-  <%= javascript_include_tag 'base/select2.min.js' %>
-  <!-- IMPORTANT! fullcalendar depends on jquery-ui.min.js for drag & drop support -->
-  <%= javascript_include_tag 'base/morris.min' %>
-  <%= javascript_include_tag 'base/raphael-min' %>
-  <%= javascript_include_tag 'base/jquery.sparkline.min' %>
-  <!-- END PAGE LEVEL PLUGINS -->
-  <!-- BEGIN PAGE LEVEL SCRIPTS -->
-  <%= javascript_include_tag 'base/metronic' %>
-  <%= javascript_include_tag 'base/layout' %>
-  <%= javascript_include_tag 'base/quick-sidebar' %>
-  <%= javascript_include_tag 'base/demo' %>
-  <%= javascript_include_tag 'base/index3' %>
-  <%= javascript_include_tag 'base/tasks' %>
-  
-  <%= javascript_include_tag 'base/login', media: 'all' %>
-  <!-- END PAGE LEVEL SCRIPTS -->
-  
-  <%= javascript_include_tag params[:controller] if ::Rails.application.assets.find_asset("#{params[:controller]}.js") %>		
-
-
-  <script>
-    jQuery(document).ready(function() {    
-       Metronic.init(); // init metronic core componets
-       Layout.init(); // init layout
-       Login.init();
-       Demo.init(); // init demo(theme settings page)
-       QuickSidebar.init(); // init quick sidebar
-       Index.init(); // init index page
-       Tasks.initDashboardWidget(); // init tash dashboard widget
-       
-    });
-  </script>
-  
-  
-
-</body>
-</html>

@@ -1,3 +1,9 @@
+// 별점 디자인 가져오기
+// 참고 블로그 : http://rog.ie/blog/css-star-rater
+// 가져온 주소 : http://codepen.io/rogie/pen/GIfqc
+// CSS (LESS) 에서 반드시 View Compiled 할 것!
+// LESS는 SCSS(SASS)와 마찬가지로 구조적으로 CSS 코드를 짤 수 있도록 도와줌
+// 가져올 css 에서 Global 한 요소들은 안 가져오기 (body, * 등)
 
 .star-rating {
   font-size: 0;
@@ -60,11 +66,22 @@
 }
 // 별점 디자인 가져오기 끝
 
-.small {
+.small_star {
 	width: 125px;
 	height: 25px;
 }
 
-.on {
+.on_star {
 	opacity: 1 !important;
 }
+
+[type="radio"]:not(:checked), [type="radio"]:checked{
+  position : relative !important;
+  left : 0px !important;
+  visibility: visible !important;
+  
+}
+
+
+
+

@@ -1,18 +1,3 @@
-<h1>84~쭉 
-
-젬을 설치한다.
-
-
-config/initializers/carrierwave.rb 파일을 생성한 후 아래의 코드를 추가해 주기만 하면 한글파일명이
-깨지지 않고 그대로 업로드되는
-CarrierWave::SanitizedFile.sanitize_regexp = /[^[:word:]\s\.\-\+]/
-
-
-rails g uploader Picture
-create app/uploaders/picture_uploader.rb
-
-92
-</h1>
 <h2><%= bulletin_name params[:bulletin_id] %> <small><%= link_to '설정', edit_bulletin_path(params[:bulletin_id])%></small></h2>
 
 <div class='gallery'>

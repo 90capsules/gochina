@@ -30,4 +30,10 @@ ul#posts_tagged {
   ul#posts_tagged li {
     margin-bottom: .5em; }
 
+input[type='file'] {
+  border: 1px solid #d1d1d1;
+  padding: .5em;
+  border-radius: .3em;
+  width: 100%; }
+
 /*# sourceMappingURL=posts.css.map */

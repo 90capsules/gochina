@@ -2,16 +2,17 @@
 class PictureUploader < CarrierWave::Uploader::Base
 
   
-  # 업로드 상단에 아래의 after 매크로를 추가한다.
-  after :remove, :delete_empty_upstream_dirs
-  def delete_empty_upstream_dirs
-  path = ::File.expand_path(store_dir, root)
-  Dir.delete(path) # fails if path not empty dir
-  path = ::File.expand_path(base_store_dir, root)
-  Dir.delete(path) # fails if path not empty dir
-  rescue SystemCallError
-  true # nothing, the dir is not empty
-  end
+  # 빈 디렉토리 삭제 보류
+  
+  # after :remove, :delete_empty_upstream_dirs
+  # def delete_empty_upstream_dirs
+  # path = ::File.expand_path(store_dir, root)
+  # Dir.delete(path) # fails if path not empty dir
+  # path = ::File.expand_path(base_store_dir, root)
+  # Dir.delete(path) # fails if path not empty dir
+  # rescue SystemCallError
+  # true # nothing, the dir is not empty
+  # end
   
  include CarrierWave::MiniMagick
 

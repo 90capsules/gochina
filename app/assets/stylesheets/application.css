@@ -13,7 +13,11 @@
  *= require_tree .
  *= require_self
  */
-
+ 
+/* 게시판용 */
+@import "font-awesome";
+@import 'posts';
+/* 게시판용 끝 */
 html {
 font-family: "Microsoft Yahei", tahoma, "segoe UI",  "Microsoft Jhenghei", meiryo, "malgun gothic"
 }
@@ -477,3 +481,6 @@ Inline Social Icons
 .input-field label{
     color :grey;
 }
+
+
+

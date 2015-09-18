@@ -1,6 +1,6 @@
 class MypageController < ApplicationController
   
-  @all_counsels = Counsel.all
+  
   
   
   
@@ -20,8 +20,11 @@ class MypageController < ApplicationController
   end
   
   def estimating_box
+    
+    @all_counsel = Counsel.all
   end
   
   def estimating_box_detail
+    @each_counsel = Counsel.where(:id => params[:id]).take
   end
 end

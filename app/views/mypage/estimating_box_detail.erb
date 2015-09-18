@@ -18,8 +18,7 @@
                     </div>
                     <div class="col s6">
                         <div class="card-content">
-                            <span class="card-title" style="color:black;"><%= ["그랜드 성형외과", "드림 성형외과", "리젠 성형외과", "메가 성형외과", "바노바기 성형외과",
-                                          "원진 성형외과", "유캔비 성형외과", "유티플봄 성형외과", "쥬얼리 성형외과", "티엘 성형외과"].sample(1).first  %></span>
+                            <span class="card-title" style="color:black;"><%= @each_counsel.codi.hospital.hos_name_display  %></span>
                             <br>
                             <p>평균 응답시간 <%=["10.21분", "30.2분", "14.32분"].sample(1).first  %></p>
                             <br>
@@ -75,8 +74,14 @@
         </div>
         <div class="col s12" >
             <div class="card">
-                    <p>애교주름(알로덤) (영구적으로애교 시술의 효과를 유지할 수 있습니다.)使用卧蚕处皱纹（人工真皮）的情况可以达到永久性的手术效果.</p>
+                    <p>
+                        <% @each_counsel.counsel_contents.each do |con| %>
+                            <td><%= con.content %></td>
+                        <% end %>
+                    </p>
                 
+                
+                                
             </div>
         </div>
     </div>

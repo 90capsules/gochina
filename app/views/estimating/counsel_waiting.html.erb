@@ -20,49 +20,32 @@
             
         <!--right start-->
         <div class="col s9">
-            <nav>
-              <div class="nav-wrapper" style ="background-color:#009688 !important;">
-              <a href="#" class="brand-logo right" style = "color:white; font-size:25px; margin-left:20px;">전체보기</a>
-              <ul id="nav-mobile" class="left hide-on-med-and-down">
-                <li><a href="sass.html" style = "color:white;">상담대기</a></li>
-                <li><a href="badges.html" style = "color:white;">상담완료</a></li>
-                <li><a href="collapsible.html" style = "color:white;">추가상담대기</a></li>
-                <li><a href="collapsible.html" style = "color:white;">추가상담완료</a></li>
-              </ul>
-              </div>
-            </nav>
             <!--right start-->
-            <div class="container">
-              <div class="row">
+            <div class="row">
                 <% @all_requesting.each do |rq| %>
-                  <div class="col l4 m6 s12">
-                    <div class="card"style = "height: 466px">
-                      <div class="card-image">
-                        <img src="/assets/background1.jpg"  width="320" height= "220">
-                        <span class="card-title"><%= rq.user.realname %></span>
+                    <div class="col s4">
+                      <div class="card small" style="width:100%; padding-right: 5px; padding-left: 5px;">
+                        <div class="card-image">
+                          <img src="<%= rq.img_front.url %>" style="height: 150px;">
+                          <span class="card-title"></span>
+                        </div>
+                        <div class="card-content" style="padding-top: 0px; padding-bottom: 0px;">
+                          <br>
+                            <p><%= rq.user.realname %>님</p>
+                            <p>요청부위 : 
+                                <% rq.requesting_contents.each do |con| %>
+                                    <td><%= con.content %></td>
+                                <% end %>
+                            </p>
+                        </div>
+                        <div class="card-action" style = "text-align:center;">
+                          <a href="/estimating/counsel/<%= rq.id %>">자세히보기</a>
+                        </div>
                       </div>
-                      <div class="card-content" style = "height:125px">
-                        <p>
-                            <% rq.requesting_contents.each do |con| %>
-                                <td><%= con.content %></td>
-                            <% end %>
-                        </p>
-                      </div>
-                      <div class="card-action">
-                        <a href="/estimating/counsel/<%= rq.id %>">자세히보기</a>
-                      
-
-                      
-                      </div>
-                     
                     </div>
-                  </div>
                 <% end %>
-              </div>
-            </div>            
-            
-            
-           
+            </div>
+
             
             
             

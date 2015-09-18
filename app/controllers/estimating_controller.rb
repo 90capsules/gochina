@@ -149,6 +149,7 @@ class EstimatingController < ApplicationController
   def counsel_waiting
     
     @all_requesting = Requesting.all
+    
   
   end
   

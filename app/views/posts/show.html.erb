@@ -32,13 +32,13 @@
         <div class="col s9">
         <div class ="board">    
         <h2 class="header"><%= bulletin_name params[:bulletin_id] %></h2>
-
+<div class="table_content">
 <table class='table'>
 <tr>
   <th>Title</th>
   <td><%= @post.title %></td>
 </tr>
- <th>작성자</th>
+ <th>Author</th>
   <td><%= @post.user.present? ? @post.user.email : "n/a" %></td>
 </tr>
 <tr>
@@ -60,7 +60,7 @@
   <td><%= @post.created_at %></td>
 </tr>
 </table>
-
+</div>
 <%= render "comments/comments" %>
 
 <%= link_to 'Edit', edit_bulletin_post_path(@post.bulletin, @post), class: 'btn btn-default' %>

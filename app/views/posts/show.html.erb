@@ -13,18 +13,21 @@
              <h6>性別 : <%=current_user.sex%></h6>
             </span>
             </div>
-            <!-- user info end-->
-            <!-- user part test--보류>
-            <!--<div class="card-panel white" style = "padding-top: 0px;    padding-right: 0px;    padding-bottom: 0px;    padding-left: 0px;">-->
-            <!--    <div class = "row" style = "margin: 0.5rem 0 1rem 0;">-->
-            <!--        <%# @tags.each do |key, value|%>-->
-            <!--          <button name="<%#=key%>" class= "col s4 form-box" type="button" id= <%#=key%> style= "padding-right: 0px; padding-left: 0px;">-->
-            <!--          <img src="/assets/part_picture/<%#= key %>.png" alt="" style = "height: 50px; width: 50px;" ></br>-->
-            <!--          <%#= value[0][0] %>-->
-            <!--          </button> -->
-            <!--        <#% end %>-->
-            <!--    </div>-->
-            <!--</div>-->
+           <% if @post.bulletin.post_type == "gallery" %>
+   
+             <!--user info end-->
+             <!--user part test--보류>-->
+            <div class="card-panel white" style = "padding-top: 0px;    padding-right: 0px;    padding-bottom: 0px;    padding-left: 0px;">
+                <div class = "row" style = "margin: 0.5rem 0 1rem 0;">
+                    <% @tags.each do |key, value|%>
+                      <button name="<%=key%>" class= "col s4 form-box" type="button" id= <%=key%> style= "padding-right: 0px; padding-left: 0px;">
+                      <img src="/assets/part_picture/<%= key %>.png" alt="" style = "height: 50px; width: 50px;" ></br>
+                      <%= value[0][0] %>
+                      </button> 
+                    <% end %>
+                </div>
+            </div>
+            <% end %>
             </div>
         <div class="col s9">
         <div class ="board">    

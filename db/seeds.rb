@@ -19,10 +19,10 @@ Hospital.create(hos_name_display: "리젠성형외과", hos_address: "서울 서
 User.create(nickname: "eatanddie")
 #=======
 
-Bulletin.create! title: '공지사항'
+Bulletin.create! title: '커뮤니티'
 Bulletin.create! title: '새소식'
 Bulletin.create! title: '가입인사', post_type: 'blog'
-Bulletin.create! title: '갤러리', post_type: 'gallery'
+Bulletin.create! title: '후기', post_type: 'gallery'
 #>>>>>>> 6f4753b54e96bf0470763674405c7ecdc6c27bda
 
 

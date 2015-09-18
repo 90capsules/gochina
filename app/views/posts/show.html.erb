@@ -1,6 +1,37 @@
 <!--글내부-->
 <div class = "container"> 
-<h2><%= bulletin_name params[:bulletin_id] %></h2>
+    <div class = "row">
+            <div class="col s3">
+               <!-- user info-->
+            <div class="card-panel red lighten-2">
+            <div class="caption center-align">
+              <img src="<%current_user.profile_img%>" alt="" class="circle responsive-img" style = "height: 150px; width: 150px;" > 
+            </div>
+            <span class="white-text"  style ="text-align: center">
+             <h5><%=current_user.realname%></h5>
+             <h6>年龄 : <%=current_user.age%> </h6>
+             <h6>性別 : <%=current_user.sex%></h6>
+            </span>
+            </div>
+           <% if @post.bulletin.post_type == "gallery" %>
+   
+             <!--user info end-->
+             <!--user part test--보류>-->
+            <div class="card-panel white" style = "padding-top: 0px;    padding-right: 0px;    padding-bottom: 0px;    padding-left: 0px;">
+                <div class = "row" style = "margin: 0.5rem 0 1rem 0;">
+                    <% @tags.each do |key, value|%>
+                      <button name="<%=key%>" class= "col s4 form-box" type="button" id= <%=key%> style= "padding-right: 0px; padding-left: 0px;">
+                      <img src="/assets/part_picture/<%= key %>.png" alt="" style = "height: 50px; width: 50px;" ></br>
+                      <%= value[0][0] %>
+                      </button> 
+                    <% end %>
+                </div>
+            </div>
+            <% end %>
+            </div>
+        <div class="col s9">
+        <div class ="board">    
+        <h2 class="header"><%= bulletin_name params[:bulletin_id] %></h2>
 
 <table class='table'>
 <tr>
@@ -34,4 +65,8 @@
 
 <%= link_to 'Edit', edit_bulletin_post_path(@post.bulletin, @post), class: 'btn btn-default' %>
 <%= link_to 'Back', bulletin_posts_path, class: 'btn btn-default' %>
+<!--기능안됨-->
+<%= link_to 'Destroy', bulletin_posts_path(@post.bulletin, @post), method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-default' %>
+</div>
+</div>
 </div>

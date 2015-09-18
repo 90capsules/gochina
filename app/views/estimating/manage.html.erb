@@ -18,7 +18,15 @@
             <!-- 실시간채팅 시작 -->
             <div class="card-panel white">
                 <h1>채팅</h1>
-                
+
+                <div id="chat_list">
+                    <% @chatchats.each do |p| %>
+                      <p> <%= p.content %> </p>
+                    <% end %>
+                </div>
+                <textarea id="chat_content">
+                </textarea>
+                <a href="#" id="submit_msg">아!!</a>
                 
                 
                 
@@ -52,8 +60,32 @@
     </div>
 </div>
     
-
-
-
-
-
+<script>
+$(function() {
+    
+    var pusher = new Pusher('6db88e6ebf1b94b03e95', {
+      encrypted: true
+    });
+    
+    var channel = pusher.subscribe('onlyone');
+    
+    channel.bind('new_message', function(data) {      
+      var txt = data.msg;
+      $("#chat_list").append("<p>" + txt + "</p>");    
+      
+    });
+    
+    $("#submit_msg").click(function(){
+        $.ajax({
+            data: {
+                content: $("#chat_content").val()
+            },
+            url: "/estimating/send_msg",
+            success: function(){
+                $("#chat_content").val('');
+                $("#chat_content").focus();                
+            }          
+        });
+    });
+});
+</script>

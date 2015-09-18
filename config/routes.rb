@@ -38,6 +38,7 @@ Rails.application.routes.draw do
   get 'estimating/counsel_waiting'
   get 'estimating/counsel_complete'
   post 'estimating/counsel_content'
+  get 'estimating/send_msg'
   
 
 

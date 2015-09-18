@@ -71,7 +71,24 @@ class EstimatingController < ApplicationController
   end
 
   def manage
+    @chatchats = Chatchat.all    
   end
+
+  def send_msg
+    p = Chatchat.new
+    p.content = params[:content]
+    p.save
+    
+    Pusher['onlyone'].trigger('new_message', {
+      msg: params[:content]
+    })
+    
+    render :text => ""
+    
+  end
+
+
+
 
   def manage_waiting
   end

@@ -7,6 +7,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem "font-awesome-rails"
 gem 'fog'
+gem 'pusher'
 
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

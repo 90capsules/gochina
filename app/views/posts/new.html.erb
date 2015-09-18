@@ -1,6 +1,8 @@
+<div class = "container"> 
 <h2><%= bulletin_name params[:bulletin_id] %></h2>
 <h4>작성자 : <%= current_user.email %></h4>
 <%= render 'form' %>
 
 <hr>
 <%= link_to 'Back', bulletin_posts_path, class: 'btn btn-default' %>
+</div>

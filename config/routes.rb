@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   get 'mypage/save_box'
   get 'mypage/saving_box'
   get 'mypage/estimating_box'
+  
+  get 'mypage/estimating_box_detail/:id', to: 'mypage#estimating_box_detail'
+  
 
   get 'hospital/index'
   get 'hospital/detail/:id', to: 'hospital#detail'

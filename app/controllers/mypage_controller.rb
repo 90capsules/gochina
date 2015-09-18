@@ -20,8 +20,8 @@ class MypageController < ApplicationController
   end
   
   def estimating_box
-    
-    
-    
+  end
+  
+  def estimating_box_detail
   end
 end

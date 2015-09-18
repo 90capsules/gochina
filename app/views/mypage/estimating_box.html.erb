@@ -58,23 +58,43 @@
     <!--right start-->
     <div class="col s9">
       <!--right start-->
-      <div class="row">
+        <nav>
+          <div class="nav-wrapper" style ="background-color:#009688 !important;">
+            <a href="#" class="brand-logo" style = "color:white; font-size:25px; margin-left:20px;">전체보기</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="sass.html" style = "color:white;">눈</a></li>
+            <li><a href="badges.html" style = "color:white;">코</a></li>
+            <li><a href="collapsible.html" style = "color:white;">입</a></li>
+            <li><a href="collapsible.html" style = "color:white;">이마</a></li>
+            <li><a href="collapsible.html" style = "color:white;">가슴</a></li>
+            <li><a href="collapsible.html" style = "color:white;">지방이식</a></li>
+            <li><a href="collapsible.html" style = "color:white;">보톡스</a></li>
+            <li><a href="collapsible.html" style = "color:white; margin-right: 5px;">모발이식</a></li>
+          </ul>
+          </div>
+        </nav>
         
-<div class="container">
-  <div class="row">
-    
-   
-      
-    
-  </div>
-</div>     
-     
-     
-     
-     
-  
-    <!-- send button end-->
-   </div>
+        <div class="row">
+        <% 1.upto(10) do |i|%>
+            <div class="col s4">
+              <div class="card small" style="width:100%; padding-right: 5px; padding-left: 5px;">
+                <div class="card-image">
+                  <img src="/assets/<%= ["da_main", "grand_main", "juwerly_main", "mega_main", "regen_main"].sample(1).first %>.jpg" style="height: 150px;">
+                  <span class="card-title"><%= ["그랜드 성형외과", "드림 성형외과", "리젠 성형외과", "메가 성형외과", "바노바기 성형외과",
+                                          "원진 성형외과", "유캔비 성형외과", "유티플봄 성형외과", "쥬얼리 성형외과", "티엘 성형외과"].sample(1).first  %></span>
+                </div>
+                <div class="card-content" style="padding-top: 0px; padding-bottom: 0px; text-align: center;">
+                  <br>
+                  <p><%= ["1200만원", "300만원", "200만원", "150만원", "20000만원",].sample(1).first %></p>
+                  <p><%= ["2015.09.14", "2014.12.11", "2015.04.03"].sample(1).first %></p>
+                </div>
+                <div class="card-action" style = "text-align:center;">
+                  <a href="/mypage/estimating_box_detail/<%= i %>" method="post">자세한 견적보기</a>
+                </div>
+              </div>
+            </div>
+        <% end %>
+        
   <!-- right end-->
- </div>
+   </div>
 </div>

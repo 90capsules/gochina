@@ -2,18 +2,19 @@
 
 <%= simple_form_for([@bulletin, @post]) do |f| %>
   <%= f.error_notification %>
-
-  <div class="form-inputs">
+<div class="row">
+  <div class="input-field">
     <%= f.input :title %>
+    </div>
     <%= f.input :content, input_html: { rows: 10 } %>
-
     <% if @post.bulletin.post_type == "gallery" %>
       <%= f.input :picture, as: :file %>
       <%= f.hidden_field :picture_cache %>
     <% end %>
-
+<div class="input-field">
     <%= f.input :tag_list_fixed, placeholder: '하나 이상의 태그는 콤마(,)로 구분하여 입력하세요.' %>
   </div>
+  
 
   <div class="form-actions">
     <%= f.button :submit %>

@@ -22,7 +22,7 @@
             <div class="card-panel white" style = "padding-top: 0px;    padding-right: 0px;    padding-bottom: 0px;    padding-left: 0px;">
                 <div class = "row" style = "margin: 0.5rem 0 1rem 0;">
                     <% @tags.each do |key, value|%>
-                      <button class= "col s4 form-box", name="<%=key%>" id= <%=key%> style= "padding-right: 0px; padding-left: 0px;">
+                      <button class= "col s4 form-box", name="<%=key%>" id= <%=key%> type = "button" style = "padding-right: 0px; padding-left: 0px;">
                       <img src="/assets/part_picture/<%= key %>.png" alt="" style = "height: 50px; width: 50px;" ></br>
                       <span id = "<%= key %>_val"><%= value[0][1] %></span>
                       </button> 
@@ -71,72 +71,110 @@
             <!--right start-->
             <!--Userpicture , Wannabe star-->
         <div class="row">
-          <div class ="col s12">
-              <div class = "row"   style=  "width: 100%;">
-                  <div class = "col s4 card-panel teal" >
-                  이름 : <%= @each_requesting.user.realname %>
-                  </div>
-                  <div class = "col s4 card-panel teal" >
-                  E-mail : <%= @each_requesting.user.email %>
-                  </div>
-                  <div class = "col s4 card-panel teal" >
-                  예약날짜 : 
-                  </div>
-              </div>
-              <div class="col s9">
+              <div class="col s12 " style =" padding-right: 0px; height: 40px;">
               
-                 
+              
+                <div class ="col s4" style =" padding-right: 0px; height: 40px;">
+                    <div class = "row"   style=  "width: 100%;">
+                        <div class = "col s12 card-panel teal" >
+                        <span class="white-text"  style ="text-align: center">
+                          <h6>이름 : <%= @each_requesting.user.realname %></h6>
+                        </span>
+                        </div>
+                      </div>
+                    </div>
+          <div class ="col s4" style =" padding-right: 0px; height: 40px;">
+                <div class = "row"   style=  "width: 100%;">
+                  <div class = "col s12 card-panel teal" >
+                  <span class="white-text"  style ="text-align: center">
+                    <h6> E-mail : <%= @each_requesting.user.email %></h6>
+                  </span>
+                  </div>
+                </div>
+              </div>
+            <div class ="col s4" style =" padding-right: 0px; height: 40px;">
+                <div class = "row"   style=  "width: 100%;">
+                  <div class = "col s12 card-panel teal" >
+                  <span class="white-text"  style ="text-align: center">
+                    <h6>예약날짜 : </h6>
+                  </span>
+                  </div>
+                </div>
+              </div>
+              
+              
+          </div>
+        </div>
+                  
+                  
+              <div class="col s9">
               <div class = "row"   style=  "width: 100%;">
+              
+              
                 <div class="col s12 card-panel teal" style = " text-align :center;">
                   <span class="white-text"  style ="text-align: center">
                     <h6>회원 사진</h6>
                   </span>
                 </div>
+                
+                
               <div class="col s4 card-panel white"  style = " text-align :center;margin-top: 0px;height : 230px">
                 <div class = "row"   >
                   <img class="materialboxed" data-caption="좌측 사진" width="100%" src="<%= @each_requesting.img_left.url %>">
                 </div>
               </div>
+              
+              
               <div class="col s4 card-panel white" style = " text-align :center;margin-top: 0px;height : 230px">
                 <div class = "row" >
                   <img class="materialboxed" data-caption="정면 사진" width="100%" src="<%= @each_requesting.img_front.url %>">
                 </div>
               </div>
+              
+              
               <div class="col s4 card-panel white" style = " text-align :center;margin-top: 0px ;height : 230px">
                 <div class = "row" >
                   <img class="materialboxed" data-caption="우측 사진" width="100%" src="<%= @each_requesting.img_right.url %>">
                 </div>              
               </div>
+              
+              
             </div>
           </div>
+          
+          
           <div class="col s3">
             <div class = "row">
+            
+            
               <div class="col s12 card-panel teal" style = " text-align :center; ">
                 <span class="white-text"  style ="text-align: center">
                   <h6>스타 사진</h6>
                 </span>
               </div>
+              
               <div class="col s12 card-panel white" style = " text-align :center;margin-top: 0px;height : 230px">
                 <div class = "row" >
                   <img class="materialboxed" data-caption="스타 사진" width="100%" src="<%= @each_requesting.prefer_img.url %>">
                 </div>
               </div>
+              
             </div>
           </div>
-        </div>
-      </div>
+        
            <!--Userpicture , Wannabe starend-->
-           <!-- 관심수술-->
+           <!-- 상태 부분 start-->
+        
        <div class="col s12 card-panel teal" style = " text-align :center;  margin-top:-25px;margin-bottom: 10px;">
         <span class="white-text"  style ="text-align: center">
-          <h6>요청 수술</h6>
+          <h6>부위의 상태</h6>
         </span>
       </div>
-       <!--관심수술-->
+       <!--상태 -->
            
            <!--Choice start -->
      <% @tags.each do |key, value| %>
-      <div class="row" id="interest_op">
+      <div class="row" id="interest_op" style = "margin-bottom: 0px;">
         <div class ="col s12 disappear" id="interest_op_<%= key %>">
           <div class="col s1" style = "padding-right: 0px;padding-left: 0px; ">
             <div class="card-panel teal" style = " text-align :center; height : 110px;">
@@ -145,6 +183,7 @@
               </span>
             </div>
           </div>
+          
           <!--체크박스 시작-->
           <div class="col s11" style = "padding-right: 0px;padding-left: 0px;">
             <div class="col s12 card-panel white" style = " text-align :center; padding-top:10px; height : 110px; ">
@@ -162,6 +201,49 @@
         </div>
       </div>
      <% end %>
+     
+     <!--상태 부분 end-->
+          <!--수술 부분 start-->
+          <div class="col s12 card-panel teal" style = " text-align :center;  margin-top:0px;margin-bottom: 10px;">
+        <span class="white-text"  style ="text-align: center">
+          <h6>추천 수술</h6>
+        </span>
+      </div>
+       <!--상태 -->
+           
+           <!--Choice start -->
+     <% @tags.each do |key, value| %>
+      <div class="row" id="interest_op" style = "margin-bottom: 0px;">
+        <div class ="col s12 disappear" id="interest_op_<%= key %>_recom">
+          <div class="col s1" style = "padding-right: 0px;padding-left: 0px; ">
+            <div class="card-panel teal" style = " text-align :center; height : 110px;">
+              <span class="white-text"  style ="text-align: center; ">
+                <h6><%=value[0][1]%></h6>
+              </span>
+            </div>
+          </div>
+          
+          <!--체크박스 시작-->
+          <div class="col s11" style = "padding-right: 0px;padding-left: 0px;">
+            <div class="col s12 card-panel white" style = " text-align :center; padding-top:10px; height : 110px; ">
+              <% for i in (1..value[1].length) do%>
+                <div class="col s3">
+                  <p>
+                    <input type="checkbox" id="<%= key %>[<%= i %>]" name="<%= key %>[<%= i %>]" value="<%= value[1][i-1][1] %>" />
+                    <label for="<%= key %>[<%= i %>]"><%= value[1][i-1][1] %></label>
+                  </p>
+                </div>
+              <% end %>
+            </div>
+          </div>
+          <!--체크박스 끝-->
+        </div>
+      </div>
+     <% end %>
+          
+          <!-- 수술 부분 end-->
+          
+          
            <!--Choice end-->
            <!-- send button start-->
       <div class="row">
@@ -177,8 +259,11 @@
       <!-- send button end-->
      </div>
     <!-- right end-->
+    
    </div>
  </form>
+ 
+ 
 </div>
 <!-- Part box jQuery-->
 <script>
@@ -199,15 +284,18 @@ $(document).ready(function(){
                   if($('#<%= key %>').hasClass("form-box")){      
                     $('#<%= key %>').removeClass('form-box').addClass('check');
                     $('#interest_op_<%= key %>').removeClass('disappear').addClass('appear');
+                     $('#interest_op_<%= key %>_recom').removeClass('disappear').addClass('appear');
                     $('#<%= key %>').off("mouseleave");
                   }    
                   else if ($('#<%= key %>').hasClass("check")){
                     $('#<%= key %>').removeClass('check').addClass('form-box');
                     $('#interest_op_<%= key %>').removeClass('appear').addClass('disappear');   
+                     $('#interest_op_<%= key %>_recom').removeClass('appear').addClass('disappear');
                     $('#<%= key %>').on('mouseleave', function(){
                             $('#<%= key %>').removeClass('check');
                             });    
                   }
+                  
               }
           });
       <% end %>

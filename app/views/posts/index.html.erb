@@ -1,14 +1,22 @@
+<!--게시판 전체 application-->
 <div class = "container"> 
+
+
 <% if params["bulletin_id"] %>
   <%= render "posts/post_types/#{@bulletin.post_type}" %>
+ 
+  
 <% else %>
   <% if params[:tag] %>
   <h2>Posts tagged with "<%= params[:tag] %>" <small>( <%= @posts.size %> )</small></h2>
   <% else %>
   <h2>All Posts <small>( <%= @posts.size %> )</small></h2>
   <% end %>
+  </div>
+  
   <ul id='posts_tagged'>
-    <%= render @posts %>
+    <%= render @posts %> 
+    
   </ul>
+ 
 <% end %>
-</div>

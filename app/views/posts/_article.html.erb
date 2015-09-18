@@ -1,7 +1,4 @@
-<!--새글-->
-<div class = "container"> 
-    <div class = "row">
-            <div class="col s3">
+<div class="col s3">
                <!-- user info-->
             <div class="card-panel red lighten-2">
             <div class="caption center-align">
@@ -26,22 +23,3 @@
             <!--    </div>-->
             <!--</div>-->
             </div>
-        
-        <div class="col s9">
-        <div class ="board">    
-         <h2 class="header"><%= bulletin_name params[:bulletin_id] %></h2>
-            <div class="input-field">
-            <input disabled value="Author : <%= current_user.email %>" id="disabled" type="text" class="validate">
-            </div>
-            <div class="input-field">
-            <input disabled value="Author : <%= current_user.nickname %>" id="disabled" type="text" class="validate">
-            </div>
-<%= render 'form' %>
-
-<hr>
-<%= link_to 'Show', [@post.bulletin, @post], class: 'btn btn-default' %>
-<%= link_to 'Back', bulletin_posts_path, class: 'btn btn-default' %>
-</div>
-</div>
-</div>
-</div>

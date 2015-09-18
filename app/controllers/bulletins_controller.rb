@@ -10,6 +10,7 @@ class BulletinsController < ApplicationController
   # GET /bulletins/1
   # GET /bulletins/1.json
   def show
+    
   end
 
   # GET /bulletins/new

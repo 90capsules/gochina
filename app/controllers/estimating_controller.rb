@@ -91,7 +91,7 @@ class EstimatingController < ApplicationController
     @each_requesting = Requesting.where(:id => params[:id]).take
   end
   
-  def counsel_content
+  def counsel_complete
     
     @tags = {
        'eye' => [ ['眼睛',"눈"], [['双眼皮',"쌍꺼풀"], ['眼形矫正术',"눈매교정"], ['开眼角',"트임"], ['眼睑下垂',"눈처짐"], ['眼袋 / 娇媚',"눈밑/애교"], [' 熊猫眼',"다크써클"], ['眼底脂肪',"눈밑 지"], ['再手术',"재수술"] ] ],
